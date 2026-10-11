@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://xhmfsp6u7yvk"]
+
+[ext_resource type="PackedScene" uid="uid://b5pk7vgajiv42" path="res://scenes/window/window.tscn" id="1_3uwou"]
+
+[node name="Node2D" type="Node2D" unique_id=1606845723]
+
+[node name="ShipWindow" parent="." unique_id=1911945941 instance=ExtResource("1_3uwou")]
+
+[node name="ShipWindow2" parent="." unique_id=610329409 instance=ExtResource("1_3uwou")]
+
+[node name="ShipWindow3" parent="." unique_id=155888140 instance=ExtResource("1_3uwou")]
+
+[node name="ShipWindow4" parent="." unique_id=97800646 instance=ExtResource("1_3uwou")]
