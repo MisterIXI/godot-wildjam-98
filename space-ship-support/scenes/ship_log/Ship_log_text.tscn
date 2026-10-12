@@ -1,9 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://cb0dxd707m43y"]
+[gd_scene load_steps=7 format=3 uid="uid://cb0dxd707m43y"]
 
+[ext_resource type="FontFile" uid="uid://bbwwkkjcgbkgq" path="res://assets/fonts/PixelOperatorHBSC.ttf" id="1_i4rxa"]
 [ext_resource type="Script" uid="uid://dh3nvkc0smq30" path="res://scenes/ship_log/ship_log_text.gd" id="1_p8ccu"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_p8ccu"]
 b = Vector2(147, 0)
+
+[sub_resource type="Animation" id="Animation_i4rxa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_p8ccu"]
 resource_name = "disapear"
@@ -35,21 +51,6 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_i4rxa"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lc460"]
 _data = {
 &"RESET": SubResource("Animation_i4rxa"),
@@ -57,8 +58,11 @@ _data = {
 }
 
 [node name="ShipLogText" type="Label"]
+editor_description = "Font made by: Jayvee Enaguas"
 offset_right = 151.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_i4rxa")
+theme_override_font_sizes/font_size = 26
 text = "Test dialog ist hier0"
 vertical_alignment = 2
 script = ExtResource("1_p8ccu")

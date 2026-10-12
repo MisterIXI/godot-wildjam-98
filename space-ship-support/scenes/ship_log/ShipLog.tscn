@@ -25,10 +25,10 @@ script = ExtResource("1_k2r23")
 clip_contents = true
 custom_minimum_size = Vector2(0.12, 0.165)
 layout_mode = 0
-offset_left = 754.0
+offset_left = 763.0
 offset_top = 253.0
-offset_right = 1244.0
-offset_bottom = 700.0
+offset_right = 1235.0
+offset_bottom = 691.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="lContainer"]
 modulate = Color(0, 1, 0, 1)
