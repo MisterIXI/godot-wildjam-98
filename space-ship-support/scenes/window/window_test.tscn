@@ -11,3 +11,6 @@
 [node name="ShipWindow3" parent="." unique_id=155888140 instance=ExtResource("1_3uwou")]
 
 [node name="ShipWindow4" parent="." unique_id=97800646 instance=ExtResource("1_3uwou")]
+transparent_bg = true
+position = Vector2i(539, 36)
+transparent = true

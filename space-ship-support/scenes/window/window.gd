@@ -9,17 +9,18 @@ var is_collapsed: bool = false
 var collapse_tween: Tween = null
 
 func _on_window_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-			if collapse_tween:
-				collapse_tween.kill()
-			if is_collapsed:
-				collapse_tween = create_tween()
-				collapse_tween.tween_property(self, "size:y", 400., 0.1)
-			else:
-				collapse_tween = create_tween()
-				collapse_tween.tween_property(self, "size:y", 2, 0.1)
-			is_collapsed = not is_collapsed
+	pass
+	# if event is InputEventMouseButton:
+	# 	if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+	# 		if collapse_tween:
+	# 			collapse_tween.kill()
+	# 		if is_collapsed:
+	# 			collapse_tween = create_tween()
+	# 			collapse_tween.tween_property(self, "size:y", 400., 0.1)
+	# 		else:
+	# 			collapse_tween = create_tween()
+	# 			collapse_tween.tween_property(self, "size:y", 30, 0.1)
+	# 		is_collapsed = not is_collapsed
 				
 
 func _on_title_bar_gui_input(event: InputEvent) -> void:
@@ -29,6 +30,16 @@ func _on_title_bar_gui_input(event: InputEvent) -> void:
 			is_dragging = event.pressed
 			if is_dragging:
 				mouse_pos_offset = event.global_position - Vector2(position)
+		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+			if collapse_tween:
+				collapse_tween.kill()
+			if is_collapsed:
+				collapse_tween = create_tween()
+				collapse_tween.tween_property(self, "size:y", 400., 0.1)
+			else:
+				collapse_tween = create_tween()
+				collapse_tween.tween_property(self, "size:y", 30, 0.1)
+			is_collapsed = not is_collapsed
 	if event is InputEventMouseMotion:
 		var mouse_motion:= event as InputEventMouseMotion
 		if mouse_motion.button_mask  == MouseButtonMask.MOUSE_BUTTON_MASK_LEFT:
