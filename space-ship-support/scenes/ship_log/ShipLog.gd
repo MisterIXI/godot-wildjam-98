@@ -1,6 +1,8 @@
 extends Control
 
-@onready var vbox_container: VBoxContainer = $ScrollContainer/VBoxContainer
+
+@onready var v_box_container: VBoxContainer = $lContainer/VBoxContainer
+
 
 
 var new_label
@@ -19,8 +21,8 @@ func _ready():
 	pass
 
 func newLine():
-	#position.y -= 30
-	new_label = Label.new()
+	new_label = preload("res://scenes/ship_log/Ship_log_text.tscn")
+	new_label = new_label.instantiate()
 	new_label.text = str(GlobalLog.log_text)
-	vbox_container.add_child(new_label)
+	v_box_container.add_child(new_label)
 	pass
