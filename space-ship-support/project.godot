@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="Space Ship Support"
-config/features=PackedStringArray("4.7", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalLog="*res://scenes/ship_log/global_log.tscn"
 
 [display]
 

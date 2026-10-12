@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi3pm55bbegwk"]
+
+[ext_resource type="Script" uid="uid://dxwbdgdgmpq1b" path="res://scenes/ship_log/test_log_sender.gd" id="1_ta8ib"]
+[ext_resource type="PackedScene" uid="uid://cd2i1kf8wgyuk" path="res://scenes/ship_log/ShipLog.tscn" id="2_qxfv0"]
+
+[node name="TestLogSender" type="Node"]
+script = ExtResource("1_ta8ib")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="ShipLog" parent="." instance=ExtResource("2_qxfv0")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
