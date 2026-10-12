@@ -1,4 +1,4 @@
-extends Window
+extends Panel
 
 var title_mouse_down: bool = false
 var is_dragging: bool = false
@@ -8,28 +8,21 @@ var partial_drag: Vector2 = Vector2.ZERO
 var is_collapsed: bool = false
 var collapse_tween: Tween = null
 
-func _on_window_input(event: InputEvent) -> void:
-	pass
-	# if event is InputEventMouseButton:
-	# 	if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-	# 		if collapse_tween:
-	# 			collapse_tween.kill()
-	# 		if is_collapsed:
-	# 			collapse_tween = create_tween()
-	# 			collapse_tween.tween_property(self, "size:y", 400., 0.1)
-	# 		else:
-	# 			collapse_tween = create_tween()
-	# 			collapse_tween.tween_property(self, "size:y", 30, 0.1)
-	# 		is_collapsed = not is_collapsed
-				
 
 func _on_title_bar_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		var mouse_event:= event as InputEventMouseButton
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			is_dragging = event.pressed
 			if is_dragging:
 				mouse_pos_offset = event.global_position - Vector2(position)
+			else:
+				if position.x < -size.x or \
+					position.y < -$TitleBar.size.y or \
+					position.x > size.x + get_viewport_rect().size.x or \
+					position.y > size.y + get_viewport_rect().size.y:
+						print("KIIIILL")
+						print($TitleBar.size.y)
+						position = Vector2(500, 200)
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 			if collapse_tween:
 				collapse_tween.kill()
@@ -43,10 +36,12 @@ func _on_title_bar_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		var mouse_motion:= event as InputEventMouseMotion
 		if mouse_motion.button_mask  == MouseButtonMask.MOUSE_BUTTON_MASK_LEFT:
-			partial_drag += mouse_motion.relative
-			var movement = Vector2i(partial_drag)
-			partial_drag -= Vector2(movement)
+			var motion: Vector2 = mouse_motion.relative
+			# print(mouse_motion.screen_velocity)
+			# if mouse_motion.screen_velocity.x == 0:
+			# 	motion.x = 0
+			# if mouse_motion.screen_velocity.y == 0:
+			# 	motion.y = 0
+			position += motion
 
-			position += movement
-
-
+			# print(mouse_motion)
