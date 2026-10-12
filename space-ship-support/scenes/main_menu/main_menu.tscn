@@ -55,7 +55,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "[center][color=gray]ssssssssssssssssssssssssssssssssssssssssssssssssss[/color]SSTS[color=gray]ssssssssssssssssssssssssssssssssssssssssssssssssss[/color][/center]"
+text = "[center][color=gray]ssssssssssssssssssssssssssssssssssssssssssssssssss[/color]SSTS[color=gray][wave amp=100 freq=1]ssssssssssssssssssssssssssssssssssssssssssssssssss[/wave][/color][/center]"
 fit_content = true
 autowrap_mode = 0
 
