@@ -8,14 +8,9 @@
 script = ExtResource("1_ta8ib")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.6
 autostart = true
 
 [node name="ShipLog" parent="." instance=ExtResource("2_qxfv0")]
-offset_left = -640.0
-offset_top = -357.0
-offset_right = -600.0
-offset_bottom = -317.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -8
