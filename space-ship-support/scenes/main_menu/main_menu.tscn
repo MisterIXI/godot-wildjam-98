@@ -21,8 +21,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_0ebjn")
-frequency = 0.10600000000000001
-lifetime = 1.9300000000000002
+frequency = 0.106
+lifetime = 1.93
 
 [node name="ColorRect" type="ColorRect" parent="Background" unique_id=1403578053]
 layout_mode = 1
@@ -55,7 +55,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "[center][color=gray]ssssssssssssssssssssssssssssssssssssssssssssssssss[/color]SSTS[color=gray][wave amp=100 freq=1]ssssssssssssssssssssssssssssssssssssssssssssssssss[/wave][/color][/center]"
+text = "[center][color=gray]sssssssssssssssssssssssssssssssssss[/color]SSTS[color=gray][wave amp=100 freq=1]sssssssssssssssssssssssssssssssssss[/wave][/color][/center]"
 fit_content = true
 autowrap_mode = 0
 
@@ -73,9 +73,19 @@ size_flags_horizontal = 4
 layout_mode = 2
 text = "Start Game"
 
+[node name="SettingsButton" type="Button" parent="VBoxContainer/VBoxContainer2" unique_id=2032212149]
+layout_mode = 2
+text = "Settings"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer/VBoxContainer2" unique_id=1310223063]
+layout_mode = 2
+text = "Credits"
+
 [node name="QuitButton" type="Button" parent="VBoxContainer/VBoxContainer2" unique_id=1108162412]
 layout_mode = 2
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/VBoxContainer2/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer2/QuitButton" to="." method="_on_quit_button_pressed"]
