@@ -23,7 +23,7 @@ func start_spawn_timer() -> void:
 	timer.timeout.connect(spawn_label)
 
 func spawn_label() -> void:
-	var used_vert_movement: int = randi_range(vert_movement * min_variance, vert_movement * max_variance)
+	var used_vert_movement: float = randf_range(vert_movement * min_variance, vert_movement * max_variance)
 	var pos: Vector2 = Vector2(randf_range(0.0, get_viewport_rect().size.x), randf_range(0.0, get_viewport_rect().size.y + (used_vert_movement * 0.9)))
 
 	var label: Label = Label.new()
