@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://py13r334qxcm"]
+
+[ext_resource type="Texture2D" uid="uid://bxb5cldblmf1y" path="res://assets/placeholder_art/ship.png" id="1_f5wym"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r7iap"]
+radius = 25.079872
+
+[node name="Ship" type="Area2D" unique_id=617731787]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=593634741]
+texture = ExtResource("1_f5wym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=571401671]
+shape = SubResource("CircleShape2D_r7iap")

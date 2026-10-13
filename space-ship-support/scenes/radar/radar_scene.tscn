@@ -1,9 +1,34 @@
 [gd_scene format=3 uid="uid://duhy8dfqmo7m5"]
 
-[ext_resource type="Texture2D" uid="uid://crncdh258kugg" path="res://assets/placeholder_art/radarboard.png" id="1_x4jdq"]
+[ext_resource type="Script" uid="uid://dkgwljjmamg5y" path="res://scenes/radar/radar_scene.gd" id="1_x4jdq"]
 
 [node name="RadarScene" type="Node2D" unique_id=431484288]
+script = ExtResource("1_x4jdq")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1579694294]
-position = Vector2(640, 360)
-texture = ExtResource("1_x4jdq")
+[node name="TestCamera2D" type="Camera2D" parent="." unique_id=1634190873]
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1858492949]
+
+[node name="SpawnPoint1" type="Marker2D" parent="." unique_id=36111795]
+position = Vector2(0, -360)
+
+[node name="SpawnPoint2" type="Marker2D" parent="." unique_id=474005685]
+position = Vector2(270, -270)
+
+[node name="SpawnPoint3" type="Marker2D" parent="." unique_id=847301055]
+position = Vector2(360, 0)
+
+[node name="SpawnPoint4" type="Marker2D" parent="." unique_id=211476180]
+position = Vector2(270, 270)
+
+[node name="SpawnPoint5" type="Marker2D" parent="." unique_id=1593189644]
+position = Vector2(0, 360)
+
+[node name="SpawnPoint6" type="Marker2D" parent="." unique_id=707087786]
+position = Vector2(-270, 270)
+
+[node name="SpawnPoint7" type="Marker2D" parent="." unique_id=1598076619]
+position = Vector2(-360, 0)
+
+[node name="SpawnPoint8" type="Marker2D" parent="." unique_id=1192315032]
+position = Vector2(-270, -270)
