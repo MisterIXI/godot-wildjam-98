@@ -20,7 +20,6 @@ func _on_title_bar_gui_input(event: InputEvent) -> void:
 					position.y < -$TitleBar.size.y or \
 					position.x > size.x + get_viewport_rect().size.x or \
 					position.y > size.y + get_viewport_rect().size.y:
-						print("KIIIILL")
 						print($TitleBar.size.y)
 						position = Vector2(500, 200)
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:

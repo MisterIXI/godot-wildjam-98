@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5pk7vgajiv42"]
 
 [ext_resource type="Script" uid="uid://dpcjujgxs4apa" path="res://scenes/window/window.gd" id="1_obuqq"]
+[ext_resource type="Texture2D" uid="uid://byqodh57uugor" path="res://icon.svg" id="2_0osky"]
 
 [node name="Window" type="Panel" unique_id=118375707]
 clip_contents = true
@@ -8,11 +9,80 @@ offset_right = 500.0
 offset_bottom = 400.0
 script = ExtResource("1_obuqq")
 
-[node name="TitleBar" type="Panel" parent="." unique_id=1470489837]
+[node name="TitleBar" type="PanelContainer" parent="." unique_id=1596550366]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_bottom = 30.0
 grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TitleBar" unique_id=1477828352]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 33
+theme_override_constants/margin_bottom = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TitleBar/MarginContainer" unique_id=357688698]
+layout_mode = 2
+bbcode_enabled = true
+text = "Ship #135741 Status: [shake][color=red]CRITICAL[/color][/shake]"
+vertical_alignment = 1
+
+[node name="ContentMarginContainer" type="MarginContainer" parent="." unique_id=688489001]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContentMarginContainer" unique_id=325412495]
+layout_mode = 2
+
+[node name="InfoMarginContainer" type="MarginContainer" parent="ContentMarginContainer/HBoxContainer" unique_id=419092979]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="InfoVBox" type="VBoxContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer" unique_id=315918773]
+layout_mode = 2
+
+[node name="CharacterPanel" type="PanelContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox" unique_id=2022405636]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/CharacterPanel" unique_id=1499784406]
+layout_mode = 2
+texture = ExtResource("2_0osky")
+expand_mode = 2
+
+[node name="DiagnosePanel" type="PanelContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox" unique_id=1196009241]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StatusPanel" type="PanelContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox" unique_id=599029278]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/StatusPanel" unique_id=610134437]
+layout_mode = 2
+
+[node name="ModuleMarginContainer" type="MarginContainer" parent="ContentMarginContainer/HBoxContainer" unique_id=1476517635]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ModuleGridContainer" type="GridContainer" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer" unique_id=745455346]
+layout_mode = 2
 
 [connection signal="gui_input" from="TitleBar" to="." method="_on_title_bar_gui_input"]
