@@ -11,6 +11,7 @@ script = ExtResource("1_x4jdq")
 [node name="TestCamera2D" type="Camera2D" parent="." unique_id=1634190873]
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=1858492949]
+wait_time = 3.0
 autostart = true
 
 [node name="SpawnPoint1" type="Marker2D" parent="." unique_id=36111795]
@@ -38,6 +39,7 @@ position = Vector2(-360, 0)
 position = Vector2(-270, -270)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=566211853]
+visible = false
 position = Vector2(278, 0)
 texture = ExtResource("2_jtmd1")
 

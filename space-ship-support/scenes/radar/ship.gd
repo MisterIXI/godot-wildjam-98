@@ -1,11 +1,16 @@
 extends Area2D
 
+@onready var target_sprite: Sprite2D = $TargetSprite
+@onready var target: Timer = $Target
+
 var y_mod
 var x_mod
 var ship_speed
 var ship_offset
 var ship_Position
 var offset_y
+var offset_plus
+var target_close = false
 
 func ship_setup(Position,speed,offset):
 	ship_speed = speed
@@ -43,15 +48,17 @@ func ship_setup(Position,speed,offset):
 		y_mod = 0.5
 		x_mod = 0.5
 	#use the decimels on the generated nummber for a another random outcome
-	if Position - ship_Position + 1 >= 0.5:
+	if Position - ship_Position + 1.1 >= 0.5:
 		offset_y = true
+		offset_plus = 0.5
 	else:
 		offset_y = false
-
+		offset_plus = -0.5
 	
 	
 	
 func _process(delta: float) -> void:
+	#movement of the ships
 	if ship_Position == 2 or ship_Position == 4 or ship_Position == 6 or ship_Position == 8:
 		#Position controlls for the X flying ships
 		if offset_y == true:
@@ -62,16 +69,32 @@ func _process(delta: float) -> void:
 			position.x += ship_speed * x_mod * delta * ship_offset
 			#Position controlls for the + flying ships
 	elif  ship_Position == 1 or ship_Position == 5:
-			position.y += ship_speed * delta / ship_offset
-			position.x += ship_speed * 0.5 / ship_offset * delta
+			position.y += ship_speed * y_mod * delta / ship_offset
+			position.x += ship_speed * offset_plus * delta / ship_offset 
 	elif ship_Position == 3 or ship_Position == 7:
-			position.y += ship_speed * 0.5 / ship_offset * delta
-			position.x += ship_speed * delta / ship_offset
-		
-		
-		
-		
-		
-		
-		
-		
+			position.y += ship_speed * offset_plus * delta / ship_offset 
+			position.x += ship_speed * x_mod * delta / ship_offset
+			
+
+#Target animation
+func _on_target_timeout() -> void:
+	target_close = not target_close
+	if target_close == true:
+		target_sprite.frame = 1
+	else:
+		target_sprite.frame = 0
+	
+
+#When clicked
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event.is_action_pressed("left_click") and target_sprite.visible == true:
+		print("Open ship window")
+
+
+
+func _on_mouse_entered() -> void:
+	get_tree().call_group("ship","target_disapear")
+	target_sprite.visible = true
+	
+func target_disapear():
+	target_sprite.visible = false
