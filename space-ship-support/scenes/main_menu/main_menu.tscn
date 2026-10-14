@@ -103,6 +103,7 @@ theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
 [node name="SettingsPanel" type="Panel" parent="SubMenuMC" unique_id=1797043354]
+visible = false
 layout_mode = 2
 
 [node name="SettingsMC" type="MarginContainer" parent="SubMenuMC/SettingsPanel" unique_id=1110718838]
