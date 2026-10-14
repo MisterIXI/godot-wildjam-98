@@ -1,12 +1,19 @@
 [gd_scene format=3 uid="uid://duhy8dfqmo7m5"]
 
 [ext_resource type="Script" uid="uid://dkgwljjmamg5y" path="res://scenes/radar/radar_scene.gd" id="1_x4jdq"]
-[ext_resource type="Texture2D" uid="uid://b1ggufgomqawo" path="res://assets/placeholder_art/radarboard_cut.png" id="2_jtmd1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r7iap"]
+radius = 335.00598
 
 [node name="RadarScene" type="Node2D" unique_id=431484288]
 script = ExtResource("1_x4jdq")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=123040192]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1411344339]
+shape = SubResource("CircleShape2D_r7iap")
 
 [node name="TestCamera2D" type="Camera2D" parent="." unique_id=1634190873]
 
@@ -15,32 +22,27 @@ wait_time = 3.0
 autostart = true
 
 [node name="SpawnPoint1" type="Marker2D" parent="." unique_id=36111795]
-position = Vector2(0, -360)
+position = Vector2(0, -335)
 
 [node name="SpawnPoint2" type="Marker2D" parent="." unique_id=474005685]
-position = Vector2(270, -270)
+position = Vector2(237, -237)
 
 [node name="SpawnPoint3" type="Marker2D" parent="." unique_id=847301055]
-position = Vector2(360, 0)
+position = Vector2(335, 0)
 
 [node name="SpawnPoint4" type="Marker2D" parent="." unique_id=211476180]
-position = Vector2(270, 270)
+position = Vector2(237, 237)
 
 [node name="SpawnPoint5" type="Marker2D" parent="." unique_id=1593189644]
-position = Vector2(0, 360)
+position = Vector2(0, 335)
 
 [node name="SpawnPoint6" type="Marker2D" parent="." unique_id=707087786]
-position = Vector2(-270, 270)
+position = Vector2(-237, 237)
 
 [node name="SpawnPoint7" type="Marker2D" parent="." unique_id=1598076619]
-position = Vector2(-360, 0)
+position = Vector2(-335, 0)
 
 [node name="SpawnPoint8" type="Marker2D" parent="." unique_id=1192315032]
-position = Vector2(-270, -270)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=566211853]
-visible = false
-position = Vector2(278, 0)
-texture = ExtResource("2_jtmd1")
+position = Vector2(-237, -237)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

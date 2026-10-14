@@ -98,3 +98,9 @@ func _on_mouse_entered() -> void:
 	
 func target_disapear():
 	target_sprite.visible = false
+	
+
+
+
+func _on_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	queue_free()
