@@ -5,8 +5,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_r7iap"]
 radius = 335.00598
 
-[node name="RadarScene" type="Node2D" unique_id=431484288]
+[node name="RadarScene" type="Node2D" unique_id=431484288 node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("1_x4jdq")
+spawn_points = [NodePath("SpawnPoint1"), NodePath("SpawnPoint2"), NodePath("SpawnPoint3"), NodePath("SpawnPoint4"), NodePath("SpawnPoint5"), NodePath("SpawnPoint6"), NodePath("SpawnPoint7"), NodePath("SpawnPoint8")]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=123040192]
 collision_layer = 2
