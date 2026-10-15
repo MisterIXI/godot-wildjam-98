@@ -1,0 +1,15 @@
+keys;en;de
+menu.start;Start;Start
+menu.settings;Settings;Einstellungen
+menu.credits;Credits;Credits
+menu.quit;Quit;Beenden
+menu.back;Back;Zurück
+menu.try_again;Try Again;Neuer Versuch
+menu.main_menu;Main Menu;Hauptmenü
+menu.settings.overall_volume;Overall Volume;Gesamtlautstärke
+menu.settings.music_volume;Music Volume;Musik-Lautstärke
+menu.settings.sfx_volume;SFX Volume;SFX-Lautstärke
+menu.settings.language;Language;Sprache
+menu.settings.reset_to_default;Reset To Default;Auf Standard zurücksetzen
+menu.settings.reset_progress;Reset Progress;Fortschritt zurücksetzen
+menu.settings.fullscreen;Fullscreen;Vollbild
