@@ -24,20 +24,23 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 33
 theme_override_constants/margin_bottom = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TitleBar/MarginContainer" unique_id=357688698]
+[node name="TitleLabel" type="RichTextLabel" parent="TitleBar/MarginContainer" unique_id=357688698]
 layout_mode = 2
+mouse_filter = 1
 bbcode_enabled = true
 text = "Ship #135741 Status: [shake][color=red]CRITICAL[/color][/shake]"
 vertical_alignment = 1
 
 [node name="ContentMarginContainer" type="MarginContainer" parent="." unique_id=688489001]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
 offset_top = 30.0
+offset_right = 250.0
+offset_bottom = 400.0
 grow_horizontal = 2
-grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ContentMarginContainer" unique_id=325412495]
 layout_mode = 2
@@ -56,8 +59,9 @@ layout_mode = 2
 [node name="CharacterPanel" type="PanelContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox" unique_id=2022405636]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 
-[node name="TextureRect" type="TextureRect" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/CharacterPanel" unique_id=1499784406]
+[node name="CharacterTexRect" type="TextureRect" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/CharacterPanel" unique_id=1499784406]
 layout_mode = 2
 texture = ExtResource("2_0osky")
 expand_mode = 2
@@ -66,12 +70,79 @@ expand_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="GridContainer" type="GridContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel" unique_id=603550398]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 4
+
+[node name="Button" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=280462281]
+layout_mode = 2
+text = "😰"
+
+[node name="Button2" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=2063615105]
+layout_mode = 2
+text = "🔥"
+
+[node name="Button3" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1324047331]
+layout_mode = 2
+text = "⚙️"
+
+[node name="Button4" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1854123135]
+layout_mode = 2
+text = "📠"
+
+[node name="Button5" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1173972872]
+layout_mode = 2
+text = "💤"
+
+[node name="Button6" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1396900626]
+layout_mode = 2
+text = "🖥️"
+
+[node name="Button7" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1343560927]
+layout_mode = 2
+text = "🐸"
+
+[node name="Button8" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1518309448]
+layout_mode = 2
+text = "👽"
+
+[node name="TimerPanel" type="PanelContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox" unique_id=1397449733]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TimeLeftLabel" type="Label" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/TimerPanel" unique_id=750560163]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 3.0
+text = "50"
+
+[node name="TimerPlusButton" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/TimerPanel" unique_id=259324543]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "+10"
+
+[node name="TimerPlayButton" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/TimerPanel" unique_id=696707360]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Start"
+
+[node name="TimerMinusButton" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/TimerPanel" unique_id=29186565]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "-10"
+
 [node name="StatusPanel" type="PanelContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox" unique_id=599029278]
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/StatusPanel" unique_id=610134437]
 layout_mode = 2
+text = "Blabla blubberfasel"
 
 [node name="ModuleMarginContainer" type="MarginContainer" parent="ContentMarginContainer/HBoxContainer" unique_id=1476517635]
 layout_mode = 2
@@ -82,7 +153,10 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ModuleGridContainer" type="GridContainer" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer" unique_id=745455346]
+[node name="PanelContainer" type="PanelContainer" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer" unique_id=861031286]
+layout_mode = 2
+
+[node name="ModuleGridContainer" type="GridContainer" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer/PanelContainer" unique_id=745455346]
 layout_mode = 2
 
 [connection signal="gui_input" from="TitleBar" to="." method="_on_title_bar_gui_input"]
