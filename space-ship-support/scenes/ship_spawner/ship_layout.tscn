@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dlfanjp627w3g"]
+
+[ext_resource type="Script" uid="uid://bga2qx0ak8iam" path="res://scenes/ship_spawner/ship_layout.gd" id="1_v5yq1"]
+
+[sub_resource type="Gradient" id="Gradient_v5yq1"]
+colors = PackedColorArray(0.6125778, 0.61257786, 0.6125778, 1, 0.24115604, 0.24115604, 0.24115604, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v5yq1"]
+gradient = SubResource("Gradient_v5yq1")
+width = 600
+height = 600
+
+[node name="ShipLayout" type="Node2D" unique_id=1128478476 node_paths=PackedStringArray("start_marker")]
+script = ExtResource("1_v5yq1")
+start_marker = NodePath("StartMarker2D")
+
+[node name="StartMarker2D" type="Marker2D" parent="." unique_id=115897841]
+position = Vector2(100, 100)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1495171122]
+position = Vector2(67, 65)
+texture = SubResource("GradientTexture2D_v5yq1")
+centered = false

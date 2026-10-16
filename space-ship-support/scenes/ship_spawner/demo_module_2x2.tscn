@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cwdrla53ch02e"]
+
+[ext_resource type="Script" uid="uid://b2shwbquiio1o" path="res://scenes/ship_spawner/demo_module.gd" id="1_d0aqk"]
+
+[sub_resource type="Gradient" id="Gradient_d0aqk"]
+colors = PackedColorArray(0.36155424, 3.218744e-07, 1.2032687e-07, 1, 1, 0.5710682, 0.50889325, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vpy3l"]
+gradient = SubResource("Gradient_d0aqk")
+width = 160
+height = 160
+
+[sub_resource type="Gradient" id="Gradient_vpy3l"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_onavl"]
+gradient = SubResource("Gradient_vpy3l")
+width = 150
+height = 150
+
+[node name="DemoModule2x2" type="Node2D" unique_id=633868013 node_paths=PackedStringArray("sprite_2d")]
+script = ExtResource("1_d0aqk")
+sprite_2d = NodePath("Color")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=167088781]
+texture = SubResource("GradientTexture2D_vpy3l")
+centered = false
+
+[node name="Color" type="Sprite2D" parent="." unique_id=355251827]
+texture = SubResource("GradientTexture2D_onavl")
+centered = false
+offset = Vector2(5, 5)

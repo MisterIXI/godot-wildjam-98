@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ModuleData" format=3 uid="uid://nbatvi28pjdp"]
+
+[ext_resource type="Script" uid="uid://bouy1x6lj0101" path="res://scenes/ship_spawner/module_data.gd" id="1_ryeiw"]
+
+[resource]
+script = ExtResource("1_ryeiw")
+target_scene_path = "uid://cdotfaphkt0ls"
+required_relative_positions = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1)])
+module_type = 1
+module_name = "Test Filler Slot 1x2"
+debug_color = Color(0.38001588, 0.19801596, 0.3210906, 1)
+metadata/_custom_type_script = "uid://bouy1x6lj0101"
