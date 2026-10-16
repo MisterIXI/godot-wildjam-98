@@ -22,6 +22,7 @@ func init_from(layout_data: ShipLayoutData) -> void:
 		module.global_position = get_spawn_pos(slot_position)
 		module.init_from_resource(module_data)
 		add_child(module)
+		print("slot: ", slot_position, " -> init module:" , module_data.module_name, " with color ", module_data.debug_color.to_html())
 		
 func get_spawn_pos(vec2i: Vector2i) -> Vector2:
 	return start_marker.global_position + (vec2i * SLOT_SIZE_XY)
