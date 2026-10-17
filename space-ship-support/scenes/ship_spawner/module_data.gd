@@ -17,6 +17,7 @@ enum ModuleType {
 
 ## Can be used if we want a module to have different dimensions
 ## e.g. a 1x2 module could be [Vector2i(0,0), Vector2i(0,1)] 
+## SHOULD ALWAYS CONTAIN Vector2i(0,0) (aka Vector2i.ZERO)
 @export var required_relative_positions: Array[Vector2i] = [Vector2i(0,0)]
 
 ## The type of module. None means no module is assigned here. This is used
