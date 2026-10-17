@@ -7,9 +7,25 @@
 [node name="Window" parent="." unique_id=118375707 instance=ExtResource("1_3uwou")]
 
 [node name="Window2" parent="." unique_id=1055275667 instance=ExtResource("1_3uwou")]
+offset_left = 571.0
+offset_top = 85.0
+offset_right = 1071.0
+offset_bottom = 485.0
 
 [node name="Window3" parent="." unique_id=2068639789 instance=ExtResource("1_3uwou")]
+offset_left = 205.0
+offset_top = 235.0
+offset_right = 705.0
+offset_bottom = 635.0
 
 [node name="Window4" parent="." unique_id=382795771 instance=ExtResource("1_3uwou")]
+offset_left = 66.0
+offset_top = 419.0
+offset_right = 566.0
+offset_bottom = 819.0
 
 [node name="Window5" parent="." unique_id=206212263 instance=ExtResource("1_3uwou")]
+offset_left = 757.0
+offset_top = 577.0
+offset_right = 1257.0
+offset_bottom = 977.0
