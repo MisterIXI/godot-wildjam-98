@@ -1,9 +1,49 @@
 [gd_scene format=3 uid="uid://duhy8dfqmo7m5"]
 
-[ext_resource type="Texture2D" uid="uid://crncdh258kugg" path="res://assets/placeholder_art/radarboard.png" id="1_x4jdq"]
+[ext_resource type="Script" uid="uid://dkgwljjmamg5y" path="res://scenes/radar/radar_scene.gd" id="1_x4jdq"]
 
-[node name="RadarScene" type="Node2D" unique_id=431484288]
+[sub_resource type="CircleShape2D" id="CircleShape2D_r7iap"]
+radius = 335.00598
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1579694294]
-position = Vector2(640, 360)
-texture = ExtResource("1_x4jdq")
+[node name="RadarScene" type="Node2D" unique_id=431484288 node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("1_x4jdq")
+spawn_points = [NodePath("SpawnPoint1"), NodePath("SpawnPoint2"), NodePath("SpawnPoint3"), NodePath("SpawnPoint4"), NodePath("SpawnPoint5"), NodePath("SpawnPoint6"), NodePath("SpawnPoint7"), NodePath("SpawnPoint8")]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=123040192]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1411344339]
+shape = SubResource("CircleShape2D_r7iap")
+
+[node name="TestCamera2D" type="Camera2D" parent="." unique_id=1634190873]
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1858492949]
+wait_time = 3.0
+autostart = true
+
+[node name="SpawnPoint1" type="Marker2D" parent="." unique_id=36111795]
+position = Vector2(0, -335)
+
+[node name="SpawnPoint2" type="Marker2D" parent="." unique_id=474005685]
+position = Vector2(237, -237)
+
+[node name="SpawnPoint3" type="Marker2D" parent="." unique_id=847301055]
+position = Vector2(335, 0)
+
+[node name="SpawnPoint4" type="Marker2D" parent="." unique_id=211476180]
+position = Vector2(237, 237)
+
+[node name="SpawnPoint5" type="Marker2D" parent="." unique_id=1593189644]
+position = Vector2(0, 335)
+
+[node name="SpawnPoint6" type="Marker2D" parent="." unique_id=707087786]
+position = Vector2(-237, 237)
+
+[node name="SpawnPoint7" type="Marker2D" parent="." unique_id=1598076619]
+position = Vector2(-335, 0)
+
+[node name="SpawnPoint8" type="Marker2D" parent="." unique_id=1192315032]
+position = Vector2(-237, -237)
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
