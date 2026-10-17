@@ -3,18 +3,6 @@ extends Resource
 
 const NO_SLOT: ModuleData = preload("res://resources/no_slot.tres")
 
-class SlotData:
-	var module_data: ModuleData
-	var is_main_index: bool
-	
-	static func from(module: ModuleData, is_main_index: bool = true) -> SlotData:
-		
-		var res: SlotData = SlotData.new()
-		res.module_data = module
-		res.is_main_index = is_main_index
-		return res
-		
-
 #var slots: Array[ModuleSlot] # or Dictionary[ModuleSlot, Array[Vector2i]] - too nested for gdscript
 var slots: Dictionary[Vector2i, SlotData]
 var size_x: int

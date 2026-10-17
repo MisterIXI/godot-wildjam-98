@@ -6,9 +6,11 @@ extends Control
 @export var main_vbc: VBoxContainer
 @export var settings_container: Control
 @export var credits_container: Control
+@export var quit_button: Button
 
 func _ready() -> void:
 	_show_start_menu()
+	quit_button.visible = !Utils.is_web_build()
 
 func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_file(game_scene_path)
