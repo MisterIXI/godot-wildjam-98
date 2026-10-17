@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dh6alm6cguons"]
 
-[ext_resource type="Script" uid="uid://b2shwbquiio1o" path="res://scenes/ship_spawner/demo_module.gd" id="1_1igpg"]
+[ext_resource type="Script" uid="uid://b2shwbquiio1o" path="res://scenes/modules/demo_module.gd" id="1_dsdva"]
 
-[sub_resource type="Gradient" id="Gradient_d0aqk"]
+[sub_resource type="Gradient" id="Gradient_dsdva"]
 colors = PackedColorArray(0.36155424, 3.218744e-07, 1.2032687e-07, 1, 1, 0.5710682, 0.50889325, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1igpg"]
-gradient = SubResource("Gradient_d0aqk")
+gradient = SubResource("Gradient_dsdva")
 width = 60
 height = 60
 
@@ -25,7 +25,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 60.0
 offset_bottom = 60.0
-script = ExtResource("1_1igpg")
+script = ExtResource("1_dsdva")
 debug_color_tr = NodePath("ColorTR")
 background_tr = NodePath("BackgroundTR")
 debug_label = NodePath("Control/VBoxContainer/DebugLabel")
@@ -41,7 +41,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_1igpg")
 expand_mode = 1
-stretch_mode = 1
 
 [node name="ColorTR" type="TextureRect" parent="." unique_id=281110636]
 layout_mode = 1

@@ -19,8 +19,8 @@ const SHIP_LAYOUT: PackedScene = preload("res://scenes/ship_spawner/ship_layout.
 @export var available_fillers: Array[ModuleData]
 
 func _ready() -> void:
-	assert(puzzle_configs.size() >= 2)
-	assert(available_fillers.size() >= 2)
+	assert(puzzle_configs.size() >= 1)
+	assert(available_fillers.size() >= 1)
 
 #region test ship spawn. may be deleted
 	# TODO: delete, this is just for testing

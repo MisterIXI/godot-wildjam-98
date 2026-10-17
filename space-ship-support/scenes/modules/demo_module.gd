@@ -1,5 +1,6 @@
 class_name DemoModule
 extends ShipModule
+## All in one module for demo purposes
 
 @export var debug_color_tr: TextureRect
 @export var background_tr: TextureRect
@@ -7,10 +8,11 @@ extends ShipModule
 @export var debug_solve_label: RichTextLabel
 @export var demo_button: Button
 
-
 func _ready() -> void:
 	pass
 	
+# override from ShipModule.init_from_resource()
+# mainly used to setup the demo showcase
 func init_from_resource(module_slot: ModuleData, module_position_new: Vector2i) -> void:
 	super(module_slot, module_position_new)
 	name = name.replace("Demo", module_slot.module_name)
@@ -44,5 +46,5 @@ func update_state(is_solved: bool) -> void:
 	debug_solve_label.text = "[color=green]solved[/color]" if is_solved else "[color=red]unsolved[/color]"
 
 func _on_demo_button_pressed() -> void:
-	for pslot: ShipModule in puzzle_slots.values():
+	for pslot: ShipModule in linked_puzzle_slots.values():
 		(pslot as DemoModule).update_state(true)
