@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cb0dxd707m43y"]
+[gd_scene format=3 uid="uid://cb0dxd707m43y"]
 
 [ext_resource type="FontFile" uid="uid://bbwwkkjcgbkgq" path="res://assets/fonts/PixelOperatorHBSC.ttf" id="1_i4rxa"]
 [ext_resource type="Script" uid="uid://dh3nvkc0smq30" path="res://scenes/ship_log/ship_log_text.gd" id="1_p8ccu"]
@@ -57,7 +57,7 @@ _data = {
 &"disapear": SubResource("Animation_p8ccu")
 }
 
-[node name="ShipLogText" type="Label"]
+[node name="ShipLogText" type="Label" unique_id=1922605172]
 editor_description = "Font made by: Jayvee Enaguas"
 offset_right = 151.0
 offset_bottom = 23.0
@@ -67,16 +67,14 @@ text = "Test dialog ist hier0"
 vertical_alignment = 2
 script = ExtResource("1_p8ccu")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=153728110]
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1312318265]
 position = Vector2(3, 12)
 shape = SubResource("SegmentShape2D_p8ccu")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_lc460")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=738006370]
+libraries/ = SubResource("AnimationLibrary_lc460")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

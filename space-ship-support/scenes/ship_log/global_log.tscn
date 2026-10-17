@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdbyvsxi5b1a0"]
+[gd_scene format=3 uid="uid://bdbyvsxi5b1a0"]
 
 [ext_resource type="Script" uid="uid://bn447y272wf5u" path="res://scenes/ship_log/global_log.gd" id="1_vqkfp"]
 
-[node name="GlobalLog" type="Node"]
+[node name="GlobalLog" type="Node" unique_id=515547077]
 script = ExtResource("1_vqkfp")

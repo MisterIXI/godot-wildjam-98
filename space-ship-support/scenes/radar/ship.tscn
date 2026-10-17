@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://py13r334qxcm"]
+
+[ext_resource type="Texture2D" uid="uid://bxb5cldblmf1y" path="res://assets/placeholder_art/ship.png" id="1_f5wym"]
+[ext_resource type="Script" uid="uid://h1jhw472rer8" path="res://scenes/radar/ship.gd" id="1_fkp5b"]
+[ext_resource type="Texture2D" uid="uid://c2esy2tu0ocoy" path="res://assets/placeholder_art/Target_all.png" id="3_lnurc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r7iap"]
+radius = 25.079872
+
+[node name="Ship" type="Area2D" unique_id=617731787 groups=["ship"]]
+collision_mask = 2
+script = ExtResource("1_fkp5b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=593634741]
+z_index = -5
+texture = ExtResource("1_f5wym")
+
+[node name="TargetSprite" type="Sprite2D" parent="." unique_id=932166928]
+visible = false
+z_index = 5
+texture = ExtResource("3_lnurc")
+hframes = 2
+region_rect = Rect2(0, 0, 50.64718, 49)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=571401671]
+shape = SubResource("CircleShape2D_r7iap")
+
+[node name="Target" type="Timer" parent="." unique_id=636840034]
+autostart = true
+
+[connection signal="area_shape_exited" from="." to="." method="_on_area_shape_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="timeout" from="Target" to="." method="_on_target_timeout"]
