@@ -1,21 +1,23 @@
 [gd_scene format=3 uid="uid://r30qnun58o1"]
 
-[ext_resource type="Script" uid="uid://bhsmplmj7o57o" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
-[ext_resource type="Script" uid="uid://campr7olnoogg" path="res://scenes/main_menu/background_anim.gd" id="2_0ebjn"]
-[ext_resource type="PackedScene" uid="uid://bc5iju7qppj7f" path="res://scenes/settings/settings.tscn" id="3_ob46e"]
+[ext_resource type="Script" uid="uid://bhsmplmj7o57o" path="res://scenes/menu/main_menu.gd" id="1_247la"]
+[ext_resource type="Script" uid="uid://campr7olnoogg" path="res://scenes/menu/background_anim.gd" id="2_kiqgm"]
+[ext_resource type="PackedScene" uid="uid://bc5iju7qppj7f" path="res://scenes/settings/settings.tscn" id="3_hj162"]
 
-[node name="MainMenu" type="Control" unique_id=1163263357 node_paths=PackedStringArray("main_vbc", "settings_container", "credits_container")]
+[node name="MainMenu" type="Control" unique_id=1163263357 node_paths=PackedStringArray("main_vbc", "settings_container", "credits_container", "quit_button")]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_fsom3")
-game_scene_path = "uid://duhy8dfqmo7m5"
+script = ExtResource("1_247la")
+game_scene_path = "uid://cv8qxcnh1h5vn"
 main_vbc = NodePath("MainVBC")
 settings_container = NodePath("SubMenuMC/SettingsPanel")
 credits_container = NodePath("SubMenuMC/CreditsPanel")
+quit_button = NodePath("MainVBC/StartMenuVBC/QuitButton")
 
 [node name="Background" type="Control" parent="." unique_id=908403620]
 layout_mode = 1
@@ -24,7 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_0ebjn")
+script = ExtResource("2_kiqgm")
 frequency = 0.106
 lifetime = 1.93
 
@@ -115,7 +117,7 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="Settings" parent="SubMenuMC/SettingsPanel/SettingsMC" unique_id=1996866761 instance=ExtResource("3_ob46e")]
+[node name="Settings" parent="SubMenuMC/SettingsPanel/SettingsMC" unique_id=1996866761 instance=ExtResource("3_hj162")]
 layout_mode = 2
 
 [node name="BackButton" type="Button" parent="SubMenuMC/SettingsPanel/SettingsMC/Settings" unique_id=181622513]
