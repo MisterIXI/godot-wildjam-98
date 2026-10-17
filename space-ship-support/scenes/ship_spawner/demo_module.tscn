@@ -20,21 +20,28 @@ gradient = SubResource("Gradient_vpy3l")
 width = 56
 height = 56
 
-[node name="DemoModule" type="Control" unique_id=1340725201 node_paths=PackedStringArray("debug_label", "debug_solve_label", "demo_button")]
+[node name="DemoModule" type="Control" unique_id=1340725201 node_paths=PackedStringArray("debug_color_tr", "background_tr", "debug_label", "debug_solve_label", "demo_button")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 60.0
 offset_bottom = 60.0
 script = ExtResource("1_1igpg")
+debug_color_tr = NodePath("ColorTR")
+background_tr = NodePath("BackgroundTR")
 debug_label = NodePath("Control/VBoxContainer/DebugLabel")
 debug_solve_label = NodePath("Control/VBoxContainer/DebugSolveLabel")
 demo_button = NodePath("Control/DemoButton")
 
 [node name="BackgroundTR" type="TextureRect" parent="." unique_id=1895140597]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = SubResource("GradientTexture2D_1igpg")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="ColorTR" type="TextureRect" parent="." unique_id=281110636]
 layout_mode = 1
@@ -50,6 +57,7 @@ offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_onavl")
+expand_mode = 1
 
 [node name="Control" type="Control" parent="." unique_id=1090106948]
 layout_mode = 1
@@ -80,11 +88,12 @@ vertical_alignment = 1
 
 [node name="DebugLabel" type="Label" parent="Control/VBoxContainer" unique_id=1938802128]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_font_sizes/font_size = 8
-text = "DEMO"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+text_overrun_behavior = 1
 
 [node name="DemoButton" type="Button" parent="Control" unique_id=446589488]
 layout_mode = 1
@@ -93,11 +102,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.5
-offset_top = -15.5
-offset_right = 20.5
-offset_bottom = 15.5
+offset_left = -9.5
+offset_top = -10.0
+offset_right = 9.5
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 8
 text = "Fix"
+
+[connection signal="pressed" from="Control/DemoButton" to="." method="_on_demo_button_pressed"]

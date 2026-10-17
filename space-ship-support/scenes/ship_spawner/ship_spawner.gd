@@ -28,7 +28,7 @@ func _ready() -> void:
 	test_spawn_ship()
 
 func test_spawn_ship() -> void:
-	var difficulty: float = 1.0
+	var difficulty: float = 0.0
 	var ship_layout: ShipLayoutData = create_ship_layout_with_difficulty(difficulty)
 	
 	instantiate_ship(ship_layout)
@@ -66,10 +66,10 @@ func create_ship_layout(size_x: int, size_y: int, num_puzzles: int) -> ShipLayou
 		
 	return ship_layout
 
-func _fill_puzzle_configurations(ship_layout: ShipLayoutData, max_num_puzzles: int) -> void:
+func _fill_puzzle_configurations(ship_layout: ShipLayoutData, target_num_puzzles: int) -> void:
 	var unused_puzzle_configs: Array[PuzzleConfigData] = puzzle_configs.duplicate()
 	
-	var num_remaining_puzzles: int = max_num_puzzles
+	var num_remaining_puzzles: int = target_num_puzzles
 	
 	for i in num_remaining_puzzles:
 		
@@ -108,7 +108,13 @@ func _fill_free_slots(ship_layout: ShipLayoutData) -> void:
 
 func _apply_puzzle(ship_layout: ShipLayoutData, puzzle: PuzzleConfigData, target_pos: Vector2i) -> void:
 	for module: ModuleData in puzzle.relative_module_positions:
-		_apply_module(ship_layout, puzzle, module, target_pos + puzzle.relative_module_positions[module])
+		
+		var relative_puzzle_pos: Vector2i = puzzle.relative_module_positions[module]
+		
+		# only the main slot of a puzzle needs to have puzzle data. This will be used in ship layout.
+		var passed_puzzle_data: PuzzleConfigData = puzzle if SlotData.is_main_pos(relative_puzzle_pos) else null
+			
+		_apply_module(ship_layout, passed_puzzle_data, module, target_pos + relative_puzzle_pos)
 
 func _apply_module(ship_layout: ShipLayoutData, puzzle_data: PuzzleConfigData, module: ModuleData, target_pos: Vector2i) -> void:
 	var has_main_position: bool = false

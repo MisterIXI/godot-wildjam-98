@@ -14,7 +14,9 @@
 [ext_resource type="Resource" uid="uid://nbatvi28pjdp" path="res://resources/testing/test_filler_slot_3_1x2.tres" id="12_y7dr2"]
 [ext_resource type="Resource" uid="uid://bqwudtff6ymlv" path="res://resources/testing/test_filler_slot_4_2x2.tres" id="13_v41k8"]
 
-[node name="TestShipSpawner" type="Node2D" unique_id=1044993993]
+[node name="TestShipSpawner" type="Control" unique_id=1596218387]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_vvuxq")
 puzzle_configs = Array[ExtResource("2_y7iji")]([ExtResource("3_11od8"), ExtResource("4_dwqdy"), ExtResource("5_fpk62"), ExtResource("6_64f47"), ExtResource("7_pqunv"), ExtResource("8_y7dr2")])
 available_fillers = Array[ExtResource("9_pqunv")]([ExtResource("5_11od8"), ExtResource("6_dwqdy"), ExtResource("12_y7dr2"), ExtResource("13_v41k8")])

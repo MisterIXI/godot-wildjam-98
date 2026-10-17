@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_iealo")
-target_scene_path = "uid://k1my5wn5nnww"
+target_scene_path = "uid://dh6alm6cguons"
 required_relative_positions = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0)])
 module_type = 3
 module_name = "Test Analysis Slot 2x1"
