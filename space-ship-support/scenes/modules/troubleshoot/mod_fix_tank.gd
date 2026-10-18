@@ -11,7 +11,6 @@ func _on_v_scroll_bar_value_changed(value: float) -> void:
 	fluid_change =  scroll_value - value
 	scroll_value = value
 	progress_target = value
-
 	
 	
 func _process(delta: float) -> void:
@@ -19,8 +18,6 @@ func _process(delta: float) -> void:
 		progress_bar.value += 100 * delta
 	elif progress_target < progress_bar.value:
 			progress_bar.value -= 100 * delta
-
-
 
 
 
