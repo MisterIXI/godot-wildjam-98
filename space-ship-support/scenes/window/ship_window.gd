@@ -27,13 +27,16 @@ signal ship_success
 signal ship_partial_success
 
 @export var title_label: RichTextLabel
+var mode_tween: Tween
 
 func _update_title() -> void:
 	match danger_level:
 		1: #warning
 			title_label.text = "Ship #%s Status: [pulse][color=yellow]WARNING[/color][/pulse]" % [ship_id]
+			warning_tween()
 		2: # critical
 			title_label.text = "Ship #%s Status: [shake][color=red]CRITICAL[/color][/shake]" % [ship_id]
+			alert_tween()
 		_: # default
 			title_label.text = "Ship #%s Status: [color=green]NORMAL[/color]" % [ship_id]
 			
@@ -106,3 +109,29 @@ func _on_layout_success() -> void:
 	print("module: full success -> all puzzles solved")
 	AudioManager.play_sfx(AudioManagerClass.SfxType.UTIL_A)
 	ship_success.emit()
+
+func clear_mode_tween() -> void:
+	if mode_tween:
+		mode_tween.kill()
+
+func warning_tween()-> void:
+	if mode_tween:
+		mode_tween.kill()
+	mode_tween = create_tween()
+	mode_tween.set_loops()
+	mode_tween.tween_property(self,"modulate",Color(1,1,0.5,1.0),2)
+	mode_tween.tween_property(self,"modulate",Color.WHITE,2)
+
+func alert_tween()->void:
+	if mode_tween:
+		mode_tween.kill()
+	mode_tween = create_tween()
+	mode_tween.set_loops()
+	mode_tween.tween_property(self,"modulate",Color(1,0.5,0.5,1.0),1)
+	mode_tween.tween_property(self,"modulate",Color.WHITE,1)
+
+func flash_window() -> void:
+	var tween:= create_tween()
+	tween.set_loops(5)
+	tween.tween_property(self,"modulate",Color(0.5,0.5,0.5,1.0),0.5)
+	tween.tween_property(self,"modulate",Color.WHITE,0.5)

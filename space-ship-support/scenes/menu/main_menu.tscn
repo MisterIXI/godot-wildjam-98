@@ -61,7 +61,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "[center][color=gray]sssssssssssssssssssssssssssssssssss[/color]SSTS[color=gray][wave amp=100 freq=1]sssssssssssssssssssssssssssssssssss[/wave][/color][/center]"
+text = "[center][color=gray][wave amp=100 freq=1]sssssssssssssssssssssssssssssssssss[/wave][/color]SSTS[color=gray][wave amp=100 freq=1]sssssssssssssssssssssssssssssssssss[/wave][/color][/center]"
 fit_content = true
 autowrap_mode = 0
 
@@ -189,11 +189,11 @@ text = "menu.back"
 [connection signal="pressed" from="MainVBC/StartMenuVBC/CreditsButton" to="." method="_on_any_accept_button_pressed"]
 [connection signal="pressed" from="MainVBC/StartMenuVBC/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="mouse_entered" from="MainVBC/StartMenuVBC/QuitButton" to="." method="_on_any_hover"]
-[connection signal="pressed" from="MainVBC/StartMenuVBC/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="MainVBC/StartMenuVBC/QuitButton" to="." method="_on_any_cancel_button_pressed"]
+[connection signal="pressed" from="MainVBC/StartMenuVBC/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="mouse_entered" from="SubMenuMC/SettingsPanel/SettingsMC/Settings/BackButton" to="." method="_on_any_hover"]
-[connection signal="pressed" from="SubMenuMC/SettingsPanel/SettingsMC/Settings/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="SubMenuMC/SettingsPanel/SettingsMC/Settings/BackButton" to="." method="_on_any_cancel_button_pressed"]
+[connection signal="pressed" from="SubMenuMC/SettingsPanel/SettingsMC/Settings/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="mouse_entered" from="SubMenuMC/CreditsPanel/CreditsMC/VBoxContainer/BackButton" to="." method="_on_any_hover"]
-[connection signal="pressed" from="SubMenuMC/CreditsPanel/CreditsMC/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="SubMenuMC/CreditsPanel/CreditsMC/VBoxContainer/BackButton" to="." method="_on_any_cancel_button_pressed"]
+[connection signal="pressed" from="SubMenuMC/CreditsPanel/CreditsMC/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
