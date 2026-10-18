@@ -40,7 +40,7 @@ func _on_target_timeout() -> void:
 	
 
 #When clicked
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("left_click") and target_sprite.visible == true:
 		ship_window.show()
 
@@ -59,3 +59,6 @@ func _on_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, l
 	# on_destroy.emit(true)
 	# queue_free()
 	pass
+
+func init_layout(layout_data: ShipLayoutData) -> void:
+	ship_window.init_ship_layout(layout_data)

@@ -1,7 +1,6 @@
-class_name ShipSpawner
+class_name ShipLayoutGenerator
 extends Node
 
-const SHIP_LAYOUT: PackedScene = preload("res://scenes/ship_spawner/ship_layout.tscn")
 
 @export_range(2, 30) var min_x_size: int = 4
 @export_range(2, 30) var max_x_size: int = 4
@@ -25,30 +24,26 @@ func _ready() -> void:
 #region test ship spawn. may be deleted
 	# TODO: delete, this is just for testing
 
-	test_spawn_ship()
+	#test_spawn_ship()
 
-func test_spawn_ship() -> void:
-	var difficulty: float = 0.0
-	var ship_layout: ShipLayoutData = create_ship_layout_with_difficulty(difficulty)
+#func test_spawn_ship() -> void:
+	#var difficulty: float = 0.0
+	#var ship_layout: ShipLayoutData = create_ship_layout_with_difficulty(difficulty)
 	
-	instantiate_ship(ship_layout)
+	#instantiate_ship(ship_layout)
 
 #endregion
 
-func create_ship_layout_with_difficulty(difficulty: float) -> ShipLayoutData:
+func generate_layout_with_difficulty(difficulty: float) -> ShipLayoutData:
 	var used_difficulty: float = clamp(randf_range(difficulty-difficulty_variance, difficulty+difficulty_variance), 0.0, 1.0)
 	
 	var size_x: int = roundi(lerpf(min_x_size, max_x_size, used_difficulty))
 	var size_y: int = roundi(lerpf(min_y_size, max_y_size, used_difficulty))
 	var num_puzzles: int = roundi(lerpf(min_num_puzzles, max_num_puzzles, used_difficulty))
-	return create_ship_layout(size_x, size_y, num_puzzles)
-	
-func instantiate_ship(ship_data: ShipLayoutData) -> void:
-	var ship_layout: ShipLayout = SHIP_LAYOUT.instantiate() as ShipLayout
-	ship_layout.init_from(ship_data)
-	add_child(ship_layout)
+	return generate_layout(size_x, size_y, num_puzzles)
 
-func create_ship_layout(size_x: int, size_y: int, num_puzzles: int) -> ShipLayoutData:
+
+func generate_layout(size_x: int, size_y: int, num_puzzles: int) -> ShipLayoutData:
 	print("creating ship layout with ", size_x, " x ", size_y, " and ", num_puzzles, " puzzles")
 	var puzzle_size_heuristic: int = 3
 	var warn_threshold: float = 0.75

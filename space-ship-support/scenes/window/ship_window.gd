@@ -1,6 +1,10 @@
 class_name ShipWindow
 extends Panel
 
+const SHIP_LAYOUT: PackedScene = preload("res://scenes/ship_spawner/ship_layout.tscn")
+
+@export var module_parent: Control
+
 var title_mouse_down: bool = false
 var is_dragging: bool = false
 var mouse_pos_offset:= Vector2i.ZERO
@@ -8,6 +12,9 @@ var partial_drag: Vector2 = Vector2.ZERO
 
 var is_collapsed: bool = false
 var collapse_tween: Tween = null
+
+var ship_layout_data: ShipLayoutData
+
 
 func _on_title_bar_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -47,3 +54,9 @@ func _on_title_bar_gui_input(event: InputEvent) -> void:
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		get_parent().move_child(self,-1)
+	
+func init_ship_layout(ship_layout_data_new: ShipLayoutData) -> void:
+	ship_layout_data = ship_layout_data_new
+	var ship_layout: ShipLayout = SHIP_LAYOUT.instantiate() as ShipLayout
+	ship_layout.init_from(ship_layout_data)
+	module_parent.add_child(ship_layout)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d4jvjsp0r67u1"]
 
-[ext_resource type="Script" uid="uid://dc3mh3v1d4l2x" path="res://scenes/ship_spawner/ship_spawner.gd" id="1_vvuxq"]
+[ext_resource type="Script" uid="uid://dc3mh3v1d4l2x" path="res://scenes/ship_spawner/ship_layout_generator.gd" id="1_vvuxq"]
 [ext_resource type="Script" uid="uid://bqflxpuoyu2uc" path="res://scenes/ship_spawner/puzzle_config_data.gd" id="2_y7iji"]
 [ext_resource type="Resource" uid="uid://bo1m5stq58h8u" path="res://resources/puzzle1.tres" id="3_y7iji"]
 [ext_resource type="Resource" uid="uid://isxtfa6m1xiu" path="res://resources/testing/test_filler_slot_1.tres" id="5_11od8"]

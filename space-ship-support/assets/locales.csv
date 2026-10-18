@@ -1,5 +1,7 @@
 keys;en;de
 menu.start;Start;Start
+menu.restart;Restart;Neustart
+menu.continue;Continue;Fortsetzen
 menu.settings;Settings;Einstellungen
 menu.credits;Credits;Credits
 menu.quit;Quit;Beenden

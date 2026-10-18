@@ -10,11 +10,14 @@ const DIAMETER:float = 720
 @export var window_root: Control
 @export var radar_interface: RadarInterface
 var current_ids:Array[int] = []
+@export var ship_layout_generator: ShipLayoutGenerator
 
-func spawn_ship() -> void:
+# min difficulty: 0.0, max difficulty: 1.0
+func spawn_ship(layout_difficulty: float = 0.0) -> void:
 	var spawn_pos: Vector2 = Vector2(RADIUS, 0)
 	spawn_pos = spawn_pos.rotated(randf() * PI * 2)
 	var new_ship: Ship = ship_scene.instantiate()
+
 	add_child(new_ship)
 	new_ship.position = spawn_pos
 	var new_id = randi_range(10000,99999)
@@ -38,3 +41,6 @@ func spawn_ship() -> void:
 		tween.tween_callback(
 			radar_interface.add_message.bind("Ship $%s estimated travel time: %d" % [new_ship.ship_id, ship_estimate])
 		)
+		
+	var ship_layout_data: ShipLayoutData = ship_layout_generator.generate_layout_with_difficulty(layout_difficulty)
+	new_ship.init_layout(ship_layout_data)
