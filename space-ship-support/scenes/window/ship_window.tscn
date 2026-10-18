@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://122fxrm67jam" path="res://assets/Dudes/dude19.png" id="22_qhsi6"]
 [ext_resource type="Texture2D" uid="uid://6ol80jk4iknu" path="res://assets/Dudes/dude20.png" id="23_k7myh"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o7f28"]
+
 [node name="ShipWindow" type="Panel" unique_id=118375707 node_paths=PackedStringArray("module_parent", "title_label")]
 clip_contents = true
 offset_right = 550.0
@@ -86,10 +88,13 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o7f28")
 
 [node name="CharacterTexRect" type="TextureRect" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/CharacterPanel" unique_id=1499784406]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("5_shi57")
+expand_mode = 3
 script = ExtResource("4_30j56")
 dudes = Array[Texture2D]([ExtResource("5_shi57"), ExtResource("6_fi41h"), ExtResource("7_k6qn7"), ExtResource("8_hlxdo"), ExtResource("9_mydhn"), ExtResource("10_gb8hr"), ExtResource("11_qn3d0"), ExtResource("12_gpgtu"), ExtResource("13_2odnx"), ExtResource("14_uoer5"), ExtResource("15_whoiu"), ExtResource("16_alaec"), ExtResource("17_wlgir"), ExtResource("18_li2us"), ExtResource("19_575pw"), ExtResource("20_4aj4c"), ExtResource("21_xwes1"), ExtResource("22_qhsi6"), ExtResource("23_k7myh")])
 
