@@ -57,7 +57,7 @@ mouse_filter = 1
 visible = false
 z_index = 200
 
-[node name="Radar" type="Node2D" parent="." unique_id=1342668903 node_paths=PackedStringArray("window_root","radar_interface", "ship_layout_generator")]
+[node name="Radar" type="Node2D" parent="." unique_id=1342668903 node_paths=PackedStringArray("window_root", "radar_interface", "ship_layout_generator", "game_manager")]
 position = Vector2(360, 360)
 script = ExtResource("3_lfrn8")
 ship_scene = ExtResource("4_bdhmt")
@@ -65,6 +65,7 @@ window_scene = ExtResource("5_87uf6")
 window_root = NodePath("../UI/WindowRoot")
 radar_interface = NodePath("../UI/RadarInterface")
 ship_layout_generator = NodePath("../ShipLayoutGenerator")
+game_manager = NodePath("../GameManager")
 
 [node name="GameManager" type="Node" parent="." unique_id=1430876819 node_paths=PackedStringArray("radar", "ui_canvas")]
 script = ExtResource("4_5i0tg")

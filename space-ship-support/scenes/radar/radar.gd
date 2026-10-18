@@ -11,6 +11,7 @@ const DIAMETER:float = 720
 @export var radar_interface: RadarInterface
 var current_ids:Array[int] = []
 @export var ship_layout_generator: ShipLayoutGenerator
+@export var game_manager: GameManager
 
 # min difficulty: 0.0, max difficulty: 1.0
 func spawn_ship(layout_difficulty: float = 0.0) -> void:
@@ -19,12 +20,14 @@ func spawn_ship(layout_difficulty: float = 0.0) -> void:
 	var new_ship: Ship = ship_scene.instantiate()
 
 	add_child(new_ship)
+	new_ship.destroyed.connect(on_ship_destroyed)
 	new_ship.position = spawn_pos
 	var new_id = randi_range(10000,99999)
 	while current_ids.has(new_id):
 		new_id = randi_range(10000,99999)
 	current_ids.append(new_id)
 	new_ship.ship_id = str(new_id)
+	new_ship.ship_speed = 12.0 + randf() * game_manager.get_max_ship_speed_bonus()
 	# rotate by -0.5 to 0.5 rad
 	new_ship.ship_direction = (-spawn_pos).normalized().rotated(randf()-0.5)
 	var ship_window: ShipWindow = window_scene.instantiate()
@@ -44,3 +47,10 @@ func spawn_ship(layout_difficulty: float = 0.0) -> void:
 		
 	var ship_layout_data: ShipLayoutData = ship_layout_generator.generate_layout_with_difficulty(layout_difficulty)
 	new_ship.init_layout(ship_layout_data)
+
+func on_ship_destroyed(ship: Ship, was_fixed: bool) ->  void:
+	if was_fixed:
+		radar_interface.add_message("Ship $%s left comms range and was fixed." % [ship.ship_id])
+	else:
+		radar_interface.add_message("Signal to Ship $%s lost. Not all issues fixed. Penalty applied." % [ship.ship_id])
+	current_ids.erase(ship.ship_id)

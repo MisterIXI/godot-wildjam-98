@@ -43,3 +43,6 @@ func on_ship_fixed() -> void:
 
 func spawn_ship() -> void:
 	radar.spawn_ship()
+
+func get_max_ship_speed_bonus() -> float:
+	return settings.ship_speed_max_bonus.sample(time_elapsed / settings.time_to_reach_max_dif)

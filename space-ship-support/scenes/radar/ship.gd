@@ -1,7 +1,7 @@
 class_name Ship
 extends Area2D
 
-signal on_destroy(id: String, was_fixed: bool)
+signal destroyed(ship: Ship, was_fixed: bool)
 
 @onready var target_sprite: Sprite2D = $TargetSprite
 @onready var target: Timer = $Target
@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	position += ship_direction * ship_speed * delta
 	if position.length() > 360:
 		#TODO: check if ship is fixed when leaving area
-		on_destroy.emit(true)
+		destroyed.emit(self, true)
 		#TODO: add destroy/close animation
 		ship_window.queue_free()
 		queue_free()
@@ -56,7 +56,7 @@ func target_disapear():
 
 func _on_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	# #TODO: check if ship is fixed when leaving area
-	# on_destroy.emit(true)
+	# destroyed.emit(true)
 	# queue_free()
 	pass
 
