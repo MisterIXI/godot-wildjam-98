@@ -349,8 +349,8 @@ offset_right = 482.0
 offset_bottom = 106.0
 theme_override_fonts/font = ExtResource("6_xahoi")
 theme_override_font_sizes/font_size = 30
-text = "Ships Fixed: 165
-Time Elapsed: 651 sec"
+text = "Ships Fixed: 0
+Time Elapsed: 0 sec"
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=1497048696]
 texture_filter = 1
