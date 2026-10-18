@@ -21,7 +21,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	time_elapsed += delta
-	radar_interface.score_label.text= "Ships Fixed: %d\nTime Elapsed: %d sec" % [ships_fixed, int(time_elapsed)]
+	radar_interface.score_label.text= "%s: %d\n%s: %d sec" % [tr("ui.ships_fixed"), ships_fixed, tr("ui.time_elapsed"), int(time_elapsed)]
 
 func _physics_process(delta: float) -> void:
 	time_to_next_ship -= delta

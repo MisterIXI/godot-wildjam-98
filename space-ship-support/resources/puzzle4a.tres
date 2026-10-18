@@ -16,5 +16,5 @@ ExtResource("4_g7e8h"): Vector2i(1, -1)
 puzzle_name = "Puzzle 4a"
 analysis_code = Array[String](["0", "1", "1", "1", "1", "1", "1", "0", "1"])
 module_name_interaction_sequence = Array[String](["FTM", "FKM"])
-descriptions = Array[String](["Fill and active the module located to the bottom left of the LED array.", "Enter the Ship ID in the module located to the upper right of the LED array."])
+descriptions = Array[String](["descriptions.p4a_1", "descriptions.p4a_2"])
 metadata/_custom_type_script = "uid://bqflxpuoyu2uc"

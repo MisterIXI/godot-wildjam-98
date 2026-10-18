@@ -46,13 +46,13 @@ func _ready() -> void:
 func _update_title() -> void:
 	match danger_level:
 		1: #warning
-			title_label.text = "Ship #%s Status: [pulse][color=yellow]WARNING[/color][/pulse]" % [ship_id]
+			title_label.text = tr("ui.ship") + " #%s Status: [pulse][color=yellow]%s[/color][/pulse]" % [ship_id, tr("ui.status.warning")]
 			warning_tween()
 		2: # critical
-			title_label.text = "Ship #%s Status: [shake][color=red]CRITICAL[/color][/shake]" % [ship_id]
+			title_label.text = tr("ui.ship") + " #%s Status: [shake][color=red]%s[/color][/shake]" % [ship_id, tr("ui.status.critical")]
 			alert_tween()
 		_: # default
-			title_label.text = "Ship #%s Status: [color=green]NORMAL[/color]" % [ship_id]
+			title_label.text = tr("ui.ship") + " #%s Status: [color=green]%s[/color]" % [ship_id, tr("ui.status.normal")]
 			clear_mode_tween()
 			
 func _on_title_bar_gui_input(event: InputEvent) -> void:
@@ -183,7 +183,7 @@ func flash_window() -> void:
 
 func _on_update_description(description_index: int) -> void:
 	if description_index >= descriptions.size():
-		description_label.text = "No remaining issues found."
+		description_label.text = tr("descriptions.no_remaining")
 		return
 	
-	description_label.text = descriptions[description_index]
+	description_label.text = tr(descriptions[description_index])

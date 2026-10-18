@@ -7,6 +7,10 @@ extends Control
 @export var font: FontFile
 var labels: Array[Label] = []
 
+func _ready() -> void:
+	score_label.text= "%s: %d\n%s: %d sec" % [tr("ui.ships_fixed"), 0, tr("ui.time_elapsed"), 0]
+
+
 func add_message(message: String) -> void:
 	var new_label: Label = Label.new()
 	scroll_content.add_child(new_label)

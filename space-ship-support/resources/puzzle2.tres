@@ -14,5 +14,5 @@ ExtResource("3_uj56y"): Vector2i(-1, 0)
 puzzle_name = "Puzzle 2b"
 analysis_code = Array[String](["0", "0", "1", "1", "0", "1", "0", "1", "0"])
 module_name_interaction_sequence = Array[String](["FKM"])
-descriptions = Array[String](["Enter the Ship ID in the module to the left of the LED array."])
+descriptions = Array[String](["descriptions.p2"])
 metadata/_custom_type_script = "uid://bqflxpuoyu2uc"

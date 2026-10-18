@@ -38,7 +38,7 @@ func spawn_ship(layout_difficulty: float = 0.0) -> void:
 	ship_window.danger_level = 2
 	window_root.add_child(ship_window)
 	new_ship.ship_window = ship_window
-	radar_interface.add_message("Ship detected at: %s | ID: %s" % [str(spawn_pos), new_ship.ship_id])
+	radar_interface.add_message("%s: %s | ID: %s" % [tr("ui.ship_detected_at"), str(spawn_pos), new_ship.ship_id])
 	# ship timing message
 	var vel_message_delay: float = randf() * 3.5 + 2.5
 	var ship_estimate: float = DIAMETER / new_ship.ship_speed - vel_message_delay
@@ -46,7 +46,7 @@ func spawn_ship(layout_difficulty: float = 0.0) -> void:
 		var tween = new_ship.create_tween()
 		tween.tween_interval(vel_message_delay)
 		tween.tween_callback(
-			radar_interface.add_message.bind("Ship $%s estimated travel time: %d" % [new_ship.ship_id, ship_estimate])
+			radar_interface.add_message.bind("%s $%s %s: %d" % [tr("ui.ship"), new_ship.ship_id, tr("ui.est_travel_time"), ship_estimate])
 		)
 		
 	var ship_layout_data: ShipLayoutData = ship_layout_generator.generate_layout_with_difficulty(layout_difficulty)
@@ -54,10 +54,10 @@ func spawn_ship(layout_difficulty: float = 0.0) -> void:
 
 func on_ship_destroyed(ship: Ship, was_fixed: bool) ->  void:
 	if was_fixed:
-		radar_interface.add_message("Ship $%s left comms range and was fixed." % [ship.ship_id])
+		radar_interface.add_message("%s $%s %s" % [tr("ui.ship"), ship.ship_id, tr("ui.left_range_fixed")])
 		ship_fixed.emit()
 	else:
-		radar_interface.add_message("Signal to Ship $%s lost. Not all issues fixed. Penalty applied." % [ship.ship_id])
+		radar_interface.add_message("%s $%s %s" % [tr("ui.signal_to_ship"), ship.ship_id, tr("ui.lost_penalty")])
 		ship_lost.emit()
 	current_ids.erase(ship.ship_id)
 

@@ -16,3 +16,26 @@ menu.settings.language;Language;Sprache
 menu.settings.reset_to_default;Reset To Default;Auf Standard zurücksetzen
 menu.settings.reset_progress;Reset Progress;Fortschritt zurücksetzen
 menu.settings.fullscreen;Fullscreen;Vollbild
+descriptions.p2;Enter the Ship ID in the module to the left of the LED array.;Gib die Schiffs-ID im Modul links vom LED Array ein.
+descriptions.p2b;Enter the Ship ID in the module to the right of the LED array.;Gib die Schiffs-ID im Modul rechts vom LED Array ein.
+descriptions.p2c;Enter the Ship ID in the module right below LED array.;Gib die Schiffs-ID im Modul unterhalb des LED Arrays ein.
+descriptions.no_remaining;No remaining issues found.;Keine verbleibenden Probleme gefunden.
+descriptions.p3;Fill and active the module located to the bottom right of the LED array.;Fülle und aktiviere das Modul unten rechts vom LED Array.
+descriptions.p3a;Fill and active the module located to the upper left of the LED array.;Fülle und aktiviere das Modul oben links vom LED Array.
+descriptions.p4a_1;Fill and active the module located to the bottom left of the LED array.;Fülle und aktiviere das Modul unten links vom LED Array.
+descriptions.p4a_2;Enter the Ship ID in the module located to the upper right of the LED array.;Gib die Schiffs-ID im Modul oben rechts vom LED Array ein.
+descriptions.p4b_1;Enter the Ship ID in the module located to the bottom left of the LED array.;Gib die Schiffs-ID im Modul unten links vom LED Array ein.
+descriptions.p4b_2;Fill and active the module located to the upper right of the LED array.;Fülle und aktiviere das Modul oben rechts vom LED Array.
+ui.integrity;Integrity;Integrität
+ui.status.critical;CRITICAL;KRITISCH
+ui.status.normal;NORMAL;NORMAL
+ui.status.warning;WARNING;WARNUNG
+ui.ship;Ship;Schiff
+ui.strikes;Strikes:;Fehler:
+ui.ships_fixed;Ships Fixed;Schiffe gelöst
+ui.time_elapsed;Time Elapsed;Zeit
+ui.ship_detected_at;Ship detected at;Schiff erkannt bei
+ui.est_travel_time;estimated travel time;geschätzte Reisedauer
+ui.left_range_fixed;left comms range and was fixed.;hat die Signalreichweite repariert verlassen.
+ui.signal_to_ship;Signal to Ship;Signal zu Schiff
+ui.lost_penalty;lost. Not all issues fixed. Penalty applied.;verloren. Nicht alle Probleme behoben. Bestraft.

@@ -27,9 +27,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="9.5583333"
-     inkscape:cx="26.259808"
-     inkscape:cy="10.514385"
+     inkscape:zoom="13.517525"
+     inkscape:cx="27.297897"
+     inkscape:cy="37.3959"
      inkscape:window-width="2560"
      inkscape:window-height="1361"
      inkscape:window-x="2391"
@@ -45,7 +45,13 @@
        id="path1"
        cx="25"
        cy="25"
-       r="20"
-       inkscape:label="path1" />
+       r="20" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:0.459071;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="path2"
+       cx="24.926023"
+       cy="25"
+       rx="24.95051"
+       ry="24.876532" />
   </g>
 </svg>
