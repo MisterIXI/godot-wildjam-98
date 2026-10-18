@@ -28,3 +28,10 @@ func set_puzzle_index(puzzle_index_new: int) -> void:
 ## called when all relevant data (module data, puzzle slots) is linked
 func _on_init_finished() -> void:
 	pass
+
+func use_module(is_correct: bool) -> void:
+	if !is_correct:
+		module_used.emit("", -1) # does not match any
+		
+	if is_correct:
+		module_used.emit(module_data.module_name, puzzle_index)
