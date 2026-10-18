@@ -18,6 +18,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 30.0
 grow_horizontal = 2
+mouse_filter = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="TitleBar" unique_id=1477828352]
 layout_mode = 2
@@ -63,6 +64,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
+mouse_filter = 1
 
 [node name="CharacterTexRect" type="TextureRect" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/CharacterPanel" unique_id=1499784406]
 layout_mode = 2
@@ -71,6 +73,7 @@ texture = ExtResource("2_0osky")
 [node name="DiagnosePanel" type="PanelContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox" unique_id=1196009241]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 1
 
 [node name="GridContainer" type="GridContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel" unique_id=603550398]
 layout_mode = 2
@@ -79,71 +82,86 @@ columns = 4
 
 [node name="Button" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=280462281]
 layout_mode = 2
+mouse_filter = 1
 text = "😰"
 
 [node name="Button2" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=2063615105]
 layout_mode = 2
+mouse_filter = 1
 text = "🔥"
 
 [node name="Button3" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1324047331]
 layout_mode = 2
+mouse_filter = 1
 text = "⚙️"
 
 [node name="Button4" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1854123135]
 layout_mode = 2
+mouse_filter = 1
 text = "📠"
 
 [node name="Button5" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1173972872]
 layout_mode = 2
+mouse_filter = 1
 text = "💤"
 
 [node name="Button6" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1396900626]
 layout_mode = 2
+mouse_filter = 1
 text = "🖥️"
 
 [node name="Button7" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1343560927]
 layout_mode = 2
+mouse_filter = 1
 text = "🐸"
 
 [node name="Button8" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1518309448]
 layout_mode = 2
+mouse_filter = 1
 text = "👽"
 
 [node name="TimerPanel" type="PanelContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox" unique_id=1397449733]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 1
 
 [node name="TimeLeftLabel" type="Label" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/TimerPanel" unique_id=750560163]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 size_flags_stretch_ratio = 3.0
+mouse_filter = 1
 text = "50"
 
 [node name="TimerPlusButton" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/TimerPanel" unique_id=259324543]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
+mouse_filter = 1
 text = "+10"
 
 [node name="TimerPlayButton" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/TimerPanel" unique_id=696707360]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+mouse_filter = 1
 text = "Start"
 
 [node name="TimerMinusButton" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/TimerPanel" unique_id=29186565]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+mouse_filter = 1
 text = "-10"
 
 [node name="StatusPanel" type="PanelContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox" unique_id=599029278]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/StatusPanel" unique_id=610134437]
 layout_mode = 2
+mouse_filter = 1
 text = "Blabla blubberfasel"
 
 [node name="ModuleMarginContainer" type="MarginContainer" parent="ContentMarginContainer/HBoxContainer" unique_id=1476517635]
@@ -157,6 +175,7 @@ theme_override_constants/margin_bottom = 5
 
 [node name="PanelContainer" type="Panel" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer" unique_id=560476384]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer/PanelContainer" unique_id=1915960077]
 texture_filter = 1
@@ -197,6 +216,33 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
+[node name="NinePatchRect6" type="NinePatchRect" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer/PanelContainer" unique_id=741842443]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 200.0
+offset_top = 100.0
+offset_right = 300.0
+offset_bottom = 200.0
+texture = ExtResource("4_lnte3")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer/PanelContainer" unique_id=203524034]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_top = 200.0
+offset_right = 200.0
+offset_bottom = 300.0
+texture = ExtResource("4_lnte3")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
 [node name="NinePatchRect4" type="NinePatchRect" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer/PanelContainer" unique_id=1379024677]
 texture_filter = 1
 custom_minimum_size = Vector2(100, 100)
@@ -222,4 +268,5 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="gui_input" from="TitleBar" to="." method="_on_title_bar_gui_input"]

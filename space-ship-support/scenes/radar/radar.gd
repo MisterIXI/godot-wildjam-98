@@ -5,8 +5,10 @@ signal ship_lost
 signal ship_fixed
 
 @export var ship_scene: PackedScene
+@export var window_scene: PackedScene
+@export var window_root: Control
 
-var ship_data: Dictionary[Ship, Window] = {}
+var ship_data: Dictionary[Ship, ShipWindow] = {}
 
 func spawn_ship() -> void:
 	var spawn_pos: Vector2 = Vector2(360, 0)
@@ -16,4 +18,6 @@ func spawn_ship() -> void:
 	new_ship.position = spawn_pos
 	# rotate by -0.5 to 0.5 rad
 	new_ship.ship_direction = (-spawn_pos).normalized().rotated(randf()-0.5)
-	
+	var ship_window: ShipWindow = window_scene.instantiate()
+	# ship_window.hide()
+	window_root.add_child(ship_window)

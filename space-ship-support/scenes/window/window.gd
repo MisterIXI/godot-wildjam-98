@@ -1,3 +1,4 @@
+class_name ShipWindow
 extends Panel
 
 var title_mouse_down: bool = false
@@ -7,7 +8,6 @@ var partial_drag: Vector2 = Vector2.ZERO
 
 var is_collapsed: bool = false
 var collapse_tween: Tween = null
-
 
 func _on_title_bar_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -43,3 +43,7 @@ func _on_title_bar_gui_input(event: InputEvent) -> void:
 			position += motion
 
 			# print(mouse_motion)
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		get_parent().move_child(self,-1)

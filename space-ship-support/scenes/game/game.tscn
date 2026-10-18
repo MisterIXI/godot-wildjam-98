@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://jlkdjn887myh" path="res://scenes/radar/radar.gd" id="3_lfrn8"]
 [ext_resource type="Script" uid="uid://cxi8ksk73nohu" path="res://scenes/game_loop/game_manager.gd" id="4_5i0tg"]
 [ext_resource type="PackedScene" uid="uid://py13r334qxcm" path="res://scenes/radar/ship.tscn" id="4_bdhmt"]
+[ext_resource type="PackedScene" uid="uid://b5pk7vgajiv42" path="res://scenes/window/window.tscn" id="5_87uf6"]
 [ext_resource type="Resource" uid="uid://bgyernveiboi1" path="res://scenes/game_loop/default_settings.tres" id="5_bdhmt"]
 
 [node name="Game" type="Node2D" unique_id=798055916]
@@ -24,10 +25,22 @@ offset_bottom = 720.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Radar" type="Node2D" parent="." unique_id=1342668903]
+[node name="WindowRoot" type="Control" parent="UI" unique_id=42124941]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Radar" type="Node2D" parent="." unique_id=1342668903 node_paths=PackedStringArray("window_root")]
 position = Vector2(360, 360)
 script = ExtResource("3_lfrn8")
 ship_scene = ExtResource("4_bdhmt")
+window_scene = ExtResource("5_87uf6")
+window_root = NodePath("../UI/WindowRoot")
 
 [node name="GameManager" type="Node" parent="." unique_id=1430876819 node_paths=PackedStringArray("radar")]
 script = ExtResource("4_5i0tg")
