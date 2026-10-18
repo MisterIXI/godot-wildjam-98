@@ -2,16 +2,23 @@ class_name ShipLayout
 extends Control
 
 
+signal layout_strike
+signal layout_failure
+signal layout_success
+
 const SLOT_SIZE_XY: float = 100
 
 @export var start_marker: Marker2D
 
 var modules: Dictionary[Vector2i, ShipModule] = {}
 
+var num_strikes: int = 3
+
 func _ready() -> void:
 	pass
 
 func init_from(layout_data: ShipLayoutData) -> void:
+	num_strikes = 3
 
 	var puzzle_modules: Dictionary[ShipModule, PuzzleConfigData] = {}
 	
@@ -30,6 +37,8 @@ func init_from(layout_data: ShipLayoutData) -> void:
 		print("slot: ", slot_position, " -> init module:" , module_data.module_name, " with color ", module_data.debug_color.to_html())
 		modules[slot_position] = module
 		
+		module.module_strike.connect(_on_module_strike)
+		module.module_success.connect(_on_module_success)
 		
 		if slot_data.puzzle_data != null:
 			puzzle_modules[module] = slot_data.puzzle_data
@@ -57,9 +66,24 @@ func link_puzzle_data(main_puzzle_module: ShipModule, puzzle: PuzzleConfigData) 
 		other_linked_modules.erase(module_position)
 		
 		linked_modules[module_position].link_puzzle_slots(other_linked_modules)
+		
+		linked_modules[module_position].set_puzzle_code(puzzle.analysis_code)
+
+
 
 static func is_action_module(module_data: ModuleData) -> bool:
 	return module_data.module_type == ModuleData.ModuleType.ACTION
 	
 static func is_analysis_module(module_data: ModuleData) -> bool:
 	return module_data.module_type == ModuleData.ModuleType.ANALYSIS
+
+func _on_module_strike() -> void:
+	num_strikes -= 1
+	layout_strike.emit()
+	
+	if (num_strikes == 0):
+		layout_failure.emit()
+
+	
+func _on_module_success() -> void:
+	layout_success.emit()	

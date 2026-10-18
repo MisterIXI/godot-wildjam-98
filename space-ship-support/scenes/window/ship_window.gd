@@ -15,6 +15,9 @@ var collapse_tween: Tween = null
 
 var ship_layout_data: ShipLayoutData
 
+signal ship_strike
+signal ship_failure
+signal ship_success
 
 func _on_title_bar_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -59,4 +62,17 @@ func init_ship_layout(ship_layout_data_new: ShipLayoutData) -> void:
 	ship_layout_data = ship_layout_data_new
 	var ship_layout: ShipLayout = SHIP_LAYOUT.instantiate() as ShipLayout
 	ship_layout.init_from(ship_layout_data)
+
+	ship_layout.layout_strike.connect(_on_layout_strike)
+	ship_layout.layout_failure.connect(_on_layout_failure)
+	ship_layout.layout_success.connect(_on_layout_success)
 	module_parent.add_child(ship_layout)
+
+func _on_layout_strike() -> void:
+	ship_strike.emit()
+	
+func _on_layout_failure() -> void:
+	ship_failure.emit()
+
+func _on_layout_success() -> void:
+	ship_success.emit()
