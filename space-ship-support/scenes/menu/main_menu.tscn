@@ -167,8 +167,10 @@ bbcode_enabled = true
 text = "Made by;
 [color=#55AA55](insert your name here)[/color]
 [color=#55AACC](insert your name here)[/color]
-[color=#CCAA55](insert your name here)[/color]
-"
+[color=#CCAA55]Substain[/color]
+
+
+Made with Godot 4.7.2"
 fit_content = true
 horizontal_alignment = 1
 
@@ -177,9 +179,21 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "menu.back"
 
+[connection signal="mouse_entered" from="MainVBC/StartMenuVBC/StartButton" to="." method="_on_any_hover"]
+[connection signal="pressed" from="MainVBC/StartMenuVBC/StartButton" to="." method="_on_any_accept_button_pressed"]
 [connection signal="pressed" from="MainVBC/StartMenuVBC/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="MainVBC/StartMenuVBC/SettingsButton" to="." method="_on_any_hover"]
+[connection signal="pressed" from="MainVBC/StartMenuVBC/SettingsButton" to="." method="_on_any_accept_button_pressed"]
 [connection signal="pressed" from="MainVBC/StartMenuVBC/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="mouse_entered" from="MainVBC/StartMenuVBC/CreditsButton" to="." method="_on_any_hover"]
+[connection signal="pressed" from="MainVBC/StartMenuVBC/CreditsButton" to="." method="_on_any_accept_button_pressed"]
 [connection signal="pressed" from="MainVBC/StartMenuVBC/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="mouse_entered" from="MainVBC/StartMenuVBC/QuitButton" to="." method="_on_any_hover"]
+[connection signal="pressed" from="MainVBC/StartMenuVBC/QuitButton" to="." method="_on_any_cancel_button_pressed"]
 [connection signal="pressed" from="MainVBC/StartMenuVBC/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="mouse_entered" from="SubMenuMC/SettingsPanel/SettingsMC/Settings/BackButton" to="." method="_on_any_hover"]
+[connection signal="pressed" from="SubMenuMC/SettingsPanel/SettingsMC/Settings/BackButton" to="." method="_on_any_cancel_button_pressed"]
 [connection signal="pressed" from="SubMenuMC/SettingsPanel/SettingsMC/Settings/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="mouse_entered" from="SubMenuMC/CreditsPanel/CreditsMC/VBoxContainer/BackButton" to="." method="_on_any_hover"]
+[connection signal="pressed" from="SubMenuMC/CreditsPanel/CreditsMC/VBoxContainer/BackButton" to="." method="_on_any_cancel_button_pressed"]
 [connection signal="pressed" from="SubMenuMC/CreditsPanel/CreditsMC/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

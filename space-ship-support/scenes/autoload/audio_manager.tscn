@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cwyahocxwh82m"]
+
+[ext_resource type="Script" uid="uid://bc54c5as4fp8g" path="res://scenes/autoload/audio_manager.gd" id="1_hhkxr"]
+[ext_resource type="AudioStream" uid="uid://dq4y6p3kfgmh7" path="res://assets/sfx/accept.wav" id="2_ccgl5"]
+[ext_resource type="AudioStream" uid="uid://3stibs0yweus" path="res://assets/sfx/cancel.wav" id="3_dka11"]
+[ext_resource type="AudioStream" uid="uid://ce8u7n48twwgv" path="res://assets/sfx/hover.wav" id="4_s06pa"]
+[ext_resource type="AudioStream" uid="uid://hwkkuvxaj5ep" path="res://assets/sfx/ping_1.wav" id="5_ccgl5"]
+[ext_resource type="AudioStream" uid="uid://box710sq3r85o" path="res://assets/sfx/utility_a.wav" id="6_s06pa"]
+[ext_resource type="AudioStream" uid="uid://dylt5pergno58" path="res://assets/sfx/utility_b.wav" id="7_nooky"]
+
+[node name="AudioManager" type="Node" unique_id=1216780163 node_paths=PackedStringArray("accept_asp", "cancel_asp", "hover_asp", "ping_asp", "util_a_asp", "util_b_asp")]
+script = ExtResource("1_hhkxr")
+accept_asp = NodePath("AcceptASP")
+cancel_asp = NodePath("CancelASP")
+hover_asp = NodePath("HoverASP")
+ping_asp = NodePath("PingASP")
+util_a_asp = NodePath("UtilAASP")
+util_b_asp = NodePath("UtilBASP")
+
+[node name="AcceptASP" type="AudioStreamPlayer" parent="." unique_id=679214339]
+stream = ExtResource("2_ccgl5")
+max_polyphony = 3
+bus = &"SFX"
+
+[node name="CancelASP" type="AudioStreamPlayer" parent="." unique_id=67153789]
+stream = ExtResource("3_dka11")
+max_polyphony = 3
+bus = &"SFX"
+
+[node name="HoverASP" type="AudioStreamPlayer" parent="." unique_id=214235590]
+stream = ExtResource("4_s06pa")
+max_polyphony = 3
+bus = &"SFX"
+
+[node name="PingASP" type="AudioStreamPlayer" parent="." unique_id=1357949873]
+stream = ExtResource("5_ccgl5")
+max_polyphony = 2
+bus = &"SFX"
+
+[node name="UtilAASP" type="AudioStreamPlayer" parent="." unique_id=1397460743]
+stream = ExtResource("6_s06pa")
+max_polyphony = 3
+bus = &"SFX"
+
+[node name="UtilBASP" type="AudioStreamPlayer" parent="." unique_id=327864324]
+stream = ExtResource("7_nooky")
+max_polyphony = 3
+bus = &"SFX"
