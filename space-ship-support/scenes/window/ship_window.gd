@@ -1,6 +1,11 @@
 class_name ShipWindow
 extends Panel
 
+const SHIP_LAYOUT: PackedScene = preload("res://scenes/ship_spawner/ship_layout.tscn")
+
+@export var module_parent: Control
+
+var ship_id:String = "SHIPID"
 var title_mouse_down: bool = false
 var is_dragging: bool = false
 var mouse_pos_offset:= Vector2i.ZERO
@@ -9,6 +14,27 @@ var partial_drag: Vector2 = Vector2.ZERO
 var is_collapsed: bool = false
 var collapse_tween: Tween = null
 
+var ship_layout_data: ShipLayoutData
+## danger levels: 0=fixed, 1=warning, 2=critical
+var danger_level: int = 0:
+	set(val):
+		danger_level = val
+		_update_title()
+
+signal ship_strike
+signal ship_failure
+signal ship_success
+@export var title_label: RichTextLabel
+
+func _update_title() -> void:
+	match danger_level:
+		1: #warning
+			title_label.text = "Ship #%s Status: [pulse][color=yellow]WARNING[/color][/pulse]" % [ship_id]
+		2: # critical
+			title_label.text = "Ship #%s Status: [shake][color=red]CRITICAL[/color][/shake]" % [ship_id]
+		_: # default
+			title_label.text = "Ship #%s Status: [color=green]NORMAL[/color]" % [ship_id]
+			
 func _on_title_bar_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
@@ -47,3 +73,22 @@ func _on_title_bar_gui_input(event: InputEvent) -> void:
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		get_parent().move_child(self,-1)
+	
+func init_ship_layout(ship_layout_data_new: ShipLayoutData) -> void:
+	ship_layout_data = ship_layout_data_new
+	var ship_layout: ShipLayout = SHIP_LAYOUT.instantiate() as ShipLayout
+	ship_layout.init_from(ship_layout_data)
+
+	ship_layout.layout_strike.connect(_on_layout_strike)
+	ship_layout.layout_failure.connect(_on_layout_failure)
+	ship_layout.layout_success.connect(_on_layout_success)
+	module_parent.add_child(ship_layout)
+
+func _on_layout_strike() -> void:
+	ship_strike.emit()
+	
+func _on_layout_failure() -> void:
+	ship_failure.emit()
+
+func _on_layout_success() -> void:
+	ship_success.emit()

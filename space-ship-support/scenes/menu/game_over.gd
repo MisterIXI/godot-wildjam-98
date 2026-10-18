@@ -1,3 +1,4 @@
+class_name GameOver
 extends Control
 
 @export_file("*.tscn") var main_menu_scene: String
@@ -8,8 +9,8 @@ extends Control
 @onready var total_pay_nummber: Label = $Window/ContentMarginContainer/VBoxContainer/HBoxContainer/TotalPayNummber
 
 
-func _ready() -> void:
-	visible = false
+# func _ready() -> void:
+# 	visible = false
 
 # Called when the node enters the scene tree for the first time.
 func active(time,fixed,strikes) -> void:
@@ -21,7 +22,6 @@ func active(time,fixed,strikes) -> void:
 
 
 func _on_button_button_down() -> void:
-	print("Test")
 	get_tree().paused = false
 	visible = false
 	get_tree().change_scene_to_file(main_menu_scene)

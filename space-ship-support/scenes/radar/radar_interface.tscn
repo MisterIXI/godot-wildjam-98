@@ -1,19 +1,22 @@
 [gd_scene format=3 uid="uid://8ngq5jrsqykh"]
 
 [ext_resource type="Texture2D" uid="uid://buuf0it8q0n1g" path="res://assets/9slice_base_border_only.png" id="1_ft5iu"]
+[ext_resource type="Script" uid="uid://lfpu6tbbvr83" path="res://scenes/radar/radar_interface.gd" id="1_tri6t"]
 [ext_resource type="Texture2D" uid="uid://l6wjvg6xnku1" path="res://assets/screw.png" id="2_fk41b"]
 [ext_resource type="Texture2D" uid="uid://c840x7irphqtl" path="res://assets/radar_base_bordered.png" id="3_fk41b"]
 [ext_resource type="Texture2D" uid="uid://cuhg3ybayhh3r" path="res://assets/9slice_base_200.png" id="4_nbdxh"]
+[ext_resource type="FontFile" uid="uid://bbwwkkjcgbkgq" path="res://assets/fonts/PixelOperatorHBSC.ttf" id="6_xahoi"]
+[ext_resource type="Texture2D" uid="uid://d33n1qrupesbq" path="res://assets/9slice_base.png" id="7_to0tc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjsx5"]
 texture = ExtResource("3_fk41b")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rp4mp"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjsx5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17gup"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="RadarInterface" type="Control" unique_id=1869526097]
+[node name="RadarInterface" type="Control" unique_id=1869526097 node_paths=PackedStringArray("scroll_content", "strike_texs", "score_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,6 +24,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_tri6t")
+scroll_content = NodePath("NinePatchRect3/MarginContainer/PanelContainer/MarginContainer/VBoxContainer")
+strike_texs = [NodePath("NinePatchRect2/MarginContainer/Panel/HBoxContainer/9SliceBase"), NodePath("NinePatchRect2/MarginContainer/Panel/HBoxContainer/9SliceBase2"), NodePath("NinePatchRect2/MarginContainer/Panel/HBoxContainer/9SliceBase3")]
+score_label = NodePath("NinePatchRect2/MarginContainer/Panel/ScoreLabel")
+font = ExtResource("6_xahoi")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=834275915]
 layout_mode = 1
@@ -304,6 +312,46 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rp4mp")
 
+[node name="Label" type="Label" parent="NinePatchRect2/MarginContainer/Panel" unique_id=581289560]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 4.0
+offset_right = 178.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("6_xahoi")
+theme_override_font_sizes/font_size = 41
+text = "Strikes:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect2/MarginContainer/Panel" unique_id=1012151270]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 46.0
+offset_right = 179.0
+offset_bottom = 96.0
+
+[node name="9SliceBase" type="TextureRect" parent="NinePatchRect2/MarginContainer/Panel/HBoxContainer" unique_id=2121656616]
+layout_mode = 2
+texture = ExtResource("7_to0tc")
+
+[node name="9SliceBase2" type="TextureRect" parent="NinePatchRect2/MarginContainer/Panel/HBoxContainer" unique_id=14809664]
+layout_mode = 2
+texture = ExtResource("7_to0tc")
+
+[node name="9SliceBase3" type="TextureRect" parent="NinePatchRect2/MarginContainer/Panel/HBoxContainer" unique_id=1924464337]
+layout_mode = 2
+texture = ExtResource("7_to0tc")
+
+[node name="ScoreLabel" type="Label" parent="NinePatchRect2/MarginContainer/Panel" unique_id=58376899]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 19.0
+offset_right = 482.0
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("6_xahoi")
+theme_override_font_sizes/font_size = 30
+text = "Ships Fixed: 0
+Time Elapsed: 0 sec"
+
 [node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=1497048696]
 texture_filter = 1
 layout_mode = 1
@@ -323,20 +371,26 @@ patch_margin_top = 20
 patch_margin_right = 20
 patch_margin_bottom = 20
 
-[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect3" unique_id=70514182]
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect3" unique_id=829640494]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bjsx5")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect3/ScrollContainer" unique_id=829640494]
+[node name="PanelContainer" type="PanelContainer" parent="NinePatchRect3/MarginContainer" unique_id=754106953]
+clip_contents = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_17gup")
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect3/MarginContainer/PanelContainer" unique_id=1656535641]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -345,9 +399,11 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect3/ScrollContainer/MarginContainer" unique_id=1607041610]
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect3/MarginContainer/PanelContainer/MarginContainer" unique_id=1607041610]
+propagate_maximum_size = false
+clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 10
+size_flags_vertical = 3
 theme_override_constants/separation = 1
 alignment = 2

@@ -1,9 +1,73 @@
 [gd_scene format=3 uid="uid://dlb0o2qwnvohy"]
 
-[node name="ModDiagLed" type="Control" unique_id=67337367]
+[ext_resource type="PackedScene" uid="uid://do8wwn65kyyyv" path="res://scenes/modules/module_base_background.tscn" id="1_hl5xw"]
+[ext_resource type="Script" uid="uid://dnw04veo1piu7" path="res://scenes/modules/diagnose/mod_diag_led.gd" id="1_pb5vc"]
+[ext_resource type="Texture2D" uid="uid://ckbgs37itstca" path="res://assets/led_on.svg" id="3_66qfh"]
+
+[node name="ModDiagLed" type="Control" unique_id=67337367 node_paths=PackedStringArray("leds")]
 layout_mode = 3
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pb5vc")
+led_on_color = Color(0.0014081855, 0.5531791, 2.4835468e-05, 1)
+led_off_color = Color(0.22352941, 0, 0, 1)
+leds = [NodePath("GridContainer/LedTR"), NodePath("GridContainer/LedTR2"), NodePath("GridContainer/LedTR3"), NodePath("GridContainer/LedTR4"), NodePath("GridContainer/LedTR5"), NodePath("GridContainer/LedTR6"), NodePath("GridContainer/LedTR7"), NodePath("GridContainer/LedTR8"), NodePath("GridContainer/LedTR9")]
+
+[node name="NinePatchRect" parent="." unique_id=209273869 instance=ExtResource("1_hl5xw")]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=598876412]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.085
+anchor_top = 0.085
+anchor_right = 0.915
+anchor_bottom = 0.915
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="LedTR" type="TextureRect" parent="GridContainer" unique_id=835567206]
+layout_mode = 2
+texture = ExtResource("3_66qfh")
+
+[node name="LedTR2" type="TextureRect" parent="GridContainer" unique_id=1271783352]
+layout_mode = 2
+texture = ExtResource("3_66qfh")
+
+[node name="LedTR3" type="TextureRect" parent="GridContainer" unique_id=1992191940]
+layout_mode = 2
+texture = ExtResource("3_66qfh")
+
+[node name="LedTR4" type="TextureRect" parent="GridContainer" unique_id=1932450905]
+layout_mode = 2
+texture = ExtResource("3_66qfh")
+
+[node name="LedTR5" type="TextureRect" parent="GridContainer" unique_id=1666277405]
+layout_mode = 2
+texture = ExtResource("3_66qfh")
+
+[node name="LedTR6" type="TextureRect" parent="GridContainer" unique_id=1711192881]
+layout_mode = 2
+texture = ExtResource("3_66qfh")
+
+[node name="LedTR7" type="TextureRect" parent="GridContainer" unique_id=2070952415]
+layout_mode = 2
+texture = ExtResource("3_66qfh")
+
+[node name="LedTR8" type="TextureRect" parent="GridContainer" unique_id=1798044619]
+layout_mode = 2
+texture = ExtResource("3_66qfh")
+
+[node name="LedTR9" type="TextureRect" parent="GridContainer" unique_id=1545543192]
+layout_mode = 2
+texture = ExtResource("3_66qfh")
