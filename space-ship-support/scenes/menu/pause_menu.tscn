@@ -38,7 +38,11 @@ size_flags_horizontal = 4
 
 [node name="ResumeButton" type="Button" parent="MainVBC/PauseMenuVBC" unique_id=135469281]
 layout_mode = 2
-text = "menu.start"
+text = "menu.continue"
+
+[node name="RetryButton" type="Button" parent="MainVBC/PauseMenuVBC" unique_id=2104940353]
+layout_mode = 2
+text = "menu.restart"
 
 [node name="SettingsButton" type="Button" parent="MainVBC/PauseMenuVBC" unique_id=24583945]
 layout_mode = 2
@@ -81,8 +85,21 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "menu.back"
 
+[connection signal="mouse_entered" from="MainVBC/PauseMenuVBC/ResumeButton" to="." method="_on_any_hover"]
 [connection signal="pressed" from="MainVBC/PauseMenuVBC/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MainVBC/PauseMenuVBC/ResumeButton" to="." method="_on_any_accept_button_pressed"]
+[connection signal="mouse_entered" from="MainVBC/PauseMenuVBC/RetryButton" to="." method="_on_any_hover"]
+[connection signal="pressed" from="MainVBC/PauseMenuVBC/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MainVBC/PauseMenuVBC/RetryButton" to="." method="_on_any_accept_button_pressed"]
+[connection signal="mouse_entered" from="MainVBC/PauseMenuVBC/SettingsButton" to="." method="_on_any_hover"]
+[connection signal="pressed" from="MainVBC/PauseMenuVBC/SettingsButton" to="." method="_on_any_accept_button_pressed"]
 [connection signal="pressed" from="MainVBC/PauseMenuVBC/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="mouse_entered" from="MainVBC/PauseMenuVBC/MainMenuButton" to="." method="_on_any_hover"]
 [connection signal="pressed" from="MainVBC/PauseMenuVBC/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="MainVBC/PauseMenuVBC/MainMenuButton" to="." method="_on_any_accept_button_pressed"]
+[connection signal="mouse_entered" from="MainVBC/PauseMenuVBC/QuitButton" to="." method="_on_any_hover"]
+[connection signal="pressed" from="MainVBC/PauseMenuVBC/QuitButton" to="." method="_on_any_cancel_button_pressed"]
 [connection signal="pressed" from="MainVBC/PauseMenuVBC/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="mouse_entered" from="SubMenuMC/SettingsPanel/SettingsMC/Settings/BackButton" to="." method="_on_any_hover"]
+[connection signal="pressed" from="SubMenuMC/SettingsPanel/SettingsMC/Settings/BackButton" to="." method="_on_any_cancel_button_pressed"]
 [connection signal="pressed" from="SubMenuMC/SettingsPanel/SettingsMC/Settings/BackButton" to="." method="_on_back_button_pressed"]
