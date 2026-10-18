@@ -22,9 +22,9 @@ func spawn_ship(layout_difficulty: float = 0.0) -> void:
 	add_child(new_ship)
 	new_ship.destroyed.connect(on_ship_destroyed)
 	new_ship.position = spawn_pos
-	var new_id = randi_range(10000,99999)
+	var new_id = randi_range(1000,9999)
 	while current_ids.has(new_id):
-		new_id = randi_range(10000,99999)
+		new_id = randi_range(1000,9999)
 	current_ids.append(new_id)
 	new_ship.ship_id = str(new_id)
 	new_ship.ship_speed = 12.0 + randf() * game_manager.get_max_ship_speed_bonus()

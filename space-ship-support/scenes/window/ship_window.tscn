@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b5pk7vgajiv42"]
 
 [ext_resource type="Script" uid="uid://dpcjujgxs4apa" path="res://scenes/window/ship_window.gd" id="1_4j3jj"]
-[ext_resource type="Texture2D" uid="uid://byqodh57uugor" path="res://icon.svg" id="2_0osky"]
 [ext_resource type="FontFile" uid="uid://bbwwkkjcgbkgq" path="res://assets/fonts/PixelOperatorHBSC.ttf" id="2_obuqq"]
 [ext_resource type="Script" uid="uid://dshtwxgqpcyej" path="res://scenes/window/dude_tex_rect.gd" id="4_30j56"]
 [ext_resource type="Texture2D" uid="uid://d33n1qrupesbq" path="res://assets/9slice_base.png" id="4_lnte3"]
@@ -90,7 +89,7 @@ mouse_filter = 1
 
 [node name="CharacterTexRect" type="TextureRect" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/CharacterPanel" unique_id=1499784406]
 layout_mode = 2
-texture = ExtResource("2_0osky")
+texture = ExtResource("5_shi57")
 script = ExtResource("4_30j56")
 dudes = Array[Texture2D]([ExtResource("5_shi57"), ExtResource("6_fi41h"), ExtResource("7_k6qn7"), ExtResource("8_hlxdo"), ExtResource("9_mydhn"), ExtResource("10_gb8hr"), ExtResource("11_qn3d0"), ExtResource("12_gpgtu"), ExtResource("13_2odnx"), ExtResource("14_uoer5"), ExtResource("15_whoiu"), ExtResource("16_alaec"), ExtResource("17_wlgir"), ExtResource("18_li2us"), ExtResource("19_575pw"), ExtResource("20_4aj4c"), ExtResource("21_xwes1"), ExtResource("22_qhsi6"), ExtResource("23_k7myh")])
 
