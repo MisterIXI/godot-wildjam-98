@@ -22,6 +22,7 @@ func add_nummber(nummber):
 		if nummber_nummber >= 4 and current_nummber != correct:
 			current_nummber = null
 			label.text = ""
+			print("wrong")
 		elif current_nummber == correct:
 			print("correct")
 			finished = true
