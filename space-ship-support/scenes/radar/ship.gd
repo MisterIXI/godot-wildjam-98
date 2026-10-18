@@ -1,8 +1,12 @@
+class_name Ship
 extends Area2D
+
+signal on_destroy(id: String, was_fixed: bool)
 
 @onready var target_sprite: Sprite2D = $TargetSprite
 @onready var target: Timer = $Target
 
+var ship_id: String
 var y_mod
 var x_mod
 var ship_speed
@@ -98,9 +102,9 @@ func _on_mouse_entered() -> void:
 	
 func target_disapear():
 	target_sprite.visible = false
-	
-
 
 
 func _on_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	#TODO: check if ship is fixed when leaving area
+	on_destroy.emit(true)
 	queue_free()
