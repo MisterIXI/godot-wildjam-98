@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d4jvjsp0r67u1"]
+[gd_scene format=3 uid="uid://ysl8r2heyett"]
 
 [ext_resource type="Script" uid="uid://dc3mh3v1d4l2x" path="res://scenes/ship_spawner/ship_layout_generator.gd" id="1_vvuxq"]
 [ext_resource type="Script" uid="uid://bqflxpuoyu2uc" path="res://scenes/ship_spawner/puzzle_config_data.gd" id="2_y7iji"]
