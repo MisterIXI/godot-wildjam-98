@@ -6,14 +6,12 @@
 
 [node name="ModDiagLed" type="Control" unique_id=67337367 node_paths=PackedStringArray("leds")]
 layout_mode = 3
-anchor_right = 0.078
-anchor_bottom = 0.13900001
-offset_right = 0.15999603
-offset_bottom = -0.08000946
+offset_right = 100.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pb5vc")
-led_on_color = Color(0.68764454, 1, 0.6604423, 1)
+led_on_color = Color(0.0014081855, 0.5531791, 2.4835468e-05, 1)
 led_off_color = Color(0.22352941, 0, 0, 1)
 leds = [NodePath("GridContainer/LedTR"), NodePath("GridContainer/LedTR2"), NodePath("GridContainer/LedTR3"), NodePath("GridContainer/LedTR4"), NodePath("GridContainer/LedTR5"), NodePath("GridContainer/LedTR6"), NodePath("GridContainer/LedTR7"), NodePath("GridContainer/LedTR8"), NodePath("GridContainer/LedTR9")]
 
@@ -29,15 +27,11 @@ grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=598876412]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -41.5
-offset_top = -41.5
-offset_right = 41.5
-offset_bottom = 41.5
+anchors_preset = -1
+anchor_left = 0.085
+anchor_top = 0.085
+anchor_right = 0.915
+anchor_bottom = 0.915
 grow_horizontal = 2
 grow_vertical = 2
 columns = 3

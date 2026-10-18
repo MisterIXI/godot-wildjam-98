@@ -7,7 +7,7 @@ var ships_fixed: int = 0
 var time_elapsed: float = 0.0
 var mistakes: int = 0
 var game_active: bool = true
-var time_to_next_ship: float = 3.0
+var time_to_next_ship: float = 0.0
 
 @export var settings: GameSettings
 @export var radar: Radar
