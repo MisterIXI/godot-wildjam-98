@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalLog="*res://scenes/ship_log/global_log.tscn"
 SettingsIO="*uid://b532813b8bias"
+AudioManager="*uid://cwyahocxwh82m"
 
 [display]
 
