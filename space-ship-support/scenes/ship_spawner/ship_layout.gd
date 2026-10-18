@@ -1,7 +1,7 @@
 class_name ShipLayout
 extends Control
 
-
+signal update_description(idx_new: int)
 signal layout_strike
 signal layout_success
 signal layout_partial_success
@@ -100,6 +100,8 @@ func _on_module_used(module_name: String, puzzle_idx: int) -> void:
 	if !use_result:
 		_on_module_strike()
 		return
+	
+	update_description.emit(puzzle.current_progress_index)
 	
 	if puzzle.is_finished():
 		

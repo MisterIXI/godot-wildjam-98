@@ -16,4 +16,5 @@ ExtResource("4_iobi1"): Vector2i(-1, 1)
 puzzle_name = "Puzzle 4b"
 analysis_code = Array[String](["1", "1", "0", "1", "1", "0", "1", "1", "1"])
 module_name_interaction_sequence = Array[String](["FKM", "FTM"])
+descriptions = Array[String](["Enter the Ship ID in the module located to the bottom left of the LED array.", "Fill and active the module located to the upper right of the LED array."])
 metadata/_custom_type_script = "uid://bqflxpuoyu2uc"

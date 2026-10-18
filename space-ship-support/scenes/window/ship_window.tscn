@@ -33,7 +33,7 @@ bg_color = Color(0.67, 0.67, 0.67, 1)
 [sub_resource type="Theme" id="Theme_rq55n"]
 Button/styles/pressed = SubResource("StyleBoxFlat_30j56")
 
-[node name="ShipWindow" type="Panel" unique_id=118375707 node_paths=PackedStringArray("module_parent", "integrity_leds", "title_label")]
+[node name="ShipWindow" type="Panel" unique_id=118375707 node_paths=PackedStringArray("module_parent", "integrity_leds", "description_label", "title_label")]
 clip_contents = true
 offset_right = 550.0
 offset_bottom = 450.0
@@ -42,6 +42,7 @@ module_parent = NodePath("ContentMarginContainer/HBoxContainer/ModuleMarginConta
 integrity_color_on = Color(0.18244442, 0.48386288, 1, 1)
 integrity_color_off = Color(0.22094142, 0.22094142, 0.22094142, 1)
 integrity_leds = [NodePath("ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC/HBoxContainer/LED"), NodePath("ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC/HBoxContainer/LED2"), NodePath("ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC/HBoxContainer/LED3")]
+description_label = NodePath("ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/StatusPanel/DescriptionLabel")
 title_label = NodePath("TitleBar/MarginContainer/TitleLabel")
 
 [node name="TitleBar" type="PanelContainer" parent="." unique_id=1596550366]
@@ -212,6 +213,7 @@ toggle_mode = true
 text = "👽"
 
 [node name="TimerPanel" type="Panel" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox" unique_id=947601353]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 1
@@ -290,11 +292,14 @@ text = "  +  "
 [node name="StatusPanel" type="PanelContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox" unique_id=599029278]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
 mouse_filter = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/StatusPanel" unique_id=610134437]
+[node name="DescriptionLabel" type="RichTextLabel" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/StatusPanel" unique_id=610134437]
 layout_mode = 2
 mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
 
 [node name="ModuleMarginContainer" type="MarginContainer" parent="ContentMarginContainer/HBoxContainer" unique_id=1476517635]
 custom_minimum_size = Vector2(410, 410)

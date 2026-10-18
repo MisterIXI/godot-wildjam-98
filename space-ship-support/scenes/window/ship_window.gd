@@ -13,6 +13,7 @@ signal ship_partial_success
 @export var integrity_color_on: Color
 @export var integrity_color_off: Color
 @export var integrity_leds: Array[TextureRect]
+@export var description_label: RichTextLabel
 
 var integrity_left: int = 3
 
@@ -26,6 +27,9 @@ var is_collapsed: bool = false
 var collapse_tween: Tween = null
 
 var ship_layout_data: ShipLayoutData
+
+var descriptions: Array[String]
+
 ## danger levels: 0=fixed, 1=warning, 2=critical
 var danger_level: int = 0:
 	set(val):
@@ -97,7 +101,12 @@ func init_ship_layout(ship_layout_data_new: ShipLayoutData) -> void:
 	ship_layout.layout_strike.connect(_on_layout_strike)
 	ship_layout.layout_success.connect(_on_layout_success)
 	ship_layout.layout_partial_success.connect(_on_layout_partial_success)
+	
+	ship_layout.update_description.connect(_on_update_description)
+	
+	descriptions = ship_layout.puzzles[0].puzzle_config.descriptions
 	module_parent.add_child(ship_layout)
+	_on_update_description(0)
 
 func set_integrity(integrity_left: int) -> void:
 	for i in integrity_leds.size():
@@ -159,3 +168,10 @@ func flash_window() -> void:
 	tween.set_loops(5)
 	tween.tween_property(self,"modulate",Color(0.5,0.5,0.5,1.0),0.5)
 	tween.tween_property(self,"modulate",Color.WHITE,0.5)
+
+func _on_update_description(description_index: int) -> void:
+	if description_index >= descriptions.size():
+		description_label.text = "No remaining issues found."
+		return
+	
+	description_label.text = descriptions[description_index]
