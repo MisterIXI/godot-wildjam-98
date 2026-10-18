@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dnw04veo1piu7" path="res://scenes/modules/diagnose/mod_diag_led.gd" id="1_pb5vc"]
 [ext_resource type="Texture2D" uid="uid://ckbgs37itstca" path="res://assets/led_on.svg" id="3_66qfh"]
 
-[node name="ModDiagLed" type="Control" unique_id=67337367 node_paths=PackedStringArray("leds")]
+[node name="ModDiagLed" type="Control" unique_id=67337367]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +14,6 @@ offset_bottom = -620.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pb5vc")
-leds = [NodePath("GridContainer/LedTR"), NodePath("GridContainer/LedTR2"), NodePath("GridContainer/LedTR3"), NodePath("GridContainer/LedTR4"), NodePath("GridContainer/LedTR5"), NodePath("GridContainer/LedTR6"), NodePath("GridContainer/LedTR7"), NodePath("GridContainer/LedTR8"), NodePath("GridContainer/LedTR9")]
 
 [node name="NinePatchRect" parent="." unique_id=209273869 instance=ExtResource("1_hl5xw")]
 layout_mode = 1

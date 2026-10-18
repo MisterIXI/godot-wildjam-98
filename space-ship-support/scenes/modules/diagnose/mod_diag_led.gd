@@ -7,7 +7,7 @@ extends ShipModule
 func _on_init_finished() -> void:
 	
 	for puzzle_code_str: String in puzzle_code:
-		if 
+		pass#if 
 		
 		
 		
