@@ -33,7 +33,9 @@ func on_ship_lost() -> void:
 	if mistakes >= MISTAKES_TO_FAIL:
 		# game over
 		print("Game over with final time: ", time_elapsed)
-		var end_screen:GameOver
+		var end_screen:GameOver = game_over_scene.instantiate()
+		ui_canvas.add_child(end_screen)
+		end_screen.active(time_elapsed,ships_fixed,mistakes)
 	#TODO: update mistake/strike visual on radar
 
 func on_ship_fixed() -> void:

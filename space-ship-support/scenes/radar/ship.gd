@@ -21,10 +21,13 @@ var ship_window: ShipWindow = null
 
 func _physics_process(delta: float) -> void:
 	position += ship_direction * ship_speed * delta
-	if position.length() > 370:
+	if position.length() > 360:
 		#TODO: check if ship is fixed when leaving area
 		on_destroy.emit(true)
+		#TODO: add destroy/close animation
+		ship_window.queue_free()
 		queue_free()
+		# print("Kaputt!")
 
 
 #Target animation
@@ -39,7 +42,7 @@ func _on_target_timeout() -> void:
 #When clicked
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("left_click") and target_sprite.visible == true:
-		print("Open ship window")
+		ship_window.show()
 
 
 
@@ -52,6 +55,7 @@ func target_disapear():
 
 
 func _on_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	#TODO: check if ship is fixed when leaving area
-	on_destroy.emit(true)
-	queue_free()
+	# #TODO: check if ship is fixed when leaving area
+	# on_destroy.emit(true)
+	# queue_free()
+	pass

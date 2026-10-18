@@ -9,7 +9,21 @@
 [ext_resource type="Resource" uid="uid://bgyernveiboi1" path="res://scenes/game_loop/default_settings.tres" id="5_bdhmt"]
 [ext_resource type="PackedScene" uid="uid://3rua33h6ar0t" path="res://scenes/menu/game_over.tscn" id="8_87uf6"]
 
+[sub_resource type="Gradient" id="Gradient_87uf6"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bjsx5"]
+gradient = SubResource("Gradient_87uf6")
+width = 1280
+height = 720
+
 [node name="Game" type="Node2D" unique_id=798055916]
+
+[node name="RadarBackground" type="Sprite2D" parent="." unique_id=1491369615]
+z_index = -30
+position = Vector2(640, 360)
+texture = SubResource("GradientTexture2D_bjsx5")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1011835357]
 layer = 100
@@ -35,13 +49,15 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 1
 
-[node name="Radar" type="Node2D" parent="." unique_id=1342668903 node_paths=PackedStringArray("window_root")]
+[node name="Radar" type="Node2D" parent="." unique_id=1342668903 node_paths=PackedStringArray("window_root", "radar_interface")]
 position = Vector2(360, 360)
 script = ExtResource("3_lfrn8")
 ship_scene = ExtResource("4_bdhmt")
 window_scene = ExtResource("5_87uf6")
 window_root = NodePath("../UI/WindowRoot")
+radar_interface = NodePath("../UI/RadarInterface")
 
 [node name="GameManager" type="Node" parent="." unique_id=1430876819 node_paths=PackedStringArray("radar", "ui_canvas")]
 script = ExtResource("4_5i0tg")
