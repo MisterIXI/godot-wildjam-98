@@ -55,3 +55,6 @@ func _on_area_shape_exited(_area_rid: RID, _area: Area2D, _area_shape_index: int
 	#TODO: check if ship is fixed when leaving area
 	on_destroy.emit(true)
 	queue_free()
+
+func init_layout(layout_data: ShipLayoutData) -> void:
+	ship_window.init_ship_layout(layout_data)
