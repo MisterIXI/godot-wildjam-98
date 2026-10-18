@@ -10,3 +10,5 @@ extends Resource
 @export var puzzle_name: String = ""
 
 @export var analysis_code: Array[String] = []
+
+@export var module_name_interaction_sequence: Array[String]
