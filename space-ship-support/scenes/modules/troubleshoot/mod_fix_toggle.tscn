@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c3cmx45gw55sv"]
+
+[ext_resource type="Script" uid="uid://cjyn8qkhfictd" path="res://scenes/modules/troubleshoot/mod_fix_toggle.gd" id="1_2nth2"]
+[ext_resource type="Texture2D" uid="uid://d33n1qrupesbq" path="res://assets/9slice_base.png" id="2_su7cc"]
+[ext_resource type="Texture2D" uid="uid://c3wnju5axrsc" path="res://assets/toggle_on.png" id="3_3t5i2"]
+[ext_resource type="Texture2D" uid="uid://cmllx8vksgjmw" path="res://assets/toggle_off.png" id="4_3lidc"]
+
+[node name="ModFixToggle" type="Control" unique_id=1135639337]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1180.0
+offset_bottom = -620.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2nth2")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=703777198]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("2_su7cc")
+
+[node name="On" type="TextureRect" parent="." unique_id=2134564770]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 17.0
+offset_right = 71.0
+offset_bottom = 79.0
+texture = ExtResource("3_3t5i2")
+
+[node name="Off" type="TextureRect" parent="On" unique_id=826904825]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 62.0
+texture = ExtResource("4_3lidc")
+
+[node name="Button" type="Button" parent="." unique_id=775649538]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 18.0
+offset_top = 11.0
+offset_right = 82.0
+offset_bottom = 86.0
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
