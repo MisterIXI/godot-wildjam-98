@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://dada8b80t76qe"]
+
+[ext_resource type="Script" uid="uid://cem04u5gawdmp" path="res://scenes/modules/troubleshoot/mod_fix_keypad.gd" id="1_8b2fb"]
+[ext_resource type="Texture2D" uid="uid://d33n1qrupesbq" path="res://assets/9slice_base.png" id="1_wectt"]
+[ext_resource type="PackedScene" uid="uid://dv6a25hrgllyq" path="res://scenes/modules/troubleshoot/mod_fix_keypad_Button.tscn" id="3_01en0"]
+
+[node name="ModFixKeypad" type="Control" unique_id=420429065 node_paths=PackedStringArray("label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1180.0
+offset_bottom = -620.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8b2fb")
+label = NodePath("MarginContainer/VBoxContainer/Label/Panel/Output")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1565738316]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("1_wectt")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1721512030]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 9.0
+offset_right = 89.0
+offset_bottom = 90.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1999250153]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1547407263]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/Label" unique_id=1306729406]
+modulate = Color(0.24788779, 0.9999997, 0.22440794, 1)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 2.0
+offset_right = 55.0
+offset_bottom = 20.0
+
+[node name="Output" type="Label" parent="MarginContainer/VBoxContainer/Label/Panel" unique_id=1322837885]
+layout_mode = 0
+theme_override_font_sizes/font_size = 13
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=758817475]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=88718021]
+layout_mode = 2
+offset_transform_enabled = true
+columns = 3
+
+[node name="Button1" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=546023629 instance=ExtResource("3_01en0")]
+layout_mode = 2
+
+[node name="Button2" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=23226931 instance=ExtResource("3_01en0")]
+layout_mode = 2
+text = "2"
+nummber = 2
+
+[node name="Button3" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=350798319 instance=ExtResource("3_01en0")]
+layout_mode = 2
+text = "3"
+nummber = 3
+
+[node name="Button4" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=202256324 instance=ExtResource("3_01en0")]
+layout_mode = 2
+text = "4"
+nummber = 4
+
+[node name="Button5" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1341032487 instance=ExtResource("3_01en0")]
+layout_mode = 2
+text = "5"
+nummber = 5
+
+[node name="Button6" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=492329405 instance=ExtResource("3_01en0")]
+layout_mode = 2
+text = "6"
+nummber = 6
+
+[node name="Button7" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=401578357 instance=ExtResource("3_01en0")]
+layout_mode = 2
+text = "7"
+nummber = 7
+
+[node name="Button8" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=1951530314 instance=ExtResource("3_01en0")]
+layout_mode = 2
+text = "8"
+nummber = 8
+
+[node name="Button9" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer" unique_id=270702775 instance=ExtResource("3_01en0")]
+layout_mode = 2
+text = "9"
+nummber = 9
