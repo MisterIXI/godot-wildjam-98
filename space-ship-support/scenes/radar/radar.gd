@@ -9,7 +9,7 @@ const DIAMETER:float = 720
 @export var window_scene: PackedScene
 @export var window_root: Control
 @export var radar_interface: RadarInterface
-var current_ids:Array[int] = []
+var current_ids: Array[String] = []
 @export var ship_layout_generator: ShipLayoutGenerator
 @export var game_manager: GameManager
 
@@ -22,11 +22,11 @@ func spawn_ship(layout_difficulty: float = 0.0) -> void:
 	add_child(new_ship)
 	new_ship.destroyed.connect(on_ship_destroyed)
 	new_ship.position = spawn_pos
-	var new_id = randi_range(1000,9999)
+	var new_id: String = create_id() # randi_range(1000,9999)
 	while current_ids.has(new_id):
-		new_id = randi_range(1000,9999)
+		new_id = create_id()# randi_range(1000,9999)
 	current_ids.append(new_id)
-	new_ship.ship_id = str(new_id)
+	new_ship.ship_id = new_id
 	new_ship.ship_speed = 12.0 + randf() * game_manager.get_max_ship_speed_bonus()
 	# rotate by -0.5 to 0.5 rad
 	new_ship.ship_direction = (-spawn_pos).normalized().rotated(randf()-0.5)
@@ -58,3 +58,12 @@ func on_ship_destroyed(ship: Ship, was_fixed: bool) ->  void:
 		radar_interface.add_message("Signal to Ship $%s lost. Not all issues fixed. Penalty applied." % [ship.ship_id])
 		ship_lost.emit()
 	current_ids.erase(ship.ship_id)
+
+
+func create_id() -> String:
+	var res: String = ""
+	for i in 4:
+		res += ["1","2","3","4","5","6","7","8","9"].pick_random()
+		
+	return res
+	

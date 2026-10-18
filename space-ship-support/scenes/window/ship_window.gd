@@ -3,7 +3,18 @@ extends Panel
 
 const SHIP_LAYOUT: PackedScene = preload("res://scenes/ship_spawner/ship_layout.tscn")
 
+signal ship_strike
+signal ship_failure
+signal ship_success
+signal ship_partial_success
+
 @export var module_parent: Control
+
+@export var integrity_color_on: Color
+@export var integrity_color_off: Color
+@export var integrity_leds: Array[TextureRect]
+
+var integrity_left: int = 3
 
 var ship_id:String = "SHIPID"
 var title_mouse_down: bool = false
@@ -21,13 +32,12 @@ var danger_level: int = 0:
 		danger_level = val
 		_update_title()
 
-signal ship_strike
-signal ship_failure
-signal ship_success
-signal ship_partial_success
 
 @export var title_label: RichTextLabel
 var mode_tween: Tween
+
+func _ready() -> void:
+	set_integrity(integrity_left)
 
 func _update_title() -> void:
 	match danger_level:
@@ -85,21 +95,35 @@ func init_ship_layout(ship_layout_data_new: ShipLayoutData) -> void:
 	ship_layout.init_from(ship_layout_data, ship_id)
 
 	ship_layout.layout_strike.connect(_on_layout_strike)
-	ship_layout.layout_failure.connect(_on_layout_failure)
 	ship_layout.layout_success.connect(_on_layout_success)
 	ship_layout.layout_partial_success.connect(_on_layout_partial_success)
 	module_parent.add_child(ship_layout)
 
-func _on_layout_strike() -> void:
-	print("module: strike")
-	ship_strike.emit()
-	AudioManager.play_sfx(AudioManagerClass.SfxType.CANCEL)
-	
-func _on_layout_failure() -> void:
-	print("module: 3 strikes -> failure")
-	AudioManager.play_sfx(AudioManagerClass.SfxType.UTIL_B)
-	ship_failure.emit()
+func set_integrity(integrity_left: int) -> void:
+	for i in integrity_leds.size():
+		set_led_active(i, i < integrity_left)
 
+func set_led_active(index: int, led_active: bool) -> void:
+	var led: TextureRect = integrity_leds[index]
+	led.texture = ModDiagLed.LED_ON if led_active else ModDiagLed.LED_OFF
+	led.modulate = integrity_color_on if led_active else integrity_color_off
+	
+func _on_layout_strike() -> void:
+	if integrity_left == 0:
+		return
+		
+	integrity_left -= 1
+	set_integrity(integrity_left)
+	
+	ship_strike.emit()
+	
+	if (integrity_left == 0):
+		AudioManager.play_sfx(AudioManagerClass.SfxType.UTIL_B)
+		ship_failure.emit()
+	else:
+		AudioManager.play_sfx(AudioManagerClass.SfxType.CANCEL)
+
+	
 func _on_layout_partial_success() -> void:
 	print("module: partial success")
 	AudioManager.play_sfx(AudioManagerClass.SfxType.ACCEPT)

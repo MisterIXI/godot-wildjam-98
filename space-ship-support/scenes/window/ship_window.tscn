@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cbdxusr8g3k0q" path="res://assets/Dudes/dude17.png" id="20_4aj4c"]
 [ext_resource type="Texture2D" uid="uid://bkvm2ex3lv5en" path="res://assets/Dudes/dude18.png" id="21_xwes1"]
 [ext_resource type="Texture2D" uid="uid://122fxrm67jam" path="res://assets/Dudes/dude19.png" id="22_qhsi6"]
+[ext_resource type="Texture2D" uid="uid://ckbgs37itstca" path="res://assets/led_on.svg" id="23_30j56"]
 [ext_resource type="Texture2D" uid="uid://6ol80jk4iknu" path="res://assets/Dudes/dude20.png" id="23_k7myh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o7f28"]
@@ -32,12 +33,15 @@ bg_color = Color(0.67, 0.67, 0.67, 1)
 [sub_resource type="Theme" id="Theme_rq55n"]
 Button/styles/pressed = SubResource("StyleBoxFlat_30j56")
 
-[node name="ShipWindow" type="Panel" unique_id=118375707 node_paths=PackedStringArray("module_parent", "title_label")]
+[node name="ShipWindow" type="Panel" unique_id=118375707 node_paths=PackedStringArray("module_parent", "integrity_leds", "title_label")]
 clip_contents = true
 offset_right = 550.0
 offset_bottom = 450.0
 script = ExtResource("1_4j3jj")
 module_parent = NodePath("ContentMarginContainer/HBoxContainer/ModuleMarginContainer/PanelContainer")
+integrity_color_on = Color(0.18244442, 0.48386288, 1, 1)
+integrity_color_off = Color(0.22094142, 0.22094142, 0.22094142, 1)
+integrity_leds = [NodePath("ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC/HBoxContainer/LED"), NodePath("ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC/HBoxContainer/LED2"), NodePath("ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC/HBoxContainer/LED3")]
 title_label = NodePath("TitleBar/MarginContainer/TitleLabel")
 
 [node name="TitleBar" type="PanelContainer" parent="." unique_id=1596550366]
@@ -116,7 +120,37 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
+[node name="IntegrityVBC" type="VBoxContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer" unique_id=1800701676]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC" unique_id=1858752683]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Integrity[/center]"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC" unique_id=284998848]
+layout_mode = 2
+alignment = 1
+
+[node name="LED" type="TextureRect" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC/HBoxContainer" unique_id=1383962060]
+layout_mode = 2
+texture = ExtResource("23_30j56")
+stretch_mode = 5
+
+[node name="LED2" type="TextureRect" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC/HBoxContainer" unique_id=22939312]
+layout_mode = 2
+texture = ExtResource("23_30j56")
+stretch_mode = 5
+
+[node name="LED3" type="TextureRect" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC/HBoxContainer" unique_id=1319892220]
+layout_mode = 2
+texture = ExtResource("23_30j56")
+stretch_mode = 5
+
 [node name="GridContainer" type="GridContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer" unique_id=603550398]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 columns = 4

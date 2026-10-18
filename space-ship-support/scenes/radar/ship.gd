@@ -23,11 +23,7 @@ func _physics_process(delta: float) -> void:
 	position += ship_direction * ship_speed * delta
 	if position.length() > 360:
 		#TODO: check if ship is fixed when leaving area
-		destroyed.emit(self, false)
-		#TODO: add destroy/close animation
-		ship_window.queue_free()
-		queue_free()
-		# print("Kaputt!")
+		ship_die(false)
 
 
 #Target animation
@@ -62,3 +58,12 @@ func _on_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, l
 
 func init_layout(layout_data: ShipLayoutData) -> void:
 	ship_window.init_ship_layout(layout_data)
+	ship_window.ship_failure.connect(ship_die.bind(false))
+	ship_window.ship_success.connect(ship_die.bind(true))
+	
+func ship_die(was_fixed: bool) -> void:
+	destroyed.emit(self, was_fixed)
+	#TODO: add destroy/close animation
+	ship_window.queue_free()
+	queue_free()
+	# print("Kaputt!")

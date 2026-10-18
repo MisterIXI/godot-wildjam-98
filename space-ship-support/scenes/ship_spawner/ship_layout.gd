@@ -3,7 +3,6 @@ extends Control
 
 
 signal layout_strike
-signal layout_failure
 signal layout_success
 signal layout_partial_success
 
@@ -13,8 +12,6 @@ const SLOT_SIZE_XY: float = 100
 
 var modules: Dictionary[Vector2i, ShipModule] = {}
 
-var num_strikes: int = 3
-
 var num_puzzles_solved: int = 0
 
 var puzzles: Array[Puzzle] = []
@@ -23,7 +20,6 @@ func _ready() -> void:
 	pass
 
 func init_from(layout_data: ShipLayoutData, ship_id: String) -> void:
-	num_strikes = 3
 	num_puzzles_solved = 0
 	puzzles = []
 	
@@ -42,7 +38,7 @@ func init_from(layout_data: ShipLayoutData, ship_id: String) -> void:
 		module.position = get_spawn_pos(slot_position)
 		module.init_from_resource(module_data, slot_position)
 		add_child(module)
-		print("slot: ", slot_position, " -> init module:" , module_data.module_name, " with color ", module_data.debug_color.to_html())
+		#print("slot: ", slot_position, " -> init module:" , module_data.module_name, " with color ", module_data.debug_color.to_html())
 		modules[slot_position] = module
 		
 		module.module_used.connect(_on_module_used)
@@ -115,11 +111,7 @@ func _on_module_used(module_name: String, puzzle_idx: int) -> void:
 		_on_module_partial_success()
 
 func _on_module_strike() -> void:
-	num_strikes -= 1
 	layout_strike.emit()
-	
-	if (num_strikes == 0):
-		layout_failure.emit()
 
 func _on_module_partial_success() -> void:
 	layout_partial_success.emit()
