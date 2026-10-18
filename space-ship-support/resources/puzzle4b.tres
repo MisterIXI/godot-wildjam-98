@@ -13,7 +13,7 @@ ExtResource("2_dpafq"): Vector2i(0, 0),
 ExtResource("3_bb7sp"): Vector2i(1, -1),
 ExtResource("4_iobi1"): Vector2i(-1, 1)
 })
-puzzle_name = "Puzzle 4a"
+puzzle_name = "Puzzle 4b"
 analysis_code = Array[String](["1", "1", "0", "1", "1", "0", "1", "1", "1"])
 module_name_interaction_sequence = Array[String](["FKM", "FTM"])
 metadata/_custom_type_script = "uid://bqflxpuoyu2uc"

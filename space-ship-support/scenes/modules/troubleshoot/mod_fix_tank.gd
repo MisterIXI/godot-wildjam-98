@@ -38,8 +38,8 @@ func _on_button_button_down() -> void:
 		
 func _correkt():
 	print("Correkt")
-	module_used.emit(true)
-	
+	use_module(true)
+		
 func _wrong():
 	print("Wrong")
-	module_used.emit(false)
+	use_module(false)
