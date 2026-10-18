@@ -3,10 +3,10 @@ extends Node
 
 const SHIP_LAYOUT: PackedScene = preload("res://scenes/ship_spawner/ship_layout.tscn")
 
-@export_range(2, 30) var min_x_size: int = 3
+@export_range(2, 30) var min_x_size: int = 4
 @export_range(2, 30) var max_x_size: int = 4
 
-@export_range(2, 30) var min_y_size: int = 3
+@export_range(2, 30) var min_y_size: int = 4
 @export_range(2, 30) var max_y_size: int = 4
  
 @export_range(2, 30) var min_num_puzzles: int = 1

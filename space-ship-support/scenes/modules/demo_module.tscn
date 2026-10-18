@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dh6alm6cguons"]
 
 [ext_resource type="Script" uid="uid://b2shwbquiio1o" path="res://scenes/modules/demo_module.gd" id="1_dsdva"]
+[ext_resource type="Texture2D" uid="uid://d33n1qrupesbq" path="res://assets/9slice_base.png" id="2_ima0e"]
 
 [sub_resource type="Gradient" id="Gradient_dsdva"]
 colors = PackedColorArray(0.36155424, 3.218744e-07, 1.2032687e-07, 1, 1, 0.5710682, 0.50889325, 1)
@@ -23,8 +24,8 @@ height = 56
 [node name="DemoModule" type="Control" unique_id=1340725201 node_paths=PackedStringArray("debug_color_tr", "background_tr", "debug_label", "debug_solve_label", "demo_button")]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 60.0
-offset_bottom = 60.0
+offset_right = 100.0
+offset_bottom = 100.0
 script = ExtResource("1_dsdva")
 debug_color_tr = NodePath("ColorTR")
 background_tr = NodePath("BackgroundTR")
@@ -32,7 +33,19 @@ debug_label = NodePath("Control/VBoxContainer/DebugLabel")
 debug_solve_label = NodePath("Control/VBoxContainer/DebugSolveLabel")
 demo_button = NodePath("Control/DemoButton")
 
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1293926099]
+texture_filter = 1
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("2_ima0e")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
 [node name="BackgroundTR" type="TextureRect" parent="." unique_id=1895140597]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,6 +56,7 @@ texture = SubResource("GradientTexture2D_1igpg")
 expand_mode = 1
 
 [node name="ColorTR" type="TextureRect" parent="." unique_id=281110636]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

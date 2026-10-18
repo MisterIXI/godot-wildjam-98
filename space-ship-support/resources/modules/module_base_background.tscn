@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://do8wwn65kyyyv"]
+
+[ext_resource type="Texture2D" uid="uid://d33n1qrupesbq" path="res://assets/9slice_base.png" id="1_sswl7"]
+
+[node name="NinePatchRect" type="NinePatchRect" unique_id=209273869]
+texture_filter = 1
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("1_sswl7")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
