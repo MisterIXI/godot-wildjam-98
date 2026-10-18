@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dmn2w6p4x5lfp"]
 
 [ext_resource type="Script" uid="uid://c31wecxucr7to" path="res://scenes/modules/locked_action_module.gd" id="1_wtljm"]
+[ext_resource type="Texture2D" uid="uid://d33n1qrupesbq" path="res://assets/9slice_base.png" id="2_arqsx"]
 
 [sub_resource type="Gradient" id="Gradient_d0aqk"]
 colors = PackedColorArray(0.36155424, 3.218744e-07, 1.2032687e-07, 1, 1, 0.5710682, 0.50889325, 1)
@@ -10,29 +11,27 @@ gradient = SubResource("Gradient_d0aqk")
 width = 80
 height = 160
 
-[sub_resource type="Gradient" id="Gradient_tbj38"]
-resource_local_to_scene = true
-colors = PackedColorArray(0.9999996, 0.5422048, 0.22767588, 1, 0.27538705, 0.63770074, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_66fu8"]
-resource_local_to_scene = true
-gradient = SubResource("Gradient_tbj38")
-width = 76
-height = 156
-
 [node name="LockedActionModule1x2" type="Control" unique_id=513390589 node_paths=PackedStringArray("button")]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1200.0
-offset_bottom = -560.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 100.0
+offset_bottom = 200.0
 script = ExtResource("1_wtljm")
 button = NodePath("VBoxContainer/Button")
 
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1682028622]
+texture_filter = 1
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 200.0
+texture = ExtResource("2_arqsx")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
 [node name="BackgroundTR" type="TextureRect" parent="." unique_id=1093026655]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,7 +54,6 @@ offset_right = 28.0
 offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_66fu8")
 stretch_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=176310455]

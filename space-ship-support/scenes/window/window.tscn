@@ -4,6 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://byqodh57uugor" path="res://icon.svg" id="2_0osky"]
 [ext_resource type="FontFile" uid="uid://bbwwkkjcgbkgq" path="res://assets/fonts/PixelOperatorHBSC.ttf" id="2_obuqq"]
 [ext_resource type="Texture2D" uid="uid://d33n1qrupesbq" path="res://assets/9slice_base.png" id="4_lnte3"]
+[ext_resource type="Script" uid="uid://dc3mh3v1d4l2x" path="res://scenes/ship_spawner/ship_spawner.gd" id="4_y2ayq"]
+[ext_resource type="Script" uid="uid://bqflxpuoyu2uc" path="res://scenes/ship_spawner/puzzle_config_data.gd" id="5_omw1o"]
+[ext_resource type="Resource" uid="uid://bo1m5stq58h8u" path="res://resources/puzzle1.tres" id="6_58ypt"]
+[ext_resource type="Script" uid="uid://bouy1x6lj0101" path="res://scenes/ship_spawner/module_data.gd" id="7_aejpm"]
+[ext_resource type="Resource" uid="uid://isxtfa6m1xiu" path="res://resources/testing/test_filler_slot_1.tres" id="8_wdkw8"]
 
 [node name="Window" type="Panel" unique_id=118375707]
 clip_contents = true
@@ -177,7 +182,19 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 mouse_filter = 1
 
+[node name="Control" type="Control" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer/PanelContainer" unique_id=206438609]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_y2ayq")
+puzzle_configs = Array[ExtResource("5_omw1o")]([ExtResource("6_58ypt")])
+available_fillers = Array[ExtResource("7_aejpm")]([ExtResource("8_wdkw8")])
+
 [node name="NinePatchRect" type="NinePatchRect" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer/PanelContainer" unique_id=1915960077]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
@@ -191,6 +208,7 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer/PanelContainer" unique_id=1226233660]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(100, 200)
 layout_mode = 0
@@ -204,6 +222,7 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer/PanelContainer" unique_id=1857413368]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
@@ -217,6 +236,7 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer/PanelContainer" unique_id=741842443]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
@@ -231,6 +251,7 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="NinePatchRect7" type="NinePatchRect" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer/PanelContainer" unique_id=203524034]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
@@ -244,6 +265,7 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="NinePatchRect4" type="NinePatchRect" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer/PanelContainer" unique_id=1379024677]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
@@ -256,6 +278,7 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="NinePatchRect5" type="NinePatchRect" parent="ContentMarginContainer/HBoxContainer/ModuleMarginContainer/PanelContainer" unique_id=1409216049]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 0

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c7jgcnbalm625"]
 
 [ext_resource type="Script" uid="uid://dd11h8uw0xh2k" path="res://scenes/modules/remote_control_module.gd" id="1_swtyh"]
+[ext_resource type="Texture2D" uid="uid://d33n1qrupesbq" path="res://assets/9slice_base.png" id="2_7ojht"]
 
 [sub_resource type="Gradient" id="Gradient_swtyh"]
 colors = PackedColorArray(0.36155424, 3.218744e-07, 1.2032687e-07, 1, 1, 0.5710682, 0.50889325, 1)
@@ -17,17 +18,18 @@ colors = PackedColorArray(0, 0.7764706, 0.79607844, 1, 1, 0, 1, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_31xfx"]
 resource_local_to_scene = true
 gradient = SubResource("Gradient_8p6oo")
-width = 76
-height = 76
+width = 90
+height = 90
 
 [node name="RemoteControlModule" type="Control" unique_id=1432464307]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 80.0
-offset_bottom = 80.0
+offset_right = 100.0
+offset_bottom = 100.0
 script = ExtResource("1_swtyh")
 
 [node name="BackgroundTR" type="TextureRect" parent="." unique_id=510566462]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,6 +39,17 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_7ojht")
 stretch_mode = 2
 
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=568643798]
+texture_filter = 1
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("2_7ojht")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
 [node name="ForegroundTexture" type="TextureRect" parent="." unique_id=622733479]
 layout_mode = 1
 anchors_preset = 8
@@ -44,10 +57,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -28.0
-offset_top = -28.0
-offset_right = 28.0
-offset_bottom = 28.0
+offset_left = -45.0
+offset_top = -45.0
+offset_right = 45.0
+offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_31xfx")

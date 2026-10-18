@@ -7,17 +7,16 @@ colors = PackedColorArray(0.6125778, 0.61257786, 0.6125778, 1, 0.24115604, 0.241
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_v5yq1"]
 gradient = SubResource("Gradient_v5yq1")
-width = 600
-height = 600
+width = 400
+height = 400
 
-[node name="ShipLayout" type="Node2D" unique_id=1128478476 node_paths=PackedStringArray("start_marker")]
+[node name="ShipLayout" type="Control" unique_id=621327236]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_v5yq1")
-start_marker = NodePath("StartMarker2D")
 
-[node name="StartMarker2D" type="Marker2D" parent="." unique_id=115897841]
-position = Vector2(100, 100)
-
-[node name="Background" type="Sprite2D" parent="." unique_id=1495171122]
-position = Vector2(67, 65)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=774638706]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 texture = SubResource("GradientTexture2D_v5yq1")
-centered = false

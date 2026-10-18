@@ -17,6 +17,8 @@ var target_close = false
 var ship_direction: Vector2
 var ship_speed: float = 40
 
+var ship_window: ShipWindow = null
+
 func _physics_process(delta: float) -> void:
 	position += ship_direction * ship_speed * delta
 	if position.length() > 370:

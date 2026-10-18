@@ -35,7 +35,9 @@ func spawn_label() -> void:
 	label.global_position = pos
 	label.text = "S" if randf() < 0.9 else "T"
 	add_child(label)
-	
+	if not get_tree():
+		push_warning("wtf")
+		return
 	var tween: Tween = get_tree().create_tween().set_parallel(true)
 	var this_lifetime = randf_range(lifetime * min_variance, lifetime * max_variance)
 	tween.tween_property(label, "modulate:a", 0.0, this_lifetime * 0.95)
