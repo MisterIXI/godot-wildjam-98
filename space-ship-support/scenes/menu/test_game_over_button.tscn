@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b8wp3smimd4y2"]
+
+[ext_resource type="Script" uid="uid://bfxslii7ywuyf" path="res://test_game_over_button.gd" id="1_upa1u"]
+
+[node name="Test game over Button" type="Button" unique_id=332608721]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_upa1u")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
