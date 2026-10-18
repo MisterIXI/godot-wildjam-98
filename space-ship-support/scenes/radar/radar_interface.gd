@@ -2,13 +2,16 @@ class_name RadarInterface
 extends Control
 
 @export var scroll_content: VBoxContainer
-
+@export var strike_texs: Array[TextureRect]
+@export var score_label: Label
+@export var font: FontFile
 var labels: Array[Label] = []
 
 func add_message(message: String) -> void:
-	var new_label = Label.new()
+	var new_label: Label = Label.new()
 	scroll_content.add_child(new_label)
 	new_label.text = message
+	new_label.set("theme_override_fonts/font", font)
 	labels.append(new_label)
 	var tween = new_label.create_tween()
 	new_label.visible_characters = 0
