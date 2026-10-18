@@ -13,6 +13,7 @@ var time_to_next_ship: float = 3.0
 @export var radar: Radar
 @export var ui_canvas: CanvasLayer
 @export var game_over_scene:PackedScene
+@export var radar_interface: RadarInterface
 
 func _ready() -> void:
 	radar.ship_lost.connect(on_ship_lost)
@@ -20,6 +21,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	time_elapsed += delta
+	radar_interface.score_label.text= "Ships Fixed: %d\nTime Elapsed: %d sec" % [ships_fixed, int(time_elapsed)]
 
 func _physics_process(delta: float) -> void:
 	time_to_next_ship -= delta
@@ -30,6 +32,7 @@ func _physics_process(delta: float) -> void:
 
 func on_ship_lost() -> void:
 	mistakes += 1
+	radar_interface.strike_texs[mistakes-1].modulate = Color.RED
 	if mistakes >= MISTAKES_TO_FAIL:
 		# game over
 		print("Game over with final time: ", time_elapsed)

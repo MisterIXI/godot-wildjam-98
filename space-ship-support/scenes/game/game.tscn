@@ -67,12 +67,13 @@ radar_interface = NodePath("../UI/RadarInterface")
 ship_layout_generator = NodePath("../ShipLayoutGenerator")
 game_manager = NodePath("../GameManager")
 
-[node name="GameManager" type="Node" parent="." unique_id=1430876819 node_paths=PackedStringArray("radar", "ui_canvas")]
+[node name="GameManager" type="Node" parent="." unique_id=1430876819 node_paths=PackedStringArray("radar", "ui_canvas", "radar_interface")]
 script = ExtResource("4_5i0tg")
 settings = ExtResource("7_vaxfo")
 radar = NodePath("../Radar")
 ui_canvas = NodePath("../UI")
 game_over_scene = ExtResource("8_87uf6")
+radar_interface = NodePath("../UI/RadarInterface")
 metadata/_custom_type_script = "uid://cxi8ksk73nohu"
 
 [node name="ShipLayoutGenerator" type="Node" parent="." unique_id=547313120]
