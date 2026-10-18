@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GameSettings" format=3 uid="uid://bgyernveiboi1"]
+
+[ext_resource type="Script" uid="uid://c7wv66gwm2c23" path="res://scenes/game_loop/game_settings.gd" id="1_vpts6"]
+
+[sub_resource type="Curve" id="Curve_ymt3o"]
+_limits = [20.0, 60.0, 0.0, 1.0]
+_data = [Vector2(0, 60), 0.0, 0.0, 0, 0, Vector2(1, 20), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_vpts6")
+spawn_curve = SubResource("Curve_ymt3o")
+metadata/_custom_type_script = "uid://c7wv66gwm2c23"

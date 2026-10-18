@@ -1,80 +1,29 @@
+class_name Ship
 extends Area2D
+
+signal on_destroy(id: String, was_fixed: bool)
 
 @onready var target_sprite: Sprite2D = $TargetSprite
 @onready var target: Timer = $Target
 
+var ship_id: String
 var y_mod
 var x_mod
-var ship_speed
 var ship_offset
 var ship_Position
 var offset_y
 var offset_plus
 var target_close = false
+var ship_direction: Vector2
+var ship_speed: float = 40
 
-func ship_setup(Position,speed,offset):
-	ship_speed = speed
-	ship_offset = offset
-	if Position < 1:
-		ship_Position = 1
-		x_mod = 0
-		y_mod = 1
-	elif Position < 2:
-		ship_Position = 2
-		x_mod = -0.5
-		y_mod = 0.5
-	elif Position < 3:
-		ship_Position = 3
-		x_mod = -1
-		y_mod = 0
-	elif Position < 4:
-		ship_Position = 4
-		x_mod = -0.5
-		y_mod = -0.5
-	elif Position < 5:
-		ship_Position = 5
-		x_mod = 0
-		y_mod = -1
-	elif Position < 6:
-		ship_Position = 6
-		x_mod = 0.5
-		y_mod = -0.5
-	elif Position < 7:
-		ship_Position = 7
-		x_mod = 1
-		y_mod = 0
-	elif Position < 8:
-		ship_Position = 8
-		y_mod = 0.5
-		x_mod = 0.5
-	#use the decimels on the generated nummber for a another random outcome
-	if Position - ship_Position + 1.1 >= 0.5:
-		offset_y = true
-		offset_plus = 0.5
-	else:
-		offset_y = false
-		offset_plus = -0.5
-	
-	
-	
-func _process(delta: float) -> void:
-	#movement of the ships
-	if ship_Position == 2 or ship_Position == 4 or ship_Position == 6 or ship_Position == 8:
-		#Position controlls for the X flying ships
-		if offset_y == true:
-			position.y += ship_speed * y_mod * delta * ship_offset
-			position.x += ship_speed * x_mod * delta / ship_offset
-		else:
-			position.y += ship_speed * y_mod * delta / ship_offset
-			position.x += ship_speed * x_mod * delta * ship_offset
-			#Position controlls for the + flying ships
-	elif  ship_Position == 1 or ship_Position == 5:
-			position.y += ship_speed * y_mod * delta / ship_offset
-			position.x += ship_speed * offset_plus * delta / ship_offset 
-	elif ship_Position == 3 or ship_Position == 7:
-			position.y += ship_speed * offset_plus * delta / ship_offset 
-			position.x += ship_speed * x_mod * delta / ship_offset
-			
+func _physics_process(delta: float) -> void:
+	position += ship_direction * ship_speed * delta
+	if position.length() > 370:
+		#TODO: check if ship is fixed when leaving area
+		on_destroy.emit(true)
+		queue_free()
+
 
 #Target animation
 func _on_target_timeout() -> void:
@@ -98,9 +47,9 @@ func _on_mouse_entered() -> void:
 	
 func target_disapear():
 	target_sprite.visible = false
-	
-
 
 
 func _on_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	#TODO: check if ship is fixed when leaving area
+	on_destroy.emit(true)
 	queue_free()

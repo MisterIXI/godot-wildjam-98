@@ -1,20 +1,36 @@
 [gd_scene format=3 uid="uid://cv8qxcnh1h5vn"]
 
+[ext_resource type="PackedScene" uid="uid://8ngq5jrsqykh" path="res://scenes/radar/radar_interface.tscn" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://cdh72q4kd1gjo" path="res://scenes/menu/pause_menu.tscn" id="1_7h61r"]
-[ext_resource type="PackedScene" uid="uid://duhy8dfqmo7m5" path="res://scenes/radar/radar_scene.tscn" id="1_sul5r"]
-[ext_resource type="PackedScene" uid="uid://3rua33h6ar0t" path="res://scenes/menu/game_over.tscn" id="3_0sr1o"]
-[ext_resource type="PackedScene" uid="uid://b8wp3smimd4y2" path="res://scenes/menu/test_game_over_button.tscn" id="3_kelw5"]
+[ext_resource type="Script" uid="uid://jlkdjn887myh" path="res://scenes/radar/radar.gd" id="3_lfrn8"]
+[ext_resource type="Script" uid="uid://cxi8ksk73nohu" path="res://scenes/game_loop/game_manager.gd" id="4_5i0tg"]
+[ext_resource type="PackedScene" uid="uid://py13r334qxcm" path="res://scenes/radar/ship.tscn" id="4_bdhmt"]
+[ext_resource type="Resource" uid="uid://bgyernveiboi1" path="res://scenes/game_loop/default_settings.tres" id="5_bdhmt"]
 
 [node name="Game" type="Node2D" unique_id=798055916]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1011835357]
 layer = 100
 
-[node name="GameOver" parent="UI" unique_id=93509185 instance=ExtResource("3_0sr1o")]
-unique_name_in_owner = true
-
 [node name="PauseMenuView" parent="UI" unique_id=1597465050 instance=ExtResource("1_7h61r")]
+visible = false
 
-[node name="Test game over Button" parent="." unique_id=332608721 instance=ExtResource("3_kelw5")]
+[node name="RadarInterface" parent="UI" unique_id=1869526097 instance=ExtResource("1_0sr1o")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="RadarScene" parent="." unique_id=431484288 instance=ExtResource("1_sul5r")]
+[node name="Radar" type="Node2D" parent="." unique_id=1342668903]
+position = Vector2(360, 360)
+script = ExtResource("3_lfrn8")
+ship_scene = ExtResource("4_bdhmt")
+
+[node name="GameManager" type="Node" parent="." unique_id=1430876819 node_paths=PackedStringArray("radar")]
+script = ExtResource("4_5i0tg")
+settings = ExtResource("5_bdhmt")
+radar = NodePath("../Radar")
+metadata/_custom_type_script = "uid://cxi8ksk73nohu"
