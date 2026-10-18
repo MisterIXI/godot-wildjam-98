@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://b7jm8e6t5issu"]
+
+[ext_resource type="Texture2D" uid="uid://61y3ob2kh513" path="res://assets/placeholder_art/module_keypad/keypad_background.png" id="1_igy2v"]
+[ext_resource type="Script" uid="uid://diynpp1cui4sc" path="res://scenes/modules/module_keypad.gd" id="1_ycn2q"]
+[ext_resource type="Texture2D" uid="uid://bw1anoheej202" path="res://assets/placeholder_art/module_keypad/keypad_screen.png" id="2_ycn2q"]
+[ext_resource type="FontFile" uid="uid://bbwwkkjcgbkgq" path="res://assets/fonts/PixelOperatorHBSC.ttf" id="3_8ansh"]
+[ext_resource type="PackedScene" uid="uid://dm3hdanrvj1ri" path="res://scenes/modules/button.tscn" id="4_ycn2q"]
+
+[node name="ModuleKeypad" type="Control" unique_id=1671915246]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1280.0
+offset_bottom = -720.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ycn2q")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=671856461]
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 172.0
+texture = ExtResource("1_igy2v")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=956257494]
+z_index = 4
+layout_mode = 0
+offset_left = 54.0
+offset_top = 13.0
+offset_right = 116.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8ansh")
+theme_override_font_sizes/font_size = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1190425389]
+layout_mode = 0
+offset_right = 154.0
+offset_bottom = 184.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(7.28, 0)
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1121354714]
+modulate = Color(0.8992962, 0, 0.1917353, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_ycn2q")
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=1285794806]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 3
+
+[node name="Button1" parent="VBoxContainer/GridContainer" unique_id=1733049522 instance=ExtResource("4_ycn2q")]
+layout_mode = 2
+
+[node name="Button2" parent="VBoxContainer/GridContainer" unique_id=758272958 instance=ExtResource("4_ycn2q")]
+layout_mode = 2
+nummber = 2
+
+[node name="Button3" parent="VBoxContainer/GridContainer" unique_id=38211172 instance=ExtResource("4_ycn2q")]
+layout_mode = 2
+nummber = 3
+
+[node name="Button4" parent="VBoxContainer/GridContainer" unique_id=112120945 instance=ExtResource("4_ycn2q")]
+layout_mode = 2
+nummber = 4
+
+[node name="Button5" parent="VBoxContainer/GridContainer" unique_id=1619807383 instance=ExtResource("4_ycn2q")]
+layout_mode = 2
+nummber = 5
+
+[node name="Button6" parent="VBoxContainer/GridContainer" unique_id=62006113 instance=ExtResource("4_ycn2q")]
+layout_mode = 2
+nummber = 6
+
+[node name="Button7" parent="VBoxContainer/GridContainer" unique_id=1488982927 instance=ExtResource("4_ycn2q")]
+layout_mode = 2
+nummber = 7
+
+[node name="Button8" parent="VBoxContainer/GridContainer" unique_id=5262744 instance=ExtResource("4_ycn2q")]
+layout_mode = 2
+nummber = 8
+
+[node name="Button9" parent="VBoxContainer/GridContainer" unique_id=270976944 instance=ExtResource("4_ycn2q")]
+layout_mode = 2
+nummber = 9

@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://b6cb8xhh08p2u"]
+
+[ext_resource type="Script" uid="uid://elm8n54klsjt" path="res://scenes/modules/module_tank.gd" id="1_wrsx3"]
+[ext_resource type="Texture2D" uid="uid://bv0yma1o3m4v2" path="res://assets/placeholder_art/module_keypad/tank background.png" id="2_r4txc"]
+[ext_resource type="Texture2D" uid="uid://0xqc2vr2bfm3" path="res://assets/placeholder_art/measure.png" id="3_ici4b"]
+[ext_resource type="Texture2D" uid="uid://ckf8xjhmq3gs" path="res://assets/placeholder_art/module_keypad/fluid.png" id="4_82u4q"]
+
+[node name="ModuleTank" type="Control" unique_id=655449818]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1112.0
+offset_bottom = -547.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wrsx3")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1791024104]
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 172.0
+texture = ExtResource("2_r4txc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect" unique_id=1799474463]
+modulate = Color(0.9999998, 0.11082401, 0.26997593, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 15.0
+offset_right = 77.0
+offset_bottom = 137.0
+offset_transform_enabled = true
+theme_override_constants/separation = 30
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect/VBoxContainer" unique_id=267426010]
+layout_mode = 2
+texture = ExtResource("3_ici4b")
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect/VBoxContainer" unique_id=801798501]
+layout_mode = 2
+texture = ExtResource("3_ici4b")
+
+[node name="TextureRect4" type="TextureRect" parent="TextureRect/VBoxContainer" unique_id=1832970905]
+layout_mode = 2
+texture = ExtResource("3_ici4b")
+
+[node name="TextureRect5" type="TextureRect" parent="TextureRect/VBoxContainer" unique_id=2091656450]
+layout_mode = 2
+texture = ExtResource("3_ici4b")
+
+[node name="VScrollBar" type="VScrollBar" parent="." unique_id=1758151442]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 15.0
+offset_right = 67.0
+offset_bottom = 137.0
+value = 100.0
+
+[node name="Button" type="Button" parent="." unique_id=602539978]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 144.0
+offset_right = 143.0
+offset_bottom = 161.0
+
+[node name="fluid" type="TextureRect" parent="." unique_id=1398232964]
+modulate = Color(0.30835682, 0.30804843, 0, 1)
+z_index = -1
+layout_mode = 0
+offset_left = 51.0
+offset_top = 120.0
+offset_right = 95.0
+offset_bottom = 138.0
+rotation = -3.1415927
+pivot_offset = Vector2(44, 18)
+texture = ExtResource("4_82u4q")
+expand_mode = 1
+
+[connection signal="value_changed" from="VScrollBar" to="." method="_on_v_scroll_bar_value_changed"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
