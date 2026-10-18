@@ -9,6 +9,7 @@ var module_data: ModuleData
 var linked_puzzle_slots: Dictionary[Vector2i, ShipModule] = {}
 var puzzle_code: Array[String] = []
 var puzzle_index: int = -1
+var ship_id: String
 
 func init_from_resource(module_data_new: ModuleData, module_position_new: Vector2i) -> void:
 	module_position = module_position_new
@@ -35,3 +36,6 @@ func use_module(is_correct: bool) -> void:
 		
 	if is_correct:
 		module_used.emit(module_data.module_name, puzzle_index)
+
+func set_ship_id(id_new: String) -> void:
+	ship_id = id_new

@@ -180,11 +180,11 @@ size_flags_horizontal = 4
 text = "menu.back"
 
 [connection signal="mouse_entered" from="MainVBC/StartMenuVBC/StartButton" to="." method="_on_any_hover"]
-[connection signal="pressed" from="MainVBC/StartMenuVBC/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainVBC/StartMenuVBC/StartButton" to="." method="_on_any_accept_button_pressed"]
+[connection signal="pressed" from="MainVBC/StartMenuVBC/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="mouse_entered" from="MainVBC/StartMenuVBC/SettingsButton" to="." method="_on_any_hover"]
-[connection signal="pressed" from="MainVBC/StartMenuVBC/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MainVBC/StartMenuVBC/SettingsButton" to="." method="_on_any_accept_button_pressed"]
+[connection signal="pressed" from="MainVBC/StartMenuVBC/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="mouse_entered" from="MainVBC/StartMenuVBC/CreditsButton" to="." method="_on_any_hover"]
 [connection signal="pressed" from="MainVBC/StartMenuVBC/CreditsButton" to="." method="_on_any_accept_button_pressed"]
 [connection signal="pressed" from="MainVBC/StartMenuVBC/CreditsButton" to="." method="_on_credits_button_pressed"]

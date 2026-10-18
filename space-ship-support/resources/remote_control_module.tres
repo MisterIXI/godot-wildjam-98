@@ -6,5 +6,5 @@
 script = ExtResource("1_eue8d")
 target_scene_path = "uid://c7jgcnbalm625"
 module_type = 2
-module_name = "Remote Control Module"
+module_name = "RCM"
 metadata/_custom_type_script = "uid://bouy1x6lj0101"

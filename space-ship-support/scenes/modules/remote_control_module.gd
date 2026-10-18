@@ -15,6 +15,8 @@ func has_matching_name(module: ShipModule, target_name: String) -> bool:
 
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
+	use_module(true)
+	
 	for module: ShipModule in target_modules:
 		if module.has_method("toggle_lock"):
 			@warning_ignore("unsafe_method_access")

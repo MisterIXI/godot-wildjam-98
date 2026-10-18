@@ -78,3 +78,5 @@ text = "Activate"
 layout_mode = 2
 text = "Action!"
 horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

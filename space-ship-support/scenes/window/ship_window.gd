@@ -24,6 +24,8 @@ var danger_level: int = 0:
 signal ship_strike
 signal ship_failure
 signal ship_success
+signal ship_partial_success
+
 @export var title_label: RichTextLabel
 
 func _update_title() -> void:
@@ -77,18 +79,30 @@ func _on_gui_input(event: InputEvent) -> void:
 func init_ship_layout(ship_layout_data_new: ShipLayoutData) -> void:
 	ship_layout_data = ship_layout_data_new
 	var ship_layout: ShipLayout = SHIP_LAYOUT.instantiate() as ShipLayout
-	ship_layout.init_from(ship_layout_data)
+	ship_layout.init_from(ship_layout_data, ship_id)
 
 	ship_layout.layout_strike.connect(_on_layout_strike)
 	ship_layout.layout_failure.connect(_on_layout_failure)
 	ship_layout.layout_success.connect(_on_layout_success)
+	ship_layout.layout_partial_success.connect(_on_layout_partial_success)
 	module_parent.add_child(ship_layout)
 
 func _on_layout_strike() -> void:
+	print("module: strike")
 	ship_strike.emit()
+	AudioManager.play_sfx(AudioManagerClass.SfxType.CANCEL)
 	
 func _on_layout_failure() -> void:
+	print("module: 3 strikes -> failure")
+	AudioManager.play_sfx(AudioManagerClass.SfxType.UTIL_B)
 	ship_failure.emit()
 
+func _on_layout_partial_success() -> void:
+	print("module: partial success")
+	AudioManager.play_sfx(AudioManagerClass.SfxType.ACCEPT)
+	ship_partial_success.emit()
+
 func _on_layout_success() -> void:
+	print("module: full success -> all puzzles solved")
+	AudioManager.play_sfx(AudioManagerClass.SfxType.UTIL_A)
 	ship_success.emit()

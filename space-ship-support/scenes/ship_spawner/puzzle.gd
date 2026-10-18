@@ -10,7 +10,7 @@ func init(puzzle_config: PuzzleConfigData) -> void:
 	
 	
 func use_module(module_name: String) -> bool:
-	if module_name == puzzle_sequence[current_progress_index]:
+	if module_name.strip_edges().to_lower() == puzzle_sequence[current_progress_index].strip_edges().to_lower():
 		current_progress_index += 1
 		return true
 		

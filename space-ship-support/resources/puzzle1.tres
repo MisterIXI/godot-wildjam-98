@@ -15,4 +15,5 @@ ExtResource("4_4d5uu"): Vector2i(1, 1)
 })
 puzzle_name = "Puzzle 1"
 analysis_code = Array[String](["0", "1", "0", "0", "1", "1", "1", "0", "1"])
+module_name_interaction_sequence = Array[String](["LAM", "RCM"])
 metadata/_custom_type_script = "uid://bqflxpuoyu2uc"

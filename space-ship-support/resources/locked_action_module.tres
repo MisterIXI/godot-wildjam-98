@@ -7,5 +7,5 @@ script = ExtResource("1_cb8ca")
 target_scene_path = "uid://dmn2w6p4x5lfp"
 required_relative_positions = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1)])
 module_type = 2
-module_name = "Locked Action Module"
+module_name = "LAM"
 metadata/_custom_type_script = "uid://bouy1x6lj0101"

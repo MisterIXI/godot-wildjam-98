@@ -27,7 +27,7 @@ anchors_preset = 0
 offset_right = 100.0
 offset_bottom = 100.0
 script = ExtResource("1_swtyh")
-target_module_name = "Locked Action Module"
+target_module_name = "LAM"
 
 [node name="BackgroundTR" type="TextureRect" parent="." unique_id=510566462]
 visible = false
