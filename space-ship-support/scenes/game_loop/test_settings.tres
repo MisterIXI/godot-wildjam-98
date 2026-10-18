@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="GameSettings" format=3 uid="uid://bmls1oam6big3"]
+
+[ext_resource type="Script" uid="uid://c7wv66gwm2c23" path="res://scenes/game_loop/game_settings.gd" id="1_o7f28"]
+
+[sub_resource type="Curve" id="Curve_3cg24"]
+_limits = [1.0, 26.0, 0.0, 1.0]
+_data = [Vector2(0, 13.420151), 0.0, 1.4253511, 0, 0, Vector2(0.61665833, 19.899355), 29.036268, 29.036268, 0, 0, Vector2(1, 26), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_ymt3o"]
+_limits = [0.0, 60.0, 0.0, 1.0]
+_data = [Vector2(0, 12.188908), 0.0, 0.0, 0, 0, Vector2(1, 3.2558289), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_o7f28")
+spawn_curve = SubResource("Curve_ymt3o")
+time_to_reach_max_dif = 200.0
+ship_speed_max_bonus = SubResource("Curve_3cg24")
+metadata/_custom_type_script = "uid://c7wv66gwm2c23"

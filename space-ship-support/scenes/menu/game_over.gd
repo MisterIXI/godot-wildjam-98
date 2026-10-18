@@ -22,7 +22,6 @@ func active(time,fixed,strikes) -> void:
 
 
 func _on_button_button_down() -> void:
-	print("Test")
 	get_tree().paused = false
 	visible = false
 	get_tree().change_scene_to_file(main_menu_scene)

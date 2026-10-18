@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cxi8ksk73nohu" path="res://scenes/game_loop/game_manager.gd" id="4_5i0tg"]
 [ext_resource type="PackedScene" uid="uid://py13r334qxcm" path="res://scenes/radar/ship.tscn" id="4_bdhmt"]
 [ext_resource type="PackedScene" uid="uid://b5pk7vgajiv42" path="res://scenes/window/ship_window.tscn" id="5_87uf6"]
-[ext_resource type="Resource" uid="uid://bgyernveiboi1" path="res://scenes/game_loop/default_settings.tres" id="5_bdhmt"]
+[ext_resource type="Resource" uid="uid://bmls1oam6big3" path="res://scenes/game_loop/test_settings.tres" id="7_vaxfo"]
 [ext_resource type="PackedScene" uid="uid://3rua33h6ar0t" path="res://scenes/menu/game_over.tscn" id="8_87uf6"]
 [ext_resource type="Script" uid="uid://dc3mh3v1d4l2x" path="res://scenes/ship_spawner/ship_layout_generator.gd" id="9_2a8rs"]
 [ext_resource type="Script" uid="uid://bqflxpuoyu2uc" path="res://scenes/ship_spawner/puzzle_config_data.gd" id="10_vaxfo"]
@@ -14,7 +14,21 @@
 [ext_resource type="Script" uid="uid://bouy1x6lj0101" path="res://scenes/ship_spawner/module_data.gd" id="12_otnwt"]
 [ext_resource type="Resource" uid="uid://isxtfa6m1xiu" path="res://resources/testing/test_filler_slot_1.tres" id="13_3xj4h"]
 
+[sub_resource type="Gradient" id="Gradient_87uf6"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bjsx5"]
+gradient = SubResource("Gradient_87uf6")
+width = 1280
+height = 720
+
 [node name="Game" type="Node2D" unique_id=798055916]
+
+[node name="RadarBackground" type="Sprite2D" parent="." unique_id=1491369615]
+z_index = -30
+position = Vector2(640, 360)
+texture = SubResource("GradientTexture2D_bjsx5")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1011835357]
 layer = 100
@@ -37,22 +51,25 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 1
 
 [node name="PauseMenuView" parent="UI" unique_id=1597465050 instance=ExtResource("1_7h61r")]
 visible = false
 z_index = 200
 
-[node name="Radar" type="Node2D" parent="." unique_id=1342668903 node_paths=PackedStringArray("window_root", "ship_layout_generator")]
+[node name="Radar" type="Node2D" parent="." unique_id=1342668903 node_paths=PackedStringArray("window_root", "radar_interface", "ship_layout_generator", "game_manager")]
 position = Vector2(360, 360)
 script = ExtResource("3_lfrn8")
 ship_scene = ExtResource("4_bdhmt")
 window_scene = ExtResource("5_87uf6")
 window_root = NodePath("../UI/WindowRoot")
+radar_interface = NodePath("../UI/RadarInterface")
 ship_layout_generator = NodePath("../ShipLayoutGenerator")
+game_manager = NodePath("../GameManager")
 
 [node name="GameManager" type="Node" parent="." unique_id=1430876819 node_paths=PackedStringArray("radar", "ui_canvas")]
 script = ExtResource("4_5i0tg")
-settings = ExtResource("5_bdhmt")
+settings = ExtResource("7_vaxfo")
 radar = NodePath("../Radar")
 ui_canvas = NodePath("../UI")
 game_over_scene = ExtResource("8_87uf6")

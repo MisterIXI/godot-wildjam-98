@@ -5,12 +5,13 @@
 [ext_resource type="FontFile" uid="uid://bbwwkkjcgbkgq" path="res://assets/fonts/PixelOperatorHBSC.ttf" id="2_obuqq"]
 [ext_resource type="Texture2D" uid="uid://d33n1qrupesbq" path="res://assets/9slice_base.png" id="4_lnte3"]
 
-[node name="ShipWindow" type="Panel" unique_id=118375707 node_paths=PackedStringArray("module_parent")]
+[node name="ShipWindow" type="Panel" unique_id=118375707 node_paths=PackedStringArray("module_parent", "title_label")]
 clip_contents = true
 offset_right = 550.0
 offset_bottom = 450.0
 script = ExtResource("1_4j3jj")
 module_parent = NodePath("ContentMarginContainer/HBoxContainer/ModuleMarginContainer/PanelContainer")
+title_label = NodePath("TitleBar/MarginContainer/TitleLabel")
 
 [node name="TitleBar" type="PanelContainer" parent="." unique_id=1596550366]
 custom_minimum_size = Vector2(0, 30)

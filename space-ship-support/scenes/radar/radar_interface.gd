@@ -17,13 +17,13 @@ func add_message(message: String) -> void:
 	if labels.size() >= 17:
 		labels.pop_front().queue_free()
 
-var time: float = 0
-var counter: float = 1
+# var time: float = 0
+# var counter: float = 1
 
-func _physics_process(delta: float) -> void:
-	time += delta
-	counter -= delta
-	if counter <= 0:
-		counter = 0.3
+# func _physics_process(delta: float) -> void:
+# 	time += delta
+# 	counter -= delta
+# 	if counter <= 0:
+# 		counter = 0.3
 
-		add_message("%d Current Time: %d %d" % [randi(),time,randi()])
+# 		add_message("%d Current Time: %d %d" % [randi(),time,randi()])

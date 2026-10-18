@@ -5,6 +5,7 @@ const SHIP_LAYOUT: PackedScene = preload("res://scenes/ship_spawner/ship_layout.
 
 @export var module_parent: Control
 
+var ship_id:String = "SHIPID"
 var title_mouse_down: bool = false
 var is_dragging: bool = false
 var mouse_pos_offset:= Vector2i.ZERO
@@ -14,11 +15,26 @@ var is_collapsed: bool = false
 var collapse_tween: Tween = null
 
 var ship_layout_data: ShipLayoutData
+## danger levels: 0=fixed, 1=warning, 2=critical
+var danger_level: int = 0:
+	set(val):
+		danger_level = val
+		_update_title()
 
 signal ship_strike
 signal ship_failure
 signal ship_success
+@export var title_label: RichTextLabel
 
+func _update_title() -> void:
+	match danger_level:
+		1: #warning
+			title_label.text = "Ship #%s Status: [pulse][color=yellow]WARNING[/color][/pulse]" % [ship_id]
+		2: # critical
+			title_label.text = "Ship #%s Status: [shake][color=red]CRITICAL[/color][/shake]" % [ship_id]
+		_: # default
+			title_label.text = "Ship #%s Status: [color=green]NORMAL[/color]" % [ship_id]
+			
 func _on_title_bar_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
