@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ModuleData" format=3 uid="uid://b2u1n5hlthydp"]
+
+[ext_resource type="Script" uid="uid://bouy1x6lj0101" path="res://scenes/ship_spawner/module_data.gd" id="1_cb8ca"]
+
+[resource]
+script = ExtResource("1_cb8ca")
+target_scene_path = "uid://dmn2w6p4x5lfp"
+required_relative_positions = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 1)])
+module_type = 2
+module_name = "Locked Action Module"
+metadata/_custom_type_script = "uid://bouy1x6lj0101"

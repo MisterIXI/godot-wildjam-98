@@ -4,6 +4,7 @@ menu.settings;Settings;Einstellungen
 menu.credits;Credits;Credits
 menu.quit;Quit;Beenden
 menu.back;Back;Zurück
+menu.back_to_main;Main Menu;Hauptmenü
 menu.try_again;Try Again;Neuer Versuch
 menu.main_menu;Main Menu;Hauptmenü
 menu.settings.overall_volume;Overall Volume;Gesamtlautstärke
