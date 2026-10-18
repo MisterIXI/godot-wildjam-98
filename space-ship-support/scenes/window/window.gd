@@ -20,14 +20,13 @@ func _on_title_bar_gui_input(event: InputEvent) -> void:
 					position.y < -$TitleBar.size.y or \
 					position.x > get_viewport_rect().size.x or \
 					position.y > get_viewport_rect().size.y:
-						print($TitleBar.size.y)
 						position = Vector2(500, 200)
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 			if collapse_tween:
 				collapse_tween.kill()
 			if is_collapsed:
 				collapse_tween = create_tween()
-				collapse_tween.tween_property(self, "size:y", 400., 0.1)
+				collapse_tween.tween_property(self, "size:y", 450., 0.1)
 			else:
 				collapse_tween = create_tween()
 				collapse_tween.tween_property(self, "size:y", 30, 0.1)

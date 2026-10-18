@@ -1,4 +1,4 @@
-class_name Radar
+
 extends Node2D
 
 const SHIP_LOAD = preload("res://scenes/radar/ship.tscn")

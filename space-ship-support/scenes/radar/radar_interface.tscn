@@ -1,0 +1,353 @@
+[gd_scene format=3 uid="uid://8ngq5jrsqykh"]
+
+[ext_resource type="Texture2D" uid="uid://buuf0it8q0n1g" path="res://assets/9slice_base_border_only.png" id="1_ft5iu"]
+[ext_resource type="Texture2D" uid="uid://l6wjvg6xnku1" path="res://assets/screw.png" id="2_fk41b"]
+[ext_resource type="Texture2D" uid="uid://c840x7irphqtl" path="res://assets/radar_base_bordered.png" id="3_fk41b"]
+[ext_resource type="Texture2D" uid="uid://cuhg3ybayhh3r" path="res://assets/9slice_base_200.png" id="4_nbdxh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjsx5"]
+texture = ExtResource("3_fk41b")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rp4mp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjsx5"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="RadarInterface" type="Control" unique_id=1869526097]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=834275915]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ft5iu")
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+
+[node name="Screw" type="TextureRect" parent="NinePatchRect" unique_id=1641090815]
+layout_mode = 1
+offset_left = 27.0
+offset_top = 35.0
+offset_right = 32.0
+offset_bottom = 40.0
+rotation = 0.8696947
+texture = ExtResource("2_fk41b")
+expand_mode = 1
+
+[node name="Screw2" type="TextureRect" parent="NinePatchRect" unique_id=2067192446]
+layout_mode = 1
+offset_left = 38.0
+offset_top = 26.000002
+offset_right = 43.0
+offset_bottom = 31.000002
+rotation = -0.32080412
+texture = ExtResource("2_fk41b")
+expand_mode = 1
+
+[node name="Screw3" type="TextureRect" parent="NinePatchRect" unique_id=2055872410]
+layout_mode = 1
+offset_left = 16.000002
+offset_top = 22.000002
+offset_right = 21.000002
+offset_bottom = 27.000002
+rotation = 1.8237311
+texture = ExtResource("2_fk41b")
+expand_mode = 1
+
+[node name="Screw4" type="TextureRect" parent="NinePatchRect" unique_id=1812759267]
+layout_mode = 1
+offset_left = 20.000002
+offset_top = 12.000002
+offset_right = 24.999998
+offset_bottom = 17.000002
+rotation = -1.3854231
+texture = ExtResource("2_fk41b")
+expand_mode = 1
+
+[node name="Screw5" type="TextureRect" parent="NinePatchRect" unique_id=201285443]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.999878
+offset_top = -23.999939
+offset_right = -8.999878
+offset_bottom = -18.999939
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -0.5499592
+texture = ExtResource("2_fk41b")
+expand_mode = 1
+
+[node name="Screw6" type="TextureRect" parent="NinePatchRect" unique_id=192764136]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.999878
+offset_top = -35.0
+offset_right = -20.999878
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -1.740458
+texture = ExtResource("2_fk41b")
+expand_mode = 1
+
+[node name="Screw7" type="TextureRect" parent="NinePatchRect" unique_id=1253976109]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -15.0
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 0.40407717
+texture = ExtResource("2_fk41b")
+expand_mode = 1
+
+[node name="Screw8" type="TextureRect" parent="NinePatchRect" unique_id=1137092064]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -21.999939
+offset_right = -31.0
+offset_bottom = -16.999939
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -2.805077
+texture = ExtResource("2_fk41b")
+expand_mode = 1
+
+[node name="Screw9" type="TextureRect" parent="NinePatchRect" unique_id=39433918]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.999878
+offset_top = 12.0
+offset_right = -15.999878
+offset_bottom = 16.999998
+grow_horizontal = 0
+rotation = 3.218865
+texture = ExtResource("2_fk41b")
+expand_mode = 1
+
+[node name="Screw10" type="TextureRect" parent="NinePatchRect" unique_id=127380074]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -36.0
+offset_top = 24.999939
+offset_right = -31.0
+offset_bottom = 29.999939
+grow_horizontal = 0
+rotation = 2.028366
+texture = ExtResource("2_fk41b")
+expand_mode = 1
+
+[node name="Screw11" type="TextureRect" parent="NinePatchRect" unique_id=2073497946]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -10.0
+offset_top = 27.0
+offset_right = -5.0
+offset_bottom = 32.0
+grow_horizontal = 0
+rotation = 4.172901
+texture = ExtResource("2_fk41b")
+expand_mode = 1
+
+[node name="Screw12" type="TextureRect" parent="NinePatchRect" unique_id=748446055]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -27.0
+offset_top = 37.99994
+offset_right = -22.0
+offset_bottom = 42.99994
+grow_horizontal = 0
+rotation = 0.96374714
+texture = ExtResource("2_fk41b")
+expand_mode = 1
+
+[node name="Screw13" type="TextureRect" parent="NinePatchRect" unique_id=100399555]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 22.999985
+offset_top = -6.999939
+offset_right = 27.999985
+offset_bottom = -1.999939
+grow_vertical = 0
+rotation = 4.4263105
+texture = ExtResource("2_fk41b")
+expand_mode = 1
+
+[node name="Screw14" type="TextureRect" parent="NinePatchRect" unique_id=1578033027]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 44.000008
+offset_top = -25.0
+offset_right = 49.000008
+offset_bottom = -20.0
+grow_vertical = 0
+rotation = 3.2358115
+texture = ExtResource("2_fk41b")
+expand_mode = 1
+
+[node name="Screw15" type="TextureRect" parent="NinePatchRect" unique_id=645683704]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -24.0
+offset_right = 13.0
+offset_bottom = -19.0
+grow_vertical = 0
+rotation = 5.380347
+texture = ExtResource("2_fk41b")
+expand_mode = 1
+
+[node name="Screw16" type="TextureRect" parent="NinePatchRect" unique_id=1679598904]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = -37.0
+offset_right = 33.0
+offset_bottom = -32.0
+grow_vertical = 0
+rotation = 2.1711924
+texture = ExtResource("2_fk41b")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=57197309]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bjsx5")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=995914839]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -580.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -520.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("4_nbdxh")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect2" unique_id=786761546]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="NinePatchRect2/MarginContainer" unique_id=959813070]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rp4mp")
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="." unique_id=1497048696]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -580.0
+offset_top = 220.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("4_nbdxh")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect3" unique_id=70514182]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bjsx5")
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect3/ScrollContainer" unique_id=829640494]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect3/ScrollContainer/MarginContainer" unique_id=1607041610]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+theme_override_constants/separation = 1
+alignment = 2

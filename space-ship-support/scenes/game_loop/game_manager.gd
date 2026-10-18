@@ -23,7 +23,8 @@ func _physics_process(delta: float) -> void:
 	time_to_next_ship -= delta
 	if time_to_next_ship <= 0.0:
 		spawn_ship()
-		time_to_next_ship = settings.spawn_curve.sample(time_elapsed / settings.time_to_reach_max_dif) * settings.max_ship_per_sec
+		time_to_next_ship = settings.spawn_curve.sample(time_elapsed / settings.time_to_reach_max_dif) + ((randf() - 0.5) * settings.max_variance)
+		print("time to next ship: ", time_to_next_ship)
 
 func on_ship_lost() -> void:
 	mistakes += 1
@@ -38,4 +39,3 @@ func on_ship_fixed() -> void:
 
 func spawn_ship() -> void:
 	radar.spawn_ship()
-

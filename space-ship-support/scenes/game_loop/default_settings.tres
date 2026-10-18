@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://c7wv66gwm2c23" path="res://scenes/game_loop/game_settings.gd" id="1_vpts6"]
 
 [sub_resource type="Curve" id="Curve_ymt3o"]
-_data = [Vector2(0, 0.009949565), 0.0, 1.7930577, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_limits = [20.0, 60.0, 0.0, 1.0]
+_data = [Vector2(0, 60), 0.0, 0.0, 0, 0, Vector2(1, 20), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [resource]
