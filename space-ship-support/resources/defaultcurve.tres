@@ -1,0 +1,5 @@
+[gd_resource type="Curve" format=3 uid="uid://t8ft254lfjgd"]
+
+[resource]
+resource_local_to_scene = true
+_limits = [-2.2351741e-10, 1.0, 0.0, 1.0]

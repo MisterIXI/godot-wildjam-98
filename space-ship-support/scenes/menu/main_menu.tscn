@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://r30qnun58o1"]
+
+[ext_resource type="Script" uid="uid://bhsmplmj7o57o" path="res://scenes/menu/main_menu.gd" id="1_247la"]
+[ext_resource type="Script" uid="uid://campr7olnoogg" path="res://scenes/menu/background_anim.gd" id="2_kiqgm"]
+[ext_resource type="PackedScene" uid="uid://bc5iju7qppj7f" path="res://scenes/settings/settings.tscn" id="3_hj162"]
+
+[node name="MainMenu" type="Control" unique_id=1163263357 node_paths=PackedStringArray("main_vbc", "settings_container", "credits_container", "quit_button")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_247la")
+game_scene_path = "uid://cv8qxcnh1h5vn"
+main_vbc = NodePath("MainVBC")
+settings_container = NodePath("SubMenuMC/SettingsPanel")
+credits_container = NodePath("SubMenuMC/CreditsPanel")
+quit_button = NodePath("MainVBC/StartMenuVBC/QuitButton")
+
+[node name="Background" type="Control" parent="." unique_id=908403620]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_kiqgm")
+frequency = 0.106
+lifetime = 1.93
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=1403578053]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15686275, 0.12941177, 0.28627452, 1)
+
+[node name="MainVBC" type="VBoxContainer" parent="." unique_id=111137526]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -725.5
+offset_top = -151.0
+offset_right = 725.5
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 28
+
+[node name="TitleVBC" type="VBoxContainer" parent="MainVBC" unique_id=466341702]
+layout_mode = 2
+
+[node name="TitleRTLabel" type="RichTextLabel" parent="MainVBC/TitleVBC" unique_id=1592645626]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center][color=gray]sssssssssssssssssssssssssssssssssss[/color]SSTS[color=gray][wave amp=100 freq=1]sssssssssssssssssssssssssssssssssss[/wave][/color][/center]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="SubTitleLabel" type="Label" parent="MainVBC/TitleVBC" unique_id=785728199]
+layout_mode = 2
+text = "Space Ship Tech Support"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartMenuVBC" type="VBoxContainer" parent="MainVBC" unique_id=1332037113]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="StartButton" type="Button" parent="MainVBC/StartMenuVBC" unique_id=2136982648]
+layout_mode = 2
+text = "menu.start"
+
+[node name="SettingsButton" type="Button" parent="MainVBC/StartMenuVBC" unique_id=2032212149]
+layout_mode = 2
+text = "menu.settings"
+
+[node name="CreditsButton" type="Button" parent="MainVBC/StartMenuVBC" unique_id=1310223063]
+layout_mode = 2
+text = "menu.credits"
+
+[node name="QuitButton" type="Button" parent="MainVBC/StartMenuVBC" unique_id=1108162412]
+layout_mode = 2
+text = "menu.quit"
+
+[node name="SubMenuMC" type="MarginContainer" parent="." unique_id=669513563]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="SettingsPanel" type="Panel" parent="SubMenuMC" unique_id=1797043354]
+visible = false
+layout_mode = 2
+
+[node name="SettingsMC" type="MarginContainer" parent="SubMenuMC/SettingsPanel" unique_id=1110718838]
+layout_mode = 0
+offset_right = 1180.0
+offset_bottom = 620.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Settings" parent="SubMenuMC/SettingsPanel/SettingsMC" unique_id=1996866761 instance=ExtResource("3_hj162")]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="SubMenuMC/SettingsPanel/SettingsMC/Settings" unique_id=181622513]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "menu.back"
+
+[node name="CreditsPanel" type="Panel" parent="SubMenuMC" unique_id=1955272177]
+visible = false
+layout_mode = 2
+
+[node name="CreditsMC" type="MarginContainer" parent="SubMenuMC/CreditsPanel" unique_id=1084323870]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubMenuMC/CreditsPanel/CreditsMC" unique_id=2046889196]
+layout_mode = 2
+alignment = 1
+
+[node name="CreditsTitleRTL" type="RichTextLabel" parent="SubMenuMC/CreditsPanel/CreditsMC/VBoxContainer" unique_id=168250630]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "menu.credits"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SubMenuMC/CreditsPanel/CreditsMC/VBoxContainer" unique_id=1510352773]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="CreditsContentRTL" type="RichTextLabel" parent="SubMenuMC/CreditsPanel/CreditsMC/VBoxContainer/ScrollContainer" unique_id=55473329]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Made by;
+[color=#55AA55](insert your name here)[/color]
+[color=#55AACC](insert your name here)[/color]
+[color=#CCAA55](insert your name here)[/color]
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="SubMenuMC/CreditsPanel/CreditsMC/VBoxContainer" unique_id=1496748910]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "menu.back"
+
+[connection signal="pressed" from="MainVBC/StartMenuVBC/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainVBC/StartMenuVBC/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MainVBC/StartMenuVBC/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MainVBC/StartMenuVBC/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="SubMenuMC/SettingsPanel/SettingsMC/Settings/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SubMenuMC/CreditsPanel/CreditsMC/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

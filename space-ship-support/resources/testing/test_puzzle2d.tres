@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PuzzleConfigData" format=3 uid="uid://dos6oggqf5m6t"]
+
+[ext_resource type="Script" uid="uid://bouy1x6lj0101" path="res://scenes/ship_spawner/module_data.gd" id="1_3ce7r"]
+[ext_resource type="Resource" uid="uid://no2xp6ccdpc4" path="res://resources/testing/test_analysis_slot_2.tres" id="2_dwouo"]
+[ext_resource type="Resource" uid="uid://bk5065kvnpqhx" path="res://resources/testing/test_action_slot_2.tres" id="3_gtw8e"]
+[ext_resource type="Script" uid="uid://bqflxpuoyu2uc" path="res://scenes/ship_spawner/puzzle_config_data.gd" id="4_64ppq"]
+
+[resource]
+script = ExtResource("4_64ppq")
+relative_module_positions = Dictionary[ExtResource("1_3ce7r"), Vector2i]({
+ExtResource("2_dwouo"): Vector2i(0, 0),
+ExtResource("3_gtw8e"): Vector2i(1, 0)
+})
+puzzle_name = "Puzzle 2d"
+metadata/_custom_type_script = "uid://bqflxpuoyu2uc"

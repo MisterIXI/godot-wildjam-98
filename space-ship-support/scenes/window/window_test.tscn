@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://xhmfsp6u7yvk"]
+
+[ext_resource type="PackedScene" uid="uid://b5pk7vgajiv42" path="res://scenes/window/window.tscn" id="1_3uwou"]
+
+[node name="Node2D" type="Node2D" unique_id=1606845723]
+
+[node name="Window" parent="." unique_id=118375707 instance=ExtResource("1_3uwou")]
+
+[node name="Window2" parent="." unique_id=1055275667 instance=ExtResource("1_3uwou")]
+
+[node name="Window3" parent="." unique_id=2068639789 instance=ExtResource("1_3uwou")]
+
+[node name="Window4" parent="." unique_id=382795771 instance=ExtResource("1_3uwou")]
+
+[node name="Window5" parent="." unique_id=206212263 instance=ExtResource("1_3uwou")]

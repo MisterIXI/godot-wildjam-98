@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://bc5iju7qppj7f"]
+
+[ext_resource type="Script" uid="uid://gtauloxcvmco" path="res://scenes/settings/settings.gd" id="1_26ncd"]
+
+[node name="Settings" type="VBoxContainer" unique_id=1996866761 node_paths=PackedStringArray("overall_volume_h_slider", "music_volume_h_slider", "sfx_volume_h_slider", "overall_volume_value_label", "music_volume_value_label", "sfx_volume_value_label", "locale_option_button", "fullscreen_check_button")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_26ncd")
+overall_volume_h_slider = NodePath("ScrollContainer/VBoxContainer/OverallVolumeHBC/OverallVolumeHSlider")
+music_volume_h_slider = NodePath("ScrollContainer/VBoxContainer/MusicVolumeHBC/MusicVolumeHSlider")
+sfx_volume_h_slider = NodePath("ScrollContainer/VBoxContainer/SFXVolumeHBC/SFXVolumeHSlider")
+overall_volume_value_label = NodePath("ScrollContainer/VBoxContainer/OverallVolumeHBC/OverallVolumeValueLabel")
+music_volume_value_label = NodePath("ScrollContainer/VBoxContainer/MusicVolumeHBC/MusicVolumeValueLabel")
+sfx_volume_value_label = NodePath("ScrollContainer/VBoxContainer/SFXVolumeHBC/SFXVolumeValueLabel")
+locale_option_button = NodePath("ScrollContainer/VBoxContainer/LocaleHBC/LocaleOptionButton")
+fullscreen_check_button = NodePath("ScrollContainer/VBoxContainer/FullscreenHBC/FullscreenCheckButton")
+
+[node name="SettingsTitleRTL" type="RichTextLabel" parent="." unique_id=459901579]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "menu.settings"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1344196133]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=840538714]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="OverallVolumeHBC" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=306312290]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="OverallVolumeLabel" type="Label" parent="ScrollContainer/VBoxContainer/OverallVolumeHBC" unique_id=1409725293]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "menu.settings.overall_volume"
+vertical_alignment = 1
+
+[node name="OverallVolumeHSlider" type="HSlider" parent="ScrollContainer/VBoxContainer/OverallVolumeHBC" unique_id=2098901198]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="OverallVolumeValueLabel" type="Label" parent="ScrollContainer/VBoxContainer/OverallVolumeHBC" unique_id=1803758214]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "100%"
+vertical_alignment = 1
+
+[node name="MusicVolumeHBC" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=47607336]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="MusicVolumeLabel" type="Label" parent="ScrollContainer/VBoxContainer/MusicVolumeHBC" unique_id=1787072780]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "menu.settings.music_volume"
+vertical_alignment = 1
+
+[node name="MusicVolumeHSlider" type="HSlider" parent="ScrollContainer/VBoxContainer/MusicVolumeHBC" unique_id=105496144]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="MusicVolumeValueLabel" type="Label" parent="ScrollContainer/VBoxContainer/MusicVolumeHBC" unique_id=698470148]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "100%"
+vertical_alignment = 1
+
+[node name="SFXVolumeHBC" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1873920401]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="SFXVolumeLabel" type="Label" parent="ScrollContainer/VBoxContainer/SFXVolumeHBC" unique_id=325692793]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "menu.settings.sfx_volume"
+vertical_alignment = 1
+
+[node name="SFXVolumeHSlider" type="HSlider" parent="ScrollContainer/VBoxContainer/SFXVolumeHBC" unique_id=349267160]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="SFXVolumeValueLabel" type="Label" parent="ScrollContainer/VBoxContainer/SFXVolumeHBC" unique_id=1855702107]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "100%"
+vertical_alignment = 1
+
+[node name="LocaleHBC" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=832824677]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LocaleLabel" type="Label" parent="ScrollContainer/VBoxContainer/LocaleHBC" unique_id=1011096408]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "menu.settings.language"
+vertical_alignment = 1
+
+[node name="LocaleOptionButton" type="OptionButton" parent="ScrollContainer/VBoxContainer/LocaleHBC" unique_id=1525600232]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "Deutsch"
+popup/item_1/id = 1
+
+[node name="FullscreenHBC" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=497856025]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="FullscreenLabel" type="Label" parent="ScrollContainer/VBoxContainer/FullscreenHBC" unique_id=689891172]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "menu.settings.fullscreen"
+vertical_alignment = 1
+
+[node name="FullscreenCheckButton" type="CheckButton" parent="ScrollContainer/VBoxContainer/FullscreenHBC" unique_id=1556226843]
+layout_mode = 2
+
+[connection signal="drag_ended" from="ScrollContainer/VBoxContainer/OverallVolumeHBC/OverallVolumeHSlider" to="." method="_on_overall_volume_h_slider_drag_ended"]
+[connection signal="value_changed" from="ScrollContainer/VBoxContainer/OverallVolumeHBC/OverallVolumeHSlider" to="." method="_on_overall_volume_h_slider_value_changed"]
+[connection signal="drag_ended" from="ScrollContainer/VBoxContainer/MusicVolumeHBC/MusicVolumeHSlider" to="." method="_on_music_volume_h_slider_drag_ended"]
+[connection signal="value_changed" from="ScrollContainer/VBoxContainer/MusicVolumeHBC/MusicVolumeHSlider" to="." method="_on_music_volume_h_slider_value_changed"]
+[connection signal="drag_ended" from="ScrollContainer/VBoxContainer/SFXVolumeHBC/SFXVolumeHSlider" to="." method="_on_sfx_volume_h_slider_drag_ended"]
+[connection signal="value_changed" from="ScrollContainer/VBoxContainer/SFXVolumeHBC/SFXVolumeHSlider" to="." method="_on_sfx_volume_h_slider_value_changed"]
+[connection signal="item_selected" from="ScrollContainer/VBoxContainer/LocaleHBC/LocaleOptionButton" to="." method="_on_locale_option_button_item_selected"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/FullscreenHBC/FullscreenCheckButton" to="." method="_on_fullscreen_check_button_toggled"]

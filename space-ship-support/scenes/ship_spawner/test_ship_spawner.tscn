@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d4jvjsp0r67u1"]
+
+[ext_resource type="Script" uid="uid://dc3mh3v1d4l2x" path="res://scenes/ship_spawner/ship_spawner.gd" id="1_vvuxq"]
+[ext_resource type="Script" uid="uid://bqflxpuoyu2uc" path="res://scenes/ship_spawner/puzzle_config_data.gd" id="2_y7iji"]
+[ext_resource type="Resource" uid="uid://bo1m5stq58h8u" path="res://resources/puzzle1.tres" id="3_y7iji"]
+[ext_resource type="Resource" uid="uid://isxtfa6m1xiu" path="res://resources/testing/test_filler_slot_1.tres" id="5_11od8"]
+[ext_resource type="Resource" uid="uid://g7rjmf1dghtf" path="res://resources/testing/test_filler_slot_2.tres" id="6_dwqdy"]
+[ext_resource type="Script" uid="uid://bouy1x6lj0101" path="res://scenes/ship_spawner/module_data.gd" id="9_pqunv"]
+[ext_resource type="Resource" uid="uid://nbatvi28pjdp" path="res://resources/testing/test_filler_slot_3_1x2.tres" id="12_y7dr2"]
+[ext_resource type="Resource" uid="uid://bqwudtff6ymlv" path="res://resources/testing/test_filler_slot_4_2x2.tres" id="13_v41k8"]
+
+[node name="TestShipSpawner" type="Control" unique_id=1596218387]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vvuxq")
+puzzle_configs = Array[ExtResource("2_y7iji")]([ExtResource("3_y7iji")])
+available_fillers = Array[ExtResource("9_pqunv")]([ExtResource("5_11od8"), ExtResource("6_dwqdy"), ExtResource("12_y7dr2"), ExtResource("13_v41k8")])
