@@ -13,9 +13,9 @@ signal ship_partial_success
 @export var integrity_color_on: Color
 @export var integrity_color_off: Color
 @export var integrity_leds: Array[TextureRect]
+var ship_radar_icon: Sprite2D
 
 var integrity_left: int = 3
-
 var ship_id:String = "SHIPID"
 var title_mouse_down: bool = false
 var is_dragging: bool = false
@@ -49,6 +49,7 @@ func _update_title() -> void:
 			alert_tween()
 		_: # default
 			title_label.text = "Ship #%s Status: [color=green]NORMAL[/color]" % [ship_id]
+			clear_mode_tween()
 			
 func _on_title_bar_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -133,10 +134,14 @@ func _on_layout_success() -> void:
 	print("module: full success -> all puzzles solved")
 	AudioManager.play_sfx(AudioManagerClass.SfxType.UTIL_A)
 	ship_success.emit()
+	danger_level = 0
 
 func clear_mode_tween() -> void:
 	if mode_tween:
 		mode_tween.kill()
+	mode_tween = create_tween()
+	mode_tween.tween_property(self, "modulate", Color.WHITE, 2)
+	mode_tween.parallel().tween_property(ship_radar_icon, "modulate", Color.WHITE, 2)
 
 func warning_tween()-> void:
 	if mode_tween:
@@ -144,7 +149,9 @@ func warning_tween()-> void:
 	mode_tween = create_tween()
 	mode_tween.set_loops()
 	mode_tween.tween_property(self,"modulate",Color(1,1,0.5,1.0),2)
+	mode_tween.parallel().tween_property(ship_radar_icon, "modulate", Color(1,1,0.5,1.0),2)
 	mode_tween.tween_property(self,"modulate",Color.WHITE,2)
+	mode_tween.parallel().tween_property(ship_radar_icon, "modulate", Color.WHITE,2)
 
 func alert_tween()->void:
 	if mode_tween:
@@ -152,10 +159,15 @@ func alert_tween()->void:
 	mode_tween = create_tween()
 	mode_tween.set_loops()
 	mode_tween.tween_property(self,"modulate",Color(1,0.5,0.5,1.0),1)
+	mode_tween.parallel().tween_property(ship_radar_icon, "modulate", Color(1,0.5,0.5,1.0),1)
 	mode_tween.tween_property(self,"modulate",Color.WHITE,1)
+	mode_tween.parallel().tween_property(ship_radar_icon, "modulate", Color.WHITE,1)
+
 
 func flash_window() -> void:
 	var tween:= create_tween()
 	tween.set_loops(5)
 	tween.tween_property(self,"modulate",Color(0.5,0.5,0.5,1.0),0.5)
+	mode_tween.parallel().tween_property(ship_radar_icon, "modulate", Color(0.5,0.5,0.5,1.0),0.5)
 	tween.tween_property(self,"modulate",Color.WHITE,0.5)
+	mode_tween.parallel().tween_property(ship_radar_icon, "modulate", Color.WHITE,0.5)

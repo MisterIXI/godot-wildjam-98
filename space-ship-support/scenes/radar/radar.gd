@@ -34,6 +34,8 @@ func spawn_ship(layout_difficulty: float = 0.0) -> void:
 	ship_window.ship_id = new_ship.ship_id
 	ship_window._update_title()
 	ship_window.hide()
+	ship_window.ship_radar_icon = new_ship.get_node("Sprite2D")
+	ship_window.danger_level = 2
 	window_root.add_child(ship_window)
 	new_ship.ship_window = ship_window
 	radar_interface.add_message("Ship detected at: %s | ID: %s" % [str(spawn_pos), new_ship.ship_id])
