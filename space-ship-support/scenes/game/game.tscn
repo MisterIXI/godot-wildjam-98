@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://py13r334qxcm" path="res://scenes/radar/ship.tscn" id="4_bdhmt"]
 [ext_resource type="PackedScene" uid="uid://b5pk7vgajiv42" path="res://scenes/window/window.tscn" id="5_87uf6"]
 [ext_resource type="Resource" uid="uid://bgyernveiboi1" path="res://scenes/game_loop/default_settings.tres" id="5_bdhmt"]
+[ext_resource type="PackedScene" uid="uid://3rua33h6ar0t" path="res://scenes/menu/game_over.tscn" id="8_87uf6"]
 
 [node name="Game" type="Node2D" unique_id=798055916]
 
@@ -42,8 +43,10 @@ ship_scene = ExtResource("4_bdhmt")
 window_scene = ExtResource("5_87uf6")
 window_root = NodePath("../UI/WindowRoot")
 
-[node name="GameManager" type="Node" parent="." unique_id=1430876819 node_paths=PackedStringArray("radar")]
+[node name="GameManager" type="Node" parent="." unique_id=1430876819 node_paths=PackedStringArray("radar", "ui_canvas")]
 script = ExtResource("4_5i0tg")
 settings = ExtResource("5_bdhmt")
 radar = NodePath("../Radar")
+ui_canvas = NodePath("../UI")
+game_over_scene = ExtResource("8_87uf6")
 metadata/_custom_type_script = "uid://cxi8ksk73nohu"

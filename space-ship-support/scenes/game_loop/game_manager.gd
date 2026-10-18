@@ -11,6 +11,8 @@ var time_to_next_ship: float = 3.0
 
 @export var settings: GameSettings
 @export var radar: Radar
+@export var ui_canvas: CanvasLayer
+@export var game_over_scene:PackedScene
 
 func _ready() -> void:
 	radar.ship_lost.connect(on_ship_lost)
@@ -31,7 +33,7 @@ func on_ship_lost() -> void:
 	if mistakes >= MISTAKES_TO_FAIL:
 		# game over
 		print("Game over with final time: ", time_elapsed)
-		#TODO: popup final screen
+		var end_screen:GameOver
 	#TODO: update mistake/strike visual on radar
 
 func on_ship_fixed() -> void:
