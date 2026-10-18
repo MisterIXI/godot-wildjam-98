@@ -31,6 +31,8 @@ func spawn_ship(layout_difficulty: float = 0.0) -> void:
 	# rotate by -0.5 to 0.5 rad
 	new_ship.ship_direction = (-spawn_pos).normalized().rotated(randf()-0.5)
 	var ship_window: ShipWindow = window_scene.instantiate()
+	ship_window.ship_id = new_ship.ship_id
+	ship_window._update_title()
 	ship_window.hide()
 	window_root.add_child(ship_window)
 	new_ship.ship_window = ship_window
@@ -51,6 +53,8 @@ func spawn_ship(layout_difficulty: float = 0.0) -> void:
 func on_ship_destroyed(ship: Ship, was_fixed: bool) ->  void:
 	if was_fixed:
 		radar_interface.add_message("Ship $%s left comms range and was fixed." % [ship.ship_id])
+		ship_fixed.emit()
 	else:
 		radar_interface.add_message("Signal to Ship $%s lost. Not all issues fixed. Penalty applied." % [ship.ship_id])
+		ship_lost.emit()
 	current_ids.erase(ship.ship_id)

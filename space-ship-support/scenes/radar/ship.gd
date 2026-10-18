@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	position += ship_direction * ship_speed * delta
 	if position.length() > 360:
 		#TODO: check if ship is fixed when leaving area
-		destroyed.emit(self, true)
+		destroyed.emit(self, false)
 		#TODO: add destroy/close animation
 		ship_window.queue_free()
 		queue_free()

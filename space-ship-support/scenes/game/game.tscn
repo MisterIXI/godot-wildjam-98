@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cxi8ksk73nohu" path="res://scenes/game_loop/game_manager.gd" id="4_5i0tg"]
 [ext_resource type="PackedScene" uid="uid://py13r334qxcm" path="res://scenes/radar/ship.tscn" id="4_bdhmt"]
 [ext_resource type="PackedScene" uid="uid://b5pk7vgajiv42" path="res://scenes/window/ship_window.tscn" id="5_87uf6"]
-[ext_resource type="Resource" uid="uid://bgyernveiboi1" path="res://scenes/game_loop/default_settings.tres" id="5_bdhmt"]
+[ext_resource type="Resource" uid="uid://bmls1oam6big3" path="res://scenes/game_loop/test_settings.tres" id="7_vaxfo"]
 [ext_resource type="PackedScene" uid="uid://3rua33h6ar0t" path="res://scenes/menu/game_over.tscn" id="8_87uf6"]
 [ext_resource type="Script" uid="uid://dc3mh3v1d4l2x" path="res://scenes/ship_spawner/ship_layout_generator.gd" id="9_2a8rs"]
 [ext_resource type="Script" uid="uid://bqflxpuoyu2uc" path="res://scenes/ship_spawner/puzzle_config_data.gd" id="10_vaxfo"]
@@ -69,7 +69,7 @@ game_manager = NodePath("../GameManager")
 
 [node name="GameManager" type="Node" parent="." unique_id=1430876819 node_paths=PackedStringArray("radar", "ui_canvas")]
 script = ExtResource("4_5i0tg")
-settings = ExtResource("5_bdhmt")
+settings = ExtResource("7_vaxfo")
 radar = NodePath("../Radar")
 ui_canvas = NodePath("../UI")
 game_over_scene = ExtResource("8_87uf6")
