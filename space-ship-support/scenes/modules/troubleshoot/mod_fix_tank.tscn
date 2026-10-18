@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://biow58ryuxol5"]
+
+[ext_resource type="Script" uid="uid://ds85wtufgewv1" path="res://scenes/modules/troubleshoot/mod_fix_tank.gd" id="1_ajvvl"]
+[ext_resource type="Texture2D" uid="uid://d33n1qrupesbq" path="res://assets/9slice_base.png" id="1_cnbn8"]
+
+[node name="ModFixTank" type="Control" unique_id=146065310]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1180.0
+offset_bottom = -620.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ajvvl")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1039676713]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("1_cnbn8")
+
+[node name="VScrollBar" type="VScrollBar" parent="TextureRect" unique_id=1304947937]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 11.0
+offset_right = 37.0
+offset_bottom = 74.0
+value = 100.0
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2056364265]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 73.882706
+offset_right = 123.39279
+offset_bottom = 100.882706
+rotation = -1.5707964
+theme_override_colors/font_color = Color(0.94385463, 0.9537517, 0, 1)
+value = 100.0
+fill_mode = 1
+show_percentage = false
+
+[node name="Panel" type="Panel" parent="ProgressBar" unique_id=291710925]
+modulate = Color(0.45043758, 0.815826, 0, 1)
+layout_mode = 0
+offset_left = -0.050437927
+offset_right = 63.327072
+offset_bottom = 26.936855
+
+[node name="Button" type="Button" parent="." unique_id=408448545]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 75.0
+offset_right = 90.0
+offset_bottom = 90.0
+
+[node name="Label" type="Label" parent="Button" unique_id=1454088568]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -5.0
+offset_right = 89.0
+offset_bottom = 18.0
+text = "Activate"
+
+[connection signal="value_changed" from="TextureRect/VScrollBar" to="." method="_on_v_scroll_bar_value_changed"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
