@@ -6,5 +6,5 @@ The core gameplay is to diagnose and then fix space ships that are within reach 
 
 The goal of the jam for us was to primarily learn more stuff - mainly UI - and we didn't have much time to actually work on the game. Most of the game was made within the last 2-3 days.
 
-![ingame screenshot](screenshot_ingame.png)
 ![screenshot of main menu](screenshot_main_menu.png)
+![ingame screenshot](screenshot_ingame.png)
