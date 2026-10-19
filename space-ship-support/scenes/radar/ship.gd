@@ -39,6 +39,7 @@ func _on_target_timeout() -> void:
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("left_click") and target_sprite.visible == true:
 		ship_window.show()
+		ship_window.move_to_top()
 
 
 
@@ -50,7 +51,7 @@ func target_disapear():
 	target_sprite.visible = false
 
 
-func _on_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+func _on_area_shape_exited(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	# #TODO: check if ship is fixed when leaving area
 	# destroyed.emit(true)
 	# queue_free()

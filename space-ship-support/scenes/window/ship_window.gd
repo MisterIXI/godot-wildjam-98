@@ -57,6 +57,7 @@ func _update_title() -> void:
 			
 func _on_title_bar_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
+		move_to_top()
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			is_dragging = event.pressed
 			if is_dragging:
@@ -92,7 +93,11 @@ func _on_title_bar_gui_input(event: InputEvent) -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		get_parent().move_child(self,-1)
+		move_to_top()
+		
+func move_to_top() -> void:
+	get_parent().move_child(self,-1)
+
 	
 func init_ship_layout(ship_layout_data_new: ShipLayoutData) -> void:
 	ship_layout_data = ship_layout_data_new
@@ -109,9 +114,9 @@ func init_ship_layout(ship_layout_data_new: ShipLayoutData) -> void:
 	module_parent.add_child(ship_layout)
 	_on_update_description(0)
 
-func set_integrity(integrity_left: int) -> void:
+func set_integrity(integrity_left_current: int) -> void:
 	for i in integrity_leds.size():
-		set_led_active(i, i < integrity_left)
+		set_led_active(i, i < integrity_left_current)
 
 func set_led_active(index: int, led_active: bool) -> void:
 	var led: TextureRect = integrity_leds[index]
@@ -150,7 +155,8 @@ func clear_mode_tween() -> void:
 		mode_tween.kill()
 	mode_tween = create_tween()
 	mode_tween.tween_property(self, "modulate", Color.WHITE, 2)
-	mode_tween.parallel().tween_property(ship_radar_icon, "modulate", Color.WHITE, 2)
+	if ship_radar_icon != null:
+		mode_tween.parallel().tween_property(ship_radar_icon, "modulate", Color.WHITE, 2)
 
 func warning_tween()-> void:
 	if mode_tween:
