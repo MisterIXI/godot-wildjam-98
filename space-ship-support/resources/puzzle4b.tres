@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PuzzleConfigData" format=3 uid="uid://begpficy2c2ik"]
+
+[ext_resource type="Script" uid="uid://bouy1x6lj0101" path="res://scenes/ship_spawner/module_data.gd" id="1_5gn8y"]
+[ext_resource type="Resource" uid="uid://bh7i45abnmrk6" path="res://resources/led_array_module.tres" id="2_dpafq"]
+[ext_resource type="Resource" uid="uid://28ohrctoxtox" path="res://resources/fix_tank_module.tres" id="3_bb7sp"]
+[ext_resource type="Resource" uid="uid://b58t417kgowt5" path="res://resources/fix_keypad_module.tres" id="4_iobi1"]
+[ext_resource type="Script" uid="uid://bqflxpuoyu2uc" path="res://scenes/ship_spawner/puzzle_config_data.gd" id="5_fiij4"]
+
+[resource]
+script = ExtResource("5_fiij4")
+relative_module_positions = Dictionary[ExtResource("1_5gn8y"), Vector2i]({
+ExtResource("2_dpafq"): Vector2i(0, 0),
+ExtResource("3_bb7sp"): Vector2i(1, -1),
+ExtResource("4_iobi1"): Vector2i(-1, 1)
+})
+puzzle_name = "Puzzle 4b"
+analysis_code = Array[String](["1", "1", "0", "1", "1", "0", "1", "1", "1"])
+module_name_interaction_sequence = Array[String](["FKM", "FTM"])
+descriptions = Array[String](["descriptions.p4b_1", "descriptions.p4b_2"])
+metadata/_custom_type_script = "uid://bqflxpuoyu2uc"

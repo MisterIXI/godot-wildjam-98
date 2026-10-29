@@ -12,3 +12,5 @@ extends Resource
 @export var analysis_code: Array[String] = []
 
 @export var module_name_interaction_sequence: Array[String]
+
+@export var descriptions: Array[String]

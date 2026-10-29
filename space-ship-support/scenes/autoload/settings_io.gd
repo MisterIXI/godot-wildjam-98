@@ -143,7 +143,10 @@ func load_from_file() -> void:
 
 		if save_dict.has("skip_intro_active"):
 			skip_intro_active = save_dict["skip_intro_active"]
-				
+		
+		if save_dict.has("locale"):
+			locale = save_dict["locale"]
+			
 func set_master_volume(vol_new: float, do_save: bool = true) -> void:
 	master_volume_linear = vol_new
 	if do_save:

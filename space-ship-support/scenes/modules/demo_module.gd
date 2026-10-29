@@ -46,5 +46,6 @@ func update_state(is_solved: bool) -> void:
 	debug_solve_label.text = "[color=green]solved[/color]" if is_solved else "[color=red]unsolved[/color]"
 
 func _on_demo_button_pressed() -> void:
+	use_module(true)
 	for pslot: ShipModule in linked_puzzle_slots.values():
 		(pslot as DemoModule).update_state(true)

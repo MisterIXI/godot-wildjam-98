@@ -16,7 +16,22 @@ offset_right = 100.0
 offset_bottom = 100.0
 texture = ExtResource("1_cnbn8")
 
-[node name="VScrollBar" type="VScrollBar" parent="TextureRect" unique_id=1304947937]
+[node name="Button" type="Button" parent="." unique_id=408448545]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 75.0
+offset_right = 90.0
+offset_bottom = 90.0
+
+[node name="Label" type="Label" parent="Button" unique_id=1454088568]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -5.0
+offset_right = 89.0
+offset_bottom = 18.0
+text = "Activate"
+
+[node name="VScrollBar" type="VScrollBar" parent="." unique_id=1304947937]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 11.0
@@ -43,20 +58,5 @@ offset_left = -0.050437927
 offset_right = 63.327072
 offset_bottom = 26.936855
 
-[node name="Button" type="Button" parent="." unique_id=408448545]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 75.0
-offset_right = 90.0
-offset_bottom = 90.0
-
-[node name="Label" type="Label" parent="Button" unique_id=1454088568]
-layout_mode = 0
-offset_left = 8.0
-offset_top = -5.0
-offset_right = 89.0
-offset_bottom = 18.0
-text = "Activate"
-
-[connection signal="value_changed" from="TextureRect/VScrollBar" to="." method="_on_v_scroll_bar_value_changed"]
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="value_changed" from="VScrollBar" to="." method="_on_v_scroll_bar_value_changed"]

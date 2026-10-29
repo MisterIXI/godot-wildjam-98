@@ -22,16 +22,27 @@
 [ext_resource type="Texture2D" uid="uid://cbdxusr8g3k0q" path="res://assets/Dudes/dude17.png" id="20_4aj4c"]
 [ext_resource type="Texture2D" uid="uid://bkvm2ex3lv5en" path="res://assets/Dudes/dude18.png" id="21_xwes1"]
 [ext_resource type="Texture2D" uid="uid://122fxrm67jam" path="res://assets/Dudes/dude19.png" id="22_qhsi6"]
+[ext_resource type="Texture2D" uid="uid://ckbgs37itstca" path="res://assets/led_on.svg" id="23_30j56"]
 [ext_resource type="Texture2D" uid="uid://6ol80jk4iknu" path="res://assets/Dudes/dude20.png" id="23_k7myh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o7f28"]
 
-[node name="ShipWindow" type="Panel" unique_id=118375707 node_paths=PackedStringArray("module_parent", "title_label")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30j56"]
+bg_color = Color(0.67, 0.67, 0.67, 1)
+
+[sub_resource type="Theme" id="Theme_rq55n"]
+Button/styles/pressed = SubResource("StyleBoxFlat_30j56")
+
+[node name="ShipWindow" type="Panel" unique_id=118375707 node_paths=PackedStringArray("module_parent", "integrity_leds", "description_label", "title_label")]
 clip_contents = true
 offset_right = 550.0
 offset_bottom = 450.0
 script = ExtResource("1_4j3jj")
 module_parent = NodePath("ContentMarginContainer/HBoxContainer/ModuleMarginContainer/PanelContainer")
+integrity_color_on = Color(0.18244442, 0.48386288, 1, 1)
+integrity_color_off = Color(0.22094142, 0.22094142, 0.22094142, 1)
+integrity_leds = [NodePath("ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC/HBoxContainer/LED"), NodePath("ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC/HBoxContainer/LED2"), NodePath("ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC/HBoxContainer/LED3")]
+description_label = NodePath("ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/StatusPanel/DescriptionLabel")
 title_label = NodePath("TitleBar/MarginContainer/TitleLabel")
 
 [node name="TitleBar" type="PanelContainer" parent="." unique_id=1596550366]
@@ -103,94 +114,194 @@ layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 1
 
-[node name="GridContainer" type="GridContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel" unique_id=603550398]
+[node name="MarginContainer" type="MarginContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel" unique_id=1254320920]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="IntegrityVBC" type="VBoxContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer" unique_id=1800701676]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="Label" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC" unique_id=889993182]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_obuqq")
+text = "ui.integrity"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC" unique_id=284998848]
+layout_mode = 2
+alignment = 1
+
+[node name="LED" type="TextureRect" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC/HBoxContainer" unique_id=1383962060]
+layout_mode = 2
+texture = ExtResource("23_30j56")
+stretch_mode = 5
+
+[node name="LED2" type="TextureRect" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC/HBoxContainer" unique_id=22939312]
+layout_mode = 2
+texture = ExtResource("23_30j56")
+stretch_mode = 5
+
+[node name="LED3" type="TextureRect" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/IntegrityVBC/HBoxContainer" unique_id=1319892220]
+layout_mode = 2
+texture = ExtResource("23_30j56")
+stretch_mode = 5
+
+[node name="GridContainer" type="GridContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer" unique_id=603550398]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 columns = 4
 
-[node name="Button" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=280462281]
+[node name="Button" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/GridContainer" unique_id=280462281]
 layout_mode = 2
 mouse_filter = 1
+theme = SubResource("Theme_rq55n")
+toggle_mode = true
 text = "😰"
 
-[node name="Button2" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=2063615105]
+[node name="Button2" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/GridContainer" unique_id=2063615105]
 layout_mode = 2
 mouse_filter = 1
+theme = SubResource("Theme_rq55n")
+toggle_mode = true
 text = "🔥"
 
-[node name="Button3" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1324047331]
+[node name="Button3" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/GridContainer" unique_id=1324047331]
 layout_mode = 2
 mouse_filter = 1
+theme = SubResource("Theme_rq55n")
+toggle_mode = true
 text = "⚙️"
 
-[node name="Button4" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1854123135]
+[node name="Button4" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/GridContainer" unique_id=1854123135]
 layout_mode = 2
 mouse_filter = 1
+theme = SubResource("Theme_rq55n")
+toggle_mode = true
 text = "📠"
 
-[node name="Button5" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1173972872]
+[node name="Button5" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/GridContainer" unique_id=1173972872]
 layout_mode = 2
 mouse_filter = 1
+theme = SubResource("Theme_rq55n")
+toggle_mode = true
 text = "💤"
 
-[node name="Button6" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1396900626]
+[node name="Button6" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/GridContainer" unique_id=1396900626]
 layout_mode = 2
 mouse_filter = 1
+theme = SubResource("Theme_rq55n")
+toggle_mode = true
 text = "🖥️"
 
-[node name="Button7" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1343560927]
+[node name="Button7" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/GridContainer" unique_id=1343560927]
 layout_mode = 2
 mouse_filter = 1
+theme = SubResource("Theme_rq55n")
+toggle_mode = true
 text = "🐸"
 
-[node name="Button8" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/GridContainer" unique_id=1518309448]
+[node name="Button8" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/DiagnosePanel/MarginContainer/GridContainer" unique_id=1518309448]
 layout_mode = 2
 mouse_filter = 1
+theme = SubResource("Theme_rq55n")
+toggle_mode = true
 text = "👽"
 
-[node name="TimerPanel" type="PanelContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox" unique_id=1397449733]
+[node name="TimerPanel" type="Panel" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox" unique_id=947601353]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 1
 
 [node name="TimeLeftLabel" type="Label" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/TimerPanel" unique_id=750560163]
-layout_mode = 2
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -9.5
+offset_top = 12.0
+offset_right = 9.5
+offset_bottom = 35.0
+grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 size_flags_stretch_ratio = 3.0
 mouse_filter = 1
 text = "50"
 
-[node name="TimerPlusButton" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/TimerPanel" unique_id=259324543]
-layout_mode = 2
+[node name="TimerMinusButton" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/TimerPanel" unique_id=29186565]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -34.0
+offset_right = 33.0
+offset_bottom = -3.0
+grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 mouse_filter = 1
-text = "+10"
+text = "  -  "
 
 [node name="TimerPlayButton" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/TimerPanel" unique_id=696707360]
-layout_mode = 2
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -34.0
+offset_right = 23.5
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 mouse_filter = 1
 text = "Start"
 
-[node name="TimerMinusButton" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/TimerPanel" unique_id=29186565]
-layout_mode = 2
+[node name="TimerPlusButton" type="Button" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/TimerPanel" unique_id=259324543]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -37.0
+offset_top = -34.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 0
+grow_vertical = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 mouse_filter = 1
-text = "-10"
+text = "  +  "
 
 [node name="StatusPanel" type="PanelContainer" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox" unique_id=599029278]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
 mouse_filter = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/StatusPanel" unique_id=610134437]
+[node name="DescriptionLabel" type="RichTextLabel" parent="ContentMarginContainer/HBoxContainer/InfoMarginContainer/InfoVBox/StatusPanel" unique_id=610134437]
 layout_mode = 2
 mouse_filter = 1
-text = "Blabla blubberfasel"
+theme_override_fonts/normal_font = ExtResource("2_obuqq")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
 
 [node name="ModuleMarginContainer" type="MarginContainer" parent="ContentMarginContainer/HBoxContainer" unique_id=1476517635]
 custom_minimum_size = Vector2(410, 410)

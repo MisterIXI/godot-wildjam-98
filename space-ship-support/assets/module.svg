@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="26.458334mm"
-   height="26.458334mm"
-   viewBox="0 0 26.458334 26.458334"
+   width="100"
+   height="100"
+   viewBox="0 0 26.458333 26.458333"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
@@ -25,8 +25,8 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      inkscape:zoom="0.35355339"
-     inkscape:cx="797.61645"
-     inkscape:cy="755.19004"
+     inkscape:cx="568.51385"
+     inkscape:cy="551.54329"
      inkscape:window-width="1920"
      inkscape:window-height="1003"
      inkscape:window-x="0"
@@ -36,8 +36,8 @@
      showguides="false"><inkscape:page
        x="0"
        y="0"
-       width="26.458334"
-       height="26.458334"
+       width="26.458332"
+       height="26.458332"
        id="page1"
        margin="0"
        bleed="0" /><inkscape:page
@@ -98,9 +98,9 @@
        margin="0"
        bleed="0"
        inkscape:label="9slice_base"
-       inkscape:export-filename="9slice_base.png"
-       inkscape:export-xdpi="24"
-       inkscape:export-ydpi="24" /><inkscape:page
+       inkscape:export-filename="9slice_base_200.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" /><inkscape:page
        x="-127.5457"
        y="-27.665495"
        width="7.9375"
@@ -121,6 +121,17 @@
        bleed="0"
        inkscape:label="radar_base"
        inkscape:export-filename="radar_base.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" /><inkscape:page
+       x="273.14948"
+       y="217.02286"
+       width="317.5"
+       height="169.33334"
+       id="page55"
+       margin="0"
+       bleed="0"
+       inkscape:label="radar_base_bordered"
+       inkscape:export-filename="radar_base_bordered.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" /></sodipodi:namedview><defs
      id="defs1"><linearGradient
@@ -153,10 +164,10 @@
        xlink:href="#linearGradient51"
        id="radialGradient53"
        cx="19.359798"
-       cy="43.441854"
+       cy="43.441853"
        fx="19.359798"
-       fy="43.441854"
-       r="0.30024"
+       fy="43.441853"
+       r="0.30024001"
        gradientTransform="matrix(1,0,0,0.31325273,0,29.833575)"
        gradientUnits="userSpaceOnUse" /></defs><g
      inkscape:label="Layer 1"
@@ -164,7 +175,7 @@
      id="layer1"
      transform="translate(-118.5,-64.5)"><path
        d="m 16.354114,42.041612 v 42.333441 h 42.33344 V 42.041612 Z"
-       style="fill:#c7c7c7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.158749;stroke-linecap:square;stroke-miterlimit:1.9"
+       style="display:none;fill:#c7c7c7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.158749;stroke-linecap:square;stroke-miterlimit:1.9"
        id="path30"
        inkscape:label="middle" /><g
        id="g45"
@@ -277,7 +288,7 @@
        y="59.261517" /><path
        id="rect54"
        style="display:inline;fill:#b9b9b9;fill-opacity:1;stroke-width:0.264583"
-       d="M 369.94718 59.26156 L 369.94718 249.76156 L 708.61385 249.76156 L 708.61385 59.26156 L 369.94718 59.26156 z M 465.19718 64.06075 A 90.450943 90.450943 0 0 1 555.64799 154.51156 A 90.450943 90.450943 0 0 1 465.19718 244.96237 A 90.450943 90.450943 0 0 1 374.74637 154.51156 A 90.450943 90.450943 0 0 1 465.19718 64.06075 z "
+       d="m 369.94718,59.26156 v 190.5 h 338.66667 v -190.5 z m 95.25,4.79919 a 90.450943,90.450943 0 0 1 90.45081,90.45081 90.450943,90.450943 0 0 1 -90.45081,90.45081 90.450943,90.450943 0 0 1 -90.45081,-90.45081 90.450943,90.450943 0 0 1 90.45081,-90.45081 z"
        transform="translate(-1.125e-6)" /><rect
        style="display:none;fill:#000000;fill-opacity:1;stroke:#4d4d4d;stroke-width:4.33028;stroke-dasharray:none;stroke-opacity:1"
        id="rect2"
@@ -295,4 +306,12 @@
        id="path54"
        cx="465.19717"
        cy="154.51154"
-       r="92.604164" /></g></svg>
+       r="92.604164" /><path
+       id="rect55"
+       style="fill:#c7c7c7;fill-opacity:1;stroke:none;stroke-width:4.983;stroke-miterlimit:1.9;stroke-dasharray:none;stroke-opacity:1"
+       d="M 391.64922 281.52293 L 391.64922 450.85626 L 709.14922 450.85626 L 709.14922 281.52293 L 391.64922 281.52293 z M 476.31589 284.16876 A 82.020836 82.020836 0 0 1 558.33672 366.1896 A 82.020836 82.020836 0 0 1 476.31589 448.21043 A 82.020836 82.020836 0 0 1 394.29505 366.1896 A 82.020836 82.020836 0 0 1 476.31589 284.16876 z " /><circle
+       style="fill:none;fill-opacity:1;stroke:#212121;stroke-width:5.0951;stroke-miterlimit:1.9;stroke-dasharray:none;stroke-opacity:1"
+       id="path55"
+       cx="476.31616"
+       cy="366.18954"
+       r="79.473282" /></g></svg>

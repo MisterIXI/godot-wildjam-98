@@ -1,4 +1,4 @@
-extends Control
+extends ShipModule
 @onready var progress_bar: ProgressBar = $ProgressBar
 
 var scroll_value = 100
@@ -11,7 +11,6 @@ func _on_v_scroll_bar_value_changed(value: float) -> void:
 	fluid_change =  scroll_value - value
 	scroll_value = value
 	progress_target = value
-
 	
 	
 func _process(delta: float) -> void:
@@ -19,10 +18,6 @@ func _process(delta: float) -> void:
 		progress_bar.value += 100 * delta
 	elif progress_target < progress_bar.value:
 			progress_bar.value -= 100 * delta
-
-
-
-
 
 func _on_button_button_down() -> void:
 	if correct_position == 1:
@@ -43,6 +38,8 @@ func _on_button_button_down() -> void:
 		
 func _correkt():
 	print("Correkt")
-	
+	use_module(true)
+		
 func _wrong():
 	print("Wrong")
+	use_module(false)

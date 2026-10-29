@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_rby48")
+target_scene_path = "uid://cavgqpcqwtf8k"
 debug_color = Color(0.47107458, 0.4262303, 0.41897967, 1)
 metadata/_custom_type_script = "uid://bouy1x6lj0101"

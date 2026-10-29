@@ -10,9 +10,17 @@
 [ext_resource type="PackedScene" uid="uid://3rua33h6ar0t" path="res://scenes/menu/game_over.tscn" id="8_87uf6"]
 [ext_resource type="Script" uid="uid://dc3mh3v1d4l2x" path="res://scenes/ship_spawner/ship_layout_generator.gd" id="9_2a8rs"]
 [ext_resource type="Script" uid="uid://bqflxpuoyu2uc" path="res://scenes/ship_spawner/puzzle_config_data.gd" id="10_vaxfo"]
-[ext_resource type="Resource" uid="uid://bo1m5stq58h8u" path="res://resources/puzzle1.tres" id="11_ftsea"]
+[ext_resource type="Resource" uid="uid://il2tlycqjef1" path="res://resources/puzzle2.tres" id="11_10c2w"]
 [ext_resource type="Script" uid="uid://bouy1x6lj0101" path="res://scenes/ship_spawner/module_data.gd" id="12_otnwt"]
-[ext_resource type="Resource" uid="uid://isxtfa6m1xiu" path="res://resources/testing/test_filler_slot_1.tres" id="13_3xj4h"]
+[ext_resource type="Resource" uid="uid://cyh75jmpwyvv8" path="res://resources/puzzle2b.tres" id="12_pg2xm"]
+[ext_resource type="Resource" uid="uid://dj7ef4uv4uaew" path="res://resources/puzzle2c.tres" id="13_gc57s"]
+[ext_resource type="Resource" uid="uid://dad70sqw2x55a" path="res://resources/puzzle3.tres" id="14_8b66f"]
+[ext_resource type="Resource" uid="uid://b2uhvdfw3d2q" path="res://resources/puzzle3a.tres" id="15_3jaai"]
+[ext_resource type="Resource" uid="uid://c55t0gcdftew3" path="res://resources/puzzle4a.tres" id="16_1iff4"]
+[ext_resource type="Resource" uid="uid://begpficy2c2ik" path="res://resources/puzzle4b.tres" id="17_4vuph"]
+[ext_resource type="Resource" uid="uid://b58t417kgowt5" path="res://resources/fix_keypad_module.tres" id="20_gc57s"]
+[ext_resource type="Resource" uid="uid://28ohrctoxtox" path="res://resources/fix_tank_module.tres" id="21_8b66f"]
+[ext_resource type="Resource" uid="uid://ql25dno3f1em" path="res://resources/filler_slot.tres" id="21_gc57s"]
 
 [sub_resource type="Gradient" id="Gradient_87uf6"]
 offsets = PackedFloat32Array(0)
@@ -78,5 +86,5 @@ metadata/_custom_type_script = "uid://cxi8ksk73nohu"
 
 [node name="ShipLayoutGenerator" type="Node" parent="." unique_id=547313120]
 script = ExtResource("9_2a8rs")
-puzzle_configs = Array[ExtResource("10_vaxfo")]([ExtResource("11_ftsea")])
-available_fillers = Array[ExtResource("12_otnwt")]([ExtResource("13_3xj4h")])
+puzzle_configs = Array[ExtResource("10_vaxfo")]([ExtResource("11_10c2w"), ExtResource("12_pg2xm"), ExtResource("13_gc57s"), ExtResource("14_8b66f"), ExtResource("15_3jaai"), ExtResource("16_1iff4"), ExtResource("17_4vuph")])
+available_fillers = Array[ExtResource("12_otnwt")]([ExtResource("20_gc57s"), ExtResource("21_8b66f"), ExtResource("21_gc57s"), ExtResource("21_gc57s"), ExtResource("21_gc57s"), ExtResource("21_gc57s"), ExtResource("21_gc57s"), ExtResource("21_gc57s"), ExtResource("21_gc57s")])

@@ -1,10 +1,10 @@
 class_name ShipLayout
 extends Control
 
-
+signal update_description(idx_new: int)
 signal layout_strike
-signal layout_failure
 signal layout_success
+signal layout_partial_success
 
 const SLOT_SIZE_XY: float = 100
 
@@ -12,15 +12,15 @@ const SLOT_SIZE_XY: float = 100
 
 var modules: Dictionary[Vector2i, ShipModule] = {}
 
-var num_strikes: int = 3
+var num_puzzles_solved: int = 0
 
 var puzzles: Array[Puzzle] = []
 
 func _ready() -> void:
 	pass
 
-func init_from(layout_data: ShipLayoutData) -> void:
-	num_strikes = 3
+func init_from(layout_data: ShipLayoutData, ship_id: String) -> void:
+	num_puzzles_solved = 0
 	puzzles = []
 	
 	var puzzle_modules: Dictionary[ShipModule, PuzzleConfigData] = {}
@@ -34,10 +34,11 @@ func init_from(layout_data: ShipLayoutData) -> void:
 		var scene: PackedScene = module_data.get_or_load_scene()
 
 		var module: ShipModule = scene.instantiate() as ShipModule
+		module.set_ship_id(ship_id)
 		module.position = get_spawn_pos(slot_position)
 		module.init_from_resource(module_data, slot_position)
 		add_child(module)
-		print("slot: ", slot_position, " -> init module:" , module_data.module_name, " with color ", module_data.debug_color.to_html())
+		#print("slot: ", slot_position, " -> init module:" , module_data.module_name, " with color ", module_data.debug_color.to_html())
 		modules[slot_position] = module
 		
 		module.module_used.connect(_on_module_used)
@@ -100,16 +101,22 @@ func _on_module_used(module_name: String, puzzle_idx: int) -> void:
 		_on_module_strike()
 		return
 	
-	_on_module_success()
-
+	update_description.emit(puzzle.current_progress_index)
+	
+	if puzzle.is_finished():
+		
+		num_puzzles_solved += 1
+		if num_puzzles_solved == puzzles.size():
+			_on_module_success()
+		
+	else:
+		_on_module_partial_success()
 
 func _on_module_strike() -> void:
-	num_strikes -= 1
 	layout_strike.emit()
-	
-	if (num_strikes == 0):
-		layout_failure.emit()
 
+func _on_module_partial_success() -> void:
+	layout_partial_success.emit()
 	
 func _on_module_success() -> void:
 	layout_success.emit()	

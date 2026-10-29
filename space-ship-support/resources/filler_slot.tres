@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ModuleData" format=3 uid="uid://ql25dno3f1em"]
+
+[ext_resource type="Script" uid="uid://bouy1x6lj0101" path="res://scenes/ship_spawner/module_data.gd" id="1_5lc3y"]
+
+[resource]
+script = ExtResource("1_5lc3y")
+target_scene_path = "uid://cavgqpcqwtf8k"
+module_type = 1
+debug_color = Color(0.47107458, 0.4262303, 0.41897967, 1)
+metadata/_custom_type_script = "uid://bouy1x6lj0101"
